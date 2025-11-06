@@ -1,0 +1,16 @@
+{{- if .Values.elasticsearch.enabled }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "bsw.fullname" . }}-elasticsearch-pvc
+  annotations:
+    helm.sh/resource-policy: keep
+spec:
+  accessModes:
+    - {{ .Values.elasticsearch.storage.accessMode }}
+  storageClassName: {{ .Values.storageClass }}
+  resources:
+    requests:
+      storage: {{ .Values.elasticsearch.storage.size }}
+{{- end }}

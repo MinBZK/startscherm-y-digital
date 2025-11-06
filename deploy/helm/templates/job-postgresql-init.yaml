@@ -1,0 +1,130 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "bsw.fullname" . }}-postgresql-init
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+  annotations:
+    app: postgresql
+    component: init
+spec:
+  backoffLimit: 3
+  ttlSecondsAfterFinished: 300
+  template:
+    metadata:
+      labels:
+        {{- include "bsw.labels" . | nindent 8 }}
+        app: postgresql
+        component: init
+    spec:
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      restartPolicy: OnFailure
+      containers:
+        - name: postgresql-init
+          image: postgres:15
+          command:
+            - /bin/bash
+            - -c
+            - |
+              echo "Waiting for PostgreSQL to be ready..."
+              until pg_isready; do
+                echo "PostgreSQL not ready, waiting..."
+                sleep 5
+              done
+
+              # Validate env vars
+              for v in PGOCUSER PGOCPASSWORD; do
+                if [ -z "${!v}" ]; then
+                  echo "Error: Environment variable $v is not set."
+                  exit 1
+                fi
+              done
+              
+              echo "Setting up NextCloud database and users..."
+              
+              # Create oc_admin user if it doesn't exist (needed for NextCloud)
+              echo "Creating oc_admin user..."
+              psql -d postgres -c "
+                DO \$\$
+                DECLARE
+                  usr TEXT := '${PGOCUSER}';
+                  pwd TEXT := '${PGOCPASSWORD}';
+                BEGIN
+                  IF NOT EXISTS (SELECT FROM pg_catalog.pg_roles WHERE rolname = usr) THEN
+                    EXECUTE format('CREATE USER %I WITH PASSWORD %L CREATEDB', usr, pwd);
+                  ELSE
+                    EXECUTE format('ALTER USER %I WITH PASSWORD %L CREATEDB', usr, pwd);
+                  END IF;
+                END
+                \$\$;
+              "
+              
+              # Drop existing NextCloud database if it exists
+              echo "Checking for existing NextCloud database..."
+              if psql -d postgres -lqt | cut -d \| -f 1 | grep -qw {{ .Values.nextcloud.database.name }}; then
+                echo "Dropping existing NextCloud database..."
+                psql -d postgres -c "DROP DATABASE {{ .Values.nextcloud.database.name }};"
+              else
+                echo "NextCloud database doesn't exist, nothing to drop"
+              fi
+              
+              echo "Creating fresh NextCloud database..."
+              psql -d postgres -c "CREATE DATABASE {{ .Values.nextcloud.database.name }} OWNER ${PGOCUSER};"
+              
+              # Create ingestor database if it doesn't exist
+              echo "Creating ingestor database..."
+              if psql -d postgres -lqt | cut -d \| -f 1 | grep -qw {{ .Values.nextcloud_ingestor.database.name }}; then
+                echo "Ingestor database already exists, skipping creation"
+              else
+                psql -d postgres -c "CREATE DATABASE {{ .Values.nextcloud_ingestor.database.name }} OWNER '${PGUSER}';"
+              fi
+              
+              # Grant permissions
+              echo "Setting up database permissions..."
+              psql -d {{ .Values.nextcloud.database.name }} -c "
+                GRANT ALL PRIVILEGES ON DATABASE {{ .Values.nextcloud.database.name }} TO ${PGOCUSER};
+                GRANT ALL PRIVILEGES ON SCHEMA public TO ${PGOCUSER};
+                ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO ${PGOCUSER};
+                ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO ${PGOCUSER};
+              " || echo "NextCloud permissions setup completed"
+              
+              # Grant permissions for ingestor database
+              echo "Setting up ingestor database permissions..."
+              psql -d {{ .Values.nextcloud_ingestor.database.name }} -c "
+                GRANT ALL PRIVILEGES ON DATABASE {{ .Values.nextcloud_ingestor.database.name }} TO \"${PGUSER}\";
+                GRANT ALL PRIVILEGES ON SCHEMA public TO \"${PGUSER}\";
+                ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO \"${PGUSER}\";
+                ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO \"${PGUSER}\";
+              " || echo "Ingestor permissions setup completed"
+              
+              echo "Database initialization complete - NextCloud and ingestor databases ready"
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: password
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: username
+            - name: PGOCUSER
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: oc-user
+            - name: PGOCPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: oc-password
+            - name: PGHOST
+              value: {{ include "bsw.fullname" . }}-postgresql
+            - name: PGPORT
+              value: "5432"
+            - name: PGDATABASE
+              value: "postgres"

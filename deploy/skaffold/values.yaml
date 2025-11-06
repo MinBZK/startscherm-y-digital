@@ -1,0 +1,6 @@
+skaffold: true
+
+# Image pull secrets for external images (Docker Hub, Elastic, etc.)
+# Local Skaffold images don't need authentication, but external images do
+imagePullSecrets:
+  - name: dockerhub-secret

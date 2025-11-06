@@ -1,0 +1,126 @@
+version: '3.8'
+
+services:
+  # Elasticsearch for document indexing
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.14.3
+    container_name: nextcloud-ingestor-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false   # disables auth for simplicity
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g     # adjust JVM heap size
+    ports:
+      - "9200:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks:
+      - ingestor-network
+    restart: unless-stopped
+
+  # PostgreSQL for state management
+  postgres:
+    image: postgres:15-alpine
+    container_name: nextcloud-ingestor-postgres
+    environment:
+      POSTGRES_DB: nextcloud_ingestor
+      POSTGRES_USER: ingestor
+      POSTGRES_PASSWORD: ingestor_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./develop/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ingestor -d nextcloud_ingestor"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ingestor-network
+    restart: unless-stopped
+
+  # Apache Tika for document content extraction
+  tika:
+    image: apache/tika:latest-full
+    container_name: nextcloud-ingestor-tika
+    ports:
+      - "9998:9998"
+    environment:
+      - TIKA_SERVER_JAVA_ARGS=-Xmx2g -Xms1g
+    volumes:
+      - tika_data:/tmp
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9998/version"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.6
+    container_name: nextcloud-db
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-read-only-compressed=OFF
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=supersecret
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    networks:
+      - nextcloud-network
+
+  redis:
+    image: redis:alpine
+    container_name: nextcloud-redis
+    restart: always
+    networks:
+      - nextcloud-network
+
+  app:
+    image: nextcloud:latest
+    container_name: nextcloud-app
+    restart: always
+    ports:
+      - 8080:80   # Access Nextcloud at http://localhost:8080
+    links:
+      - db
+      - redis
+    volumes:
+      - nextcloud:/var/www/html
+      - ./development/nextcloud/init-users.sh:/docker-entrypoint-hooks.d/before-starting/init-users.sh:ro
+      # - ./apps:/var/www/html/custom_apps   # <--- add this
+      # - ./config:/var/www/html/config
+      # - ./data:/var/www/html/data
+    environment:
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+      - REDIS_HOST=redis
+      - NEXTCLOUD_ADMIN_USER=admin
+      - NEXTCLOUD_ADMIN_PASSWORD=adminpassword
+      - NEXTCLOUD_TRUSTED_DOMAINS=localhost
+      - NEXTCLOUD_DISABLE_APPS_UPDATE_CHECK=true
+      - NEXTCLOUD_DISABLE_DEFAULT_APPS=true
+    networks:
+      - nextcloud-network
+
+volumes:
+  es_data:
+    driver: local
+  postgres_data:
+    driver: local
+  tika_data:
+    driver: local
+  db:
+  nextcloud:
+
+networks:
+  ingestor-network:
+    driver: bridge
+  nextcloud-network:
+    driver: bridge

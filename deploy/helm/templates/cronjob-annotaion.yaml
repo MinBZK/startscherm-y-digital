@@ -1,0 +1,58 @@
+{{- if .Values.annotation.cronjob.enabled }}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: annotation-cronjob
+spec:
+  schedule: "{{ .Values.annotation.cronjob.schedule }}"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      ttlSecondsAfterFinished: 30
+      template:
+        metadata:
+          labels:
+            {{- include "bsw.labels" . | nindent 12 }}
+        spec:
+          containers:
+            - name: {{ .Chart.Name }}
+              env:
+              - name: DEFAULT_LLM
+                value: {{ $.Values.api.llm.default_llm | quote }}
+              - name: MISTRAL_API_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: api-llm-secrets
+                    key: mistral-api-key
+              - name: MISTRAL_DEPLOYMENT_NAME
+                value: {{ $.Values.api.llm.mistral.deploymentName | quote }}
+              - name: GPT_API_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: api-llm-secrets
+                    key: gpt-api-key
+              - name: VLAM_API_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: api-llm-secrets
+                    key: vlam-api-key
+              - name: GPT_DEPLOYMENT_NAME
+                value: {{ $.Values.api.llm.gpt.deploymentName | quote }}
+              - name: EMBEDDINGS_MODEL_NAME
+                value: {{ $.Values.api.llm.gpt.embeddings.modelName | quote }}
+              - name: EMBEDDINGS_API_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: api-llm-secrets
+                    key: gpt-embeddings-key
+              - name: EMBEDDINGS_API_VERSION
+                value: {{ $.Values.api.llm.gpt.embeddings.apiVersion | quote }}
+              - name: EMBEDDINGS_ENDPOINT
+                value: {{ $.Values.api.llm.gpt.embeddings.endpoint | quote }}
+              image: "{{ .Values.annotation.cronjob.image.repository }}:{{ .Values.annotation.cronjob.image.tag }}"
+              imagePullPolicy: {{ .Values.annotation.cronjob.image.pullPolicy }}
+              args: {{- toYaml .Values.annotation.cronjob.args | nindent 14 }}
+          restartPolicy: OnFailure
+{{- end }}

@@ -1,0 +1,78 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+build:
+  local:
+    push: false
+    useBuildkit: true
+  artifacts:
+  - context: frontend
+    docker:
+      network: host
+      ssh: default
+    image: frontend
+    sync:
+      infer:
+        - '/**/*.ts'
+        - '/**/*.tsx'
+        - '/**/*.css'
+  - context: backend
+    docker:
+      dockerfile: bsw-api/Dockerfile
+      network: host
+      ssh: default
+    image: api
+    sync:
+      infer:
+      - '**/*.py'
+  - context: backend/nextcloud_ingestor
+    docker:
+      network: host
+      ssh: default
+    image: nextcloud_ingestor
+    sync:
+      infer:
+      - '**/*.py'
+  - context: backend
+    docker:
+      dockerfile: annotation/Dockerfile
+      network: host
+      ssh: default
+    image: annotation
+    sync:
+      infer:
+      - '**/*.py'
+    
+profiles:
+- name: dev
+  deploy:
+    helm:
+      flags:
+        install:
+        - --dependency-update
+        - --timeout=120m
+      releases:
+      - name: bsw
+        upgradeOnChange: true
+        # recreatePods: false
+        chartPath: "deploy/helm"
+        # imageStrategy:
+        #   helm:
+        #     explicitRegistry: true
+        valuesFiles:
+        - deploy/helm/values.yaml
+        - deploy/skaffold/values.yaml
+        skipBuildDependencies: true
+        setValueTemplates:
+          api.image.repository: "{{.IMAGE_REPO_api}}"
+          api.image.tag: "{{.IMAGE_TAG_api}}@{{.IMAGE_DIGEST_api}}"
+          frontend.image.repository: "{{.IMAGE_REPO_frontend}}"
+          frontend.image.tag: "{{.IMAGE_TAG_frontend}}@{{.IMAGE_DIGEST_frontend}}"
+          nextcloud_ingestor.image.repository: "{{.IMAGE_REPO_nextcloud_ingestor}}"
+          nextcloud_ingestor.image.tag: "{{.IMAGE_TAG_nextcloud_ingestor}}@{{.IMAGE_DIGEST_nextcloud_ingestor}}"
+          annotation.image.repository: "{{.IMAGE_REPO_annotation}}"
+          annotation.image.tag: "{{.IMAGE_TAG_annotation}}@{{.IMAGE_DIGEST_annotation}}"
+        setValues:
+          api.image.pullPolicy: IfNotPresent
+          frontend.image.pullPolicy: IfNotPresent
+          nextcloud_ingestor.image.pullPolicy: IfNotPresent
+          annotation.image.pullPolicy: IfNotPresent

@@ -1,0 +1,136 @@
+{{- if .Values.elasticsearch.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "bsw.fullname" . }}-elasticsearch
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+    app: elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+        {{- include "bsw.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      initContainers:
+      - name: setup-data-dir
+        image: busybox:1.35
+        command:
+        - /bin/sh
+        - -c
+        - |
+          mkdir -p /usr/share/elasticsearch/data
+          chown 1000:1000 /usr/share/elasticsearch/data
+          chmod 755 /usr/share/elasticsearch/data
+        volumeMounts:
+        - name: elasticsearch-data
+          mountPath: /usr/share/elasticsearch/data
+        securityContext:
+          runAsUser: 0
+      containers:
+      - name: elasticsearch
+        image: {{ .Values.elasticsearch.image.repository }}:{{ .Values.elasticsearch.image.tag }}
+        imagePullPolicy: {{ .Values.elasticsearch.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.elasticsearch.service.httpPort }}
+          name: http
+        # - containerPort: {{ .Values.elasticsearch.service.transportPort }}
+        #   name: transport
+        readinessProbe:
+          httpGet:
+            path: /_cluster/health?local=true
+            port: {{ .Values.elasticsearch.service.httpPort }}
+          initialDelaySeconds: {{ .Values.elasticsearch.probes.readiness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.elasticsearch.probes.readiness.periodSeconds }}
+          timeoutSeconds: {{ .Values.elasticsearch.probes.readiness.timeoutSeconds }}
+          failureThreshold: {{ .Values.elasticsearch.probes.readiness.failureThreshold }}
+          successThreshold: {{ .Values.elasticsearch.probes.readiness.successThreshold }}
+        livenessProbe:
+          httpGet:
+            path: /_cluster/health?local=true
+            port: {{ .Values.elasticsearch.service.httpPort }}
+          initialDelaySeconds: {{ .Values.elasticsearch.probes.liveness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.elasticsearch.probes.liveness.periodSeconds }}
+          timeoutSeconds: {{ .Values.elasticsearch.probes.liveness.timeoutSeconds }}
+          failureThreshold: {{ .Values.elasticsearch.probes.liveness.failureThreshold }}
+        startupProbe:
+          httpGet:
+            path: /_cluster/health?local=true
+            port: {{ .Values.elasticsearch.service.httpPort }}
+          initialDelaySeconds: {{ .Values.elasticsearch.probes.startup.initialDelaySeconds }}
+          periodSeconds: {{ .Values.elasticsearch.probes.startup.periodSeconds }}
+          timeoutSeconds: {{ .Values.elasticsearch.probes.startup.timeoutSeconds }}
+          failureThreshold: {{ .Values.elasticsearch.probes.startup.failureThreshold }}
+        env:
+        - name: discovery.type
+          value: {{ .Values.elasticsearch.env.discoveryType }}
+        - name: xpack.security.enabled
+          value: {{ .Values.elasticsearch.env.securityEnabled | quote }}
+        - name: ES_JAVA_OPTS
+          value: {{ .Values.elasticsearch.env.javaOpts }}
+        - name: cluster.name
+          value: {{ .Values.elasticsearch.env.clusterName }}
+        - name: node.name
+          value: {{ .Values.elasticsearch.env.nodeName }}
+        resources:
+          {{- toYaml .Values.elasticsearch.resources | nindent 10 }}
+        volumeMounts:
+        - name: elasticsearch-data
+          mountPath: /usr/share/elasticsearch/data
+      volumes:
+      - name: elasticsearch-data
+        persistentVolumeClaim:
+          claimName: {{ include "bsw.fullname" . }}-elasticsearch-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "bsw.fullname" . }}-elasticsearch
+  labels:
+    app: elasticsearch
+    {{- include "bsw.labels" . | nindent 4 }}
+spec:
+  selector:
+    app: elasticsearch
+  ports:
+  - port: {{ .Values.elasticsearch.service.httpPort }}
+    name: http
+    targetPort: {{ .Values.elasticsearch.service.httpPort }}
+  - port: {{ .Values.elasticsearch.service.transportPort }}
+    name: transport
+    targetPort: {{ .Values.elasticsearch.service.transportPort }}
+  type: {{ .Values.elasticsearch.service.type }}
+{{- if .Values.networkPolicies.enabled }}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: elasticsearch-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: elasticsearch
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: bsw-search-api
+          {{- include "bsw.selectorLabels" . | nindent 10 }}
+    ports:
+    - protocol: TCP
+      port: 9200
+    # - protocol: TCP 
+    #   port: 9300
+{{- end }}
+{{- end }} 

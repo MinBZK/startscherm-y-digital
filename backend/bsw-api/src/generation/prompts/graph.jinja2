@@ -1,0 +1,49 @@
+{% if law_sources %}
+**Wetartikelen en bijbehorende kennisgrafen**:
+{% for i, (doc, title, law, uri, lido, jas) in law_sources %}
+INDEX {{ i }}
+Wet: {{ law }}
+Article: {{ title }}
+Article tekst: {{ doc }}
+
+
+**Gerelateerde wet- en regelgeving (LIDO) kennisgraf voor document {{ i }}:**
+{% if lido %}
+{
+  "subject": "{{ uri }}",  
+  "triplets": [
+    {% for binding in lido['results']['bindings'] %}
+    {
+      "predicate": "{{ binding.predicate.value }}",
+      "object": {
+        "type": "{{ binding.object.type }}",
+        "value": "{{ binding.object.value }}"
+        {% if binding.object.datatype is defined %}, 
+        "datatype": "{{ binding.object.datatype }}" 
+        {% endif %}
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+{% else %}
+Geen aanvullende informatie gevonden.
+{% endif %}
+
+**Relevante entiteiten en relaties van de kennisgraf Juridisch Analyse Schema (JAS) voor document {{ i }}:**
+{% if jas %}
+  {% if jas.message %}
+    Geen aanvullende informatie gevonden voor deze wet URI: {{ jas.message }}
+  {% else %}
+    **Relevante entiteiten en relaties (JAS) voor document {{ i }}:**
+    {% for binding in jas.results.bindings %}
+      - **Subject**: {{ binding.subject.value }}  
+      - **Predicate**: {{ binding.predicate.value }}  
+      - **Object**: {{ binding.object.value }}  
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+-----------------------------------
+{% endfor %}
+{% endif %}

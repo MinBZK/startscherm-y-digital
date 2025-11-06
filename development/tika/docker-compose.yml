@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  tika:
+    image: apache/tika:latest-full
+    container_name: nextcloud-ingestor-tika
+    ports:
+      - "9998:9998"
+    environment:
+      - TIKA_SERVER_JAVA_ARGS=-Xmx2g -Xms1g
+    volumes:
+      - tika_data:/tmp
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9998/version"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    restart: unless-stopped
+    networks:
+      - tika-network
+
+volumes:
+  tika_data:
+    driver: local
+
+networks:
+  tika-network:
+    driver: bridge

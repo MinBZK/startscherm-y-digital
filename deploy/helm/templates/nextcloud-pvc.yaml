@@ -1,0 +1,41 @@
+{{- if .Values.nextcloud.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "bsw.fullname" . }}-nextcloud-data
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+    app: nextcloud
+    component: data
+  annotations:
+    helm.sh/resource-policy: keep
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.nextcloud.persistence.data.size }}
+  {{- if .Values.storageClass }}
+  storageClassName: {{ .Values.storageClass }}
+  {{- end }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "bsw.fullname" . }}-nextcloud-config
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+    app: nextcloud
+    component: config
+  annotations:
+    helm.sh/resource-policy: keep
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.nextcloud.persistence.config.size }}
+  {{- if .Values.storageClass }}
+  storageClassName: {{ .Values.storageClass }}
+  {{- end }}
+{{- end }}

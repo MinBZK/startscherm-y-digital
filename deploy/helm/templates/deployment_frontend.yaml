@@ -1,0 +1,78 @@
+{{- if .Values.frontend.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "bsw.fullname" . }}-frontend
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: frontend
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: frontend
+        {{- include "bsw.labels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: default
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: {{ .Chart.Name }}-frontend
+          image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          env:
+            - name: NEXT_PUBLIC_API_BASE_URL
+              value: "http://{{ include "bsw.fullname" . }}-api"
+            {{- if .Values.nextcloud.enabled }}
+            - name: NEXT_PUBLIC_NEXTCLOUD_BASE_URL
+              value: "http://{{ .Values.nextcloud.ingress.host }}:8080"
+            {{- else }}
+            - name: NEXT_PUBLIC_NEXTCLOUD_BASE_URL
+              value: {{ .Values.frontend.nextcloud.externalUrl | quote }}
+            {{- end }}
+            # File watcher configuration to prevent "too many open files" error
+            - name: WATCHPACK_POLLING
+              value: "true"
+            - name: CHOKIDAR_USEPOLLING
+              value: "true"
+            - name: CHOKIDAR_INTERVAL
+              value: "1000"
+            - name: NODE_OPTIONS
+              value: "--max-old-space-size=4096"
+            - name: NEXT_PUBLIC_KEYCLOAK_URL
+              value: "{{ .Values.auth.keycloak.publicUrl }}"
+            - name: NEXT_PUBLIC_KEYCLOAK_REALM
+              value: "{{ .Values.auth.keycloak.realm }}"
+            - name: NEXT_PUBLIC_KEYCLOAK_CLIENT_ID
+              value: "{{ .Values.auth.keycloak.clientId }}"
+            - name: KEYCLOAK_INTERNAL_URL
+              value: "{{ .Values.auth.keycloak.internalUrl }}"
+            # Disable file watching in production-like environments
+            - name: CI
+              value: "true"
+          resources:
+            {{- toYaml .Values.frontend.resources | nindent 12 }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 1000
+            runAsGroup: 1000
+            capabilities:
+              drop:
+                - ALL
+
+{{- end }}

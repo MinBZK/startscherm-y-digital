@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1",
+    "title": "Verzamelen documenten en voorleggen",
+    "dueDate": "2025-06-17T00:00:00Z",
+    "status": "notStarted",
+    "relatedTo": {
+      "type": "channel",
+      "title": "Woo-verzoek over verzoek documenten EU-inbraak",
+      "url": "https://teams.microsoft.com/l/channel/example"
+    }
+  },
+  {
+    "id": "2",
+    "title": "Controleren en beoordelen gelakte documenten",
+    "dueDate": "2025-06-14T00:00:00Z",
+    "status": "inProgress"
+  },
+  {
+    "id": "3",
+    "title": "Uitvoeren intake met aanvrager",
+    "dueDate": "2025-06-18T00:00:00Z",
+    "status": "notStarted"
+  },
+  {
+    "id": "4",
+    "title": "Controleren en beoordelen gelakte documenten",
+    "dueDate": "2025-06-24T00:00:00Z",
+    "status": "waitinOnOthers"
+  },
+  {
+    "id": "5",
+    "title": "In gang zetten parafeerlijn",
+    "dueDate": null,
+    "status": "completed"
+  },
+  {
+    "id": "6",
+    "title": "Uitvoeren intake met aanvrager",
+    "dueDate": "2025-06-28T00:00:00Z",
+    "status": "notStarted"
+  },
+  {
+    "id": "7",
+    "title": "Hoorzitting met burger",
+    "dueDate": "2025-06-15T00:00:00Z",
+    "status": "completed",
+    "relatedTo": {
+      "type": "dossier",
+      "title": "Klacht over Piet de Vries",
+      "url": "https://teams.microsoft.com/l/channel/example"
+    }
+  }
+]

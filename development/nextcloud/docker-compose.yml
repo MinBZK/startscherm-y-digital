@@ -1,0 +1,51 @@
+# run a local instance of nextcloud for development and testing
+services:
+  db:
+    image: mariadb:10.6
+    container_name: nextcloud-db
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-read-only-compressed=OFF
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=supersecret
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+
+  redis:
+    image: redis:alpine
+    container_name: nextcloud-redis
+    restart: always
+
+  app:
+    image: nextcloud:latest
+    container_name: nextcloud-app
+    restart: always
+    ports:
+      - 8080:80   # Access Nextcloud at http://localhost:8080
+    links:
+      - db
+      - redis
+    volumes:
+      - nextcloud:/var/www/html
+      - ./init-users.sh:/docker-entrypoint-hooks.d/before-starting/init-users.sh:ro
+      # - ./apps:/var/www/html/custom_apps   # <--- add this
+      # - ./config:/var/www/html/config
+      # - ./data:/var/www/html/data
+
+    environment:
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+      - REDIS_HOST=redis
+      - NEXTCLOUD_ADMIN_USER=admin
+      - NEXTCLOUD_ADMIN_PASSWORD=adminpassword
+      - NEXTCLOUD_TRUSTED_DOMAINS=localhost
+      - NEXTCLOUD_DISABLE_APPS_UPDATE_CHECK=true
+      - NEXTCLOUD_DISABLE_DEFAULT_APPS=true
+
+volumes:
+  db:
+  nextcloud:

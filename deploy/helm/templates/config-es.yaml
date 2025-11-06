@@ -1,0 +1,10 @@
+{{- if .Values.elasticsearch.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: elasticsearch-config
+data:
+  ES_INDEX_DOCUMENTS: {{ .Values.elasticsearch.main_index.name  | quote }}
+  ES_INDEX_DOSSIERS: {{ .Values.elasticsearch.dossier_index.name  | quote }}
+  ES_URL: "http://{{ include "bsw.fullname" . }}-elasticsearch:{{ .Values.elasticsearch.service.httpPort }}"
+{{- end }}

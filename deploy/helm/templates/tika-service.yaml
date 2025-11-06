@@ -1,0 +1,22 @@
+{{- if .Values.nextcloud_ingestor.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: tika
+  name: tika
+  namespace: default
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 9998
+  selector:
+    run: tika
+  sessionAffinity: None
+  type: ClusterIP
+{{- end }}

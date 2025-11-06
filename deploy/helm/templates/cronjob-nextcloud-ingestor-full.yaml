@@ -1,0 +1,71 @@
+{{- if and .Values.nextcloud_ingestor.enabled (hasKey .Values.nextcloud_ingestor "cronjobs") (hasKey .Values.nextcloud_ingestor.cronjobs "full") .Values.nextcloud_ingestor.cronjobs.full.enabled }}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: nextcloud-ingestor-full
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+    app.kubernetes.io/component: nextcloud-ingestor-full
+spec:
+  schedule: "{{ .Values.nextcloud_ingestor.cronjobs.full.schedule }}"
+  successfulJobsHistoryLimit: {{ .Values.nextcloud_ingestor.cronjobs.full.successfulJobsHistoryLimit | default 3 }}
+  failedJobsHistoryLimit: {{ .Values.nextcloud_ingestor.cronjobs.full.failedJobsHistoryLimit | default 1 }}
+  {{- if .Values.nextcloud_ingestor.cronjobs.full.suspend }}
+  suspend: {{ .Values.nextcloud_ingestor.cronjobs.full.suspend }}
+  {{- end }}
+  jobTemplate:
+    spec:
+      backoffLimit: {{ .Values.nextcloud_ingestor.cronjobs.full.backoffLimit | default 1 }}
+      ttlSecondsAfterFinished: {{ .Values.nextcloud_ingestor.cronjobs.full.ttlSecondsAfterFinished | default 300 }}
+      template:
+        metadata:
+          labels:
+            {{- include "bsw.labels" . | nindent 12 }}
+            app.kubernetes.io/component: nextcloud-ingestor-full
+        spec:
+          {{- if .Values.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml .Values.imagePullSecrets | nindent 12 }}
+          {{- end }}
+          containers:
+            - name: nextcloud-ingestor-full
+              image: "{{ .Values.nextcloud_ingestor.image.repository }}:{{ .Values.nextcloud_ingestor.image.tag }}"
+              imagePullPolicy: {{ .Values.imagePullPolicy }}
+              args:
+                - "python3"
+                - "main.py"
+                - "full"
+              env:
+                - name: LOG_LEVEL
+                  value: {{ .Values.nextcloud_ingestor.loglevel | default "INFO" | quote }}
+                - name: DRY_RUN
+                  value: {{ .Values.nextcloud_ingestor.cronjobs.full.dryRun | default "false" | quote }}
+                - name: NC_USER
+                  valueFrom:
+                    secretKeyRef:
+                      name: nextcloud-admin-secret
+                      key: admin-user
+                - name: NC_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: nextcloud-admin-secret
+                      key: admin-password
+                - name: POSTGRES_USER
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgresql-secret
+                      key: username
+                - name: POSTGRES_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgresql-secret
+                      key: password
+              envFrom:
+                - configMapRef:
+                    name: nextcloud-ingestor-config
+                - configMapRef:
+                    name: elasticsearch-config
+              resources:
+                {{- toYaml .Values.nextcloud_ingestor.cronjobs.full.resources | nindent 16 }}
+          restartPolicy: {{ .Values.nextcloud_ingestor.cronjobs.full.restartPolicy | default "OnFailure" }}
+{{- end }}

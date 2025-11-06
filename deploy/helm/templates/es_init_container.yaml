@@ -1,0 +1,32 @@
+{{- define "elasticsearch.initContainer" }}
+name: wait-for-index
+image: appropriate/curl:latest
+resources:
+    requests:
+        ephemeral-storage: 50Mi
+    limits:
+        ephemeral-storage: 100Mi
+securityContext:
+    readOnlyRootFilesystem: true
+    runAsUser: 10000
+    runAsGroup: 10000
+    seccompProfile:
+        type: RuntimeDefault
+command: ['sh', '-c', 'until curl --fail -s http://{{ include "bsw.name" .}}-elasticsearch:9200/{{ .Values.elasticsearch.main_index.name }}; do echo waiting for main index; sleep 1; done']
+{{- end}}
+{{- define "elasticsearch.initContainerCreation" }}
+name: wait-for-index
+image: appropriate/curl:latest
+resources:
+    requests:
+        ephemeral-storage: 50Mi
+    limits:
+        ephemeral-storage: 100Mi
+securityContext:
+    readOnlyRootFilesystem: true
+    runAsUser: 10000
+    runAsGroup: 10000
+    seccompProfile:
+        type: RuntimeDefault
+command: ['sh', '-c', 'until curl -s http://{{ include "bsw.name" .}}-elasticsearch:9200/; do echo waiting for index; sleep 1; done']
+{{- end}}

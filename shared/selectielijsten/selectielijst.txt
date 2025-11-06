@@ -1,0 +1,1406 @@
+1
+Concernbrede selectielijst van het ministerie van
+Volksgezondheid, Welzijn en Sport (VWS)
+Vastgesteld: Staatscourant 9 februari 2024, nr. 3945
+Ingangsdatum: • Inspectie Gezondheidszorg en Jeugd (IGJ): 1 januari 2020
+Interpretatie en doorvertaling van de selectielijst voor IGJ – 26 maart 2024.
+2
+Opbouw van de selectielijst en toelichting op de waarderingen
+Opbouw van de selectielijst
+In deze selectielijst worden archiefbescheiden gewaardeerd en geselecteerd op basis van het generiek gedefinieerde proces (de
+context) waarin de archiefbescheiden zijn ontvangen of ontstaan, ongeacht de vorm van de archiefbescheiden. De waardering
+staat dus los van of het tekstbestanden, spreadsheets, audiobestanden, e-mails, papieren documenten, websites, chatberichten,
+etc. betreft.1
+Tevens geldt de waardering voor alle stappen en fasen in het proces, niet alleen voor de uitkomst of het eindproduct.
+Dat wil zeggen dat bij bijvoorbeeld een proces ‘behandelen van een vergunningaanvraag’ onderliggende stukken voor de
+aanvraag, correspondentie, concepten en definitieve vergunning allemaal dezelfde waardering krijgen. Op deze stelregel zijn
+uitzonderingen. In het geval van ‘het behandelen van een vergunningaanvraag’ kan het zo zijn dat een afgewezen aanvraag een
+andere waardering krijgt dan een toegekende aanvraag. Een andere uitkomst van het proces leidt in dat geval tot een andere
+waardering. Ook is er bij enkele processen voor gekozen om het eindproduct van het proces anders te waarderen dan de overige
+archiefbescheiden in het proces. De selectiedoelstelling (zie hieronder), privacyrichtlijnen en/of bedrijfsvoeringsargumenten gaan
+in zo’n geval boven de algemene stelregel van eenzelfde waardering voor alle informatie in het proces.
+Voor het definiëren van de generieke processen is gebruik gemaakt van het bovengenoemde Generiek Waarderingsmodel
+Rijksoverheid, versie 2.0 (GWR). Het GWR is een model en een hulpmiddel voor het opstellen van selectielijsten voor de
+Rijksoverheid. Het GWR kent veertien generieke procescategorieën, verdeeld over vijf zogeheten functies. De procescategorieën
+(en de nummering) zijn in deze selectielijst overgenomen. Hieronder een overzicht van de vijf functies en de veertien generieke
+procescategorieën.
+(Interne) sturing en inrichting van de organisatie
+Procescategorie 1 Maken en uitvoeren van afspraken inzake de inrichting en besturing van de organisatie.
+Primaire (bedrijfs)functies (beleid en uitvoering)
+Procescategorie 2 Maken, verantwoorden en uitdragen van beleid.
+Procescategorie 3 Maken van wet- en regelgeving.
+Procescategorie 4 Het (mede) opstellen van de rijksbegroting en de ramingen voor de volgende jaren.
+Procescategorie 5 Geven van voorlichting en verstrekken van informatie aan burgers, bedrijven, instellingen
+en andere overheden.
+Handhaving en toezicht
+Procescategorie 6 Uitoefenen van toezicht op overheidsorganisaties.
+Procescategorie 7 Controleren op naleving van wet- en regelgeving en handhaving ervan.
+Kennis en advies
+Procescategorie 8 Het (laten) verrichten van onderzoek en het rapporteren hierover.
+Ondersteunende bedrijfsfuncties (PIOFACH)
+Procescategorie 9 Verlenen van ondersteunende diensten.
+Uitvoering (bedrijfsvoering overig: dienstverlening, handhaving, toezicht)
+Procescategorie 10 Leveren van producten en diensten aan personen, bedrijven, instellingen en andere
+overheden.
+Procescategorie 11 (*) Het heffen en innen bij en het uitkeren aan burgers, bedrijven en instellingen.
+1
+Om deze reden zijn algoritmen niet in deze selectielijst terug te vinden. Algoritmen vallen onder archiefbescheiden maar ze zijn
+onderdeel van een proces, geen proces(categorie) op zich. Waardering en selectie vindt plaats binnen het proces waarbinnen het
+algoritme wordt toegepast.
+3
+Procescategorie 12 Vertegenwoordigen van de minister of de Staat in bestuursrechtelijke procedures voor
+(inter)nationale gerechtelijke instanties.
+Procescategorie 13 Onderhouden van (internationale) betrekkingen en samenwerkingsverbanden.
+Procescategorie 14 Leveren van overheidsdiensten bij crises en calamiteiten.
+(*) Procescategorie 11 ‘Het heffen en innen bij en het uitkeren aan burgers, bedrijven en instellingen’ is gericht op de
+Belastingdienst en komt daarom in deze selectielijst niet voor.
+4
+(Interne) sturing en inrichting van de organisatie
+Procescategorie 1. Het maken en uitvoeren van afspraken inzake de inrichting en besturing van de
+organisatie
+Proces 1.1
+(GWR 1.1)
+Het inrichten van de organisatie
+Waardering B1
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het betreft hier het oprichten, inrichten en opheffen van organisatieonderdelen,
+raden, commissies, etc. op de beleidsterreinen Volksgezondheid, Welzijn, Sport.
+Onder dit proces valt ook het nationaliseren, privatiseren, verzelfstandigen, inrichten
+van beleidsdeelnemingen, etc. van organisaties/organisatieonderdelen en de
+voorbereiding daarvan.
+Denk bij dit proces ook aan informatie waarvan de inhoud leidt tot wijzigingen,
+aanpassingen en/of vernieuwingen in en van de organisatie.
+Voorbeelden van
+informatie in het proces
+Instellingsbesluiten, overeenkomsten, (organisatie)wijzigingsvoorstellen, evaluaties,
+maatregelen, overeenkomsten en eindverslagen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Het coördineren van interne reorganisaties (BSD-proces 143-134): nota’s,
+adviezen, rapporten, gespreksverslagen, agenda’s, notulen en vergaderstukken,
+reorganisatieplan
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie: 1.1 betreft IG, DT, MT. (Beleids)stukken op strategisch niveau. Niet zaakgebonden informatie.
++ voorbeelden BSD IGJ specifiek.
+Proces 1.2
+(GWR 1.2)
+Het benoemen, schorsen of ontslaan van voorzitters, secretarissen, leden en
+ambtelijke adviseurs van formeel ingestelde adviesorganen, stuurgroepen en
+organisaties, alsook het toekennen van vergoedingen voor de verrichte diensten
+Waardering V 7 na vervallen benoeming, schorsing, ontslag of terugtreding
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Onder dit proces valt ook:
+• Het benoemen, detacheren, etc. van ambtenaren bij internationale
+organisaties;
+• Het benoemen van commissarissen, zitting nemen in de raad van bestuur of
+deelnemen met risicodragend kapitaal;
+• Het maken van afspraken over en het toekennen van vergoedingen en
+emolumenten.
+Dit proces heeft uitsluitend betrekking op benoemingen waarbij geen sprake is van
+een rechtspositionele verhouding. In gevallen waarin wel sprake is van een
+rechtspositionele verhouding wordt de selectielijst voor personeelsdossiers van de
+Rijksoverheid (P-Direkt) toegepast.
+5
+Voorbeelden van
+informatie in het
+proces
+Benoeming- en ontslagvoorstellen en -besluiten, belangenverklaringen, afspraken
+over vergoedingen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie: Dit proces heeft uitsluitend betrekking op benoemingen waarbij geen sprake is van een
+rechtspositionele verhouding (geen dienstverband).
+Proces 1.3
+(GWR 1.3)
+Het sturen van de organisatie op het hoogste ambtelijke en bestuurlijke niveau
+(strategisch niveau)
+Waardering B1
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Dit proces is van toepassing op zowel VWS concern als geheel als op de afzonderlijke
+organisatieonderdelen. Voor het VWS concern heeft het proces betrekking op het
+sturen van de organisatie op het niveau van de SG, pSG en DG’s, bijvoorbeeld in de
+Bestuursraad en de Bestuursraad Bedrijfsvoering (BRBV).
+Voor de organisatieonderdelen binnen VWS heeft dit proces betrekking op het sturen
+op het hoogste ambtelijke en bestuurlijke niveau van het organisatieonderdeel, zoals
+het (dagelijks) bestuur, (het presidium van) de raad, het overleg van de Directieraad
+en het managementoverleg van de domeindirecteuren (RIVM), de commissie en het
+MT van de CCMO.
+Onder dit proces valt ook het sluiten van overeenkomsten met
+(overheids)organisaties ter uitvoering van beleid en het nemen van maatregelen op
+dit gebied.
+Voor het RIVM betreft dit proces ook het sturen / regievoeren op landelijke
+activiteiten in opdracht van de minister van VWS (of andere opdrachtgever),
+bijvoorbeeld het coördineren van bevolkingsonderzoeken, het
+Rijksvaccinatieprogramma en meetnetten. Verder valt het opstellen (en financieren)
+van onderzoeksprogramma’s onder dit werkproces.
+Voorbeelden van
+informatie in het proces
+Besluiten en vergaderstukken van overleg op het hoogste bestuurlijke niveau (van het
+organisatieonderdeel), strategische visies, werkplannen, jaarplannen en
+meerjarenplannen, jaarverslagen, adviezen aan de ambtelijke top, hoofdlijnen van het
+beleid en beleidsprioriteiten, bestuursovereenkomsten, monitoring- en
+uitvoeringsprogramma’s, organisatie- en mandaatbesluiten.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: vaststellen en evalueren van het eigen beleid van de IGJ (BSD-proces 5-
+15): nota’s, Notities, memo’s, jaarplannen, rapporten, evaluaties
+Proces BSD: Voeren van bestuurlijk en beleidsbepalend overleg (BSD-proces 5-22):
+agenda, vergaderstukken, notulen, actiepuntenlijsten
+Proceseigenaar
+6
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie: 1.3 betreft Strategisch niveau; IG, DT, MT, HI. (Beleids)stukken op strategisch niveau. Niet
+zaakgebonden informatie.
+Proces 1.4
+(GWR 1.4)
+Het sturen van de organisatie op niveaus onder het hoogste ambtelijke en
+bestuurlijke niveau (tactisch en operationeel niveau)
+Waardering V 10
+V 10 na vaststellen nieuw plan
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Dit proces heeft betrekking op het sturen binnen VWS concern en binnen de
+organisatieonderdelen op het niveau van directies, afdelingen, programma’s en
+teams. Voor de raden is dit het niveau van het secretariaat van de raad.
+Onder dit proces vallen ook vergaderstukken van overleg van en met de
+ondernemingsraad. Terugkoppeling uit de (groeps)ondernemingsraad valt onder
+proces 2.4.
+De waardering V 10 na vaststellen nieuw plan is van toepassing indien er in het
+werkproces een plan wordt vastgesteld, bijvoorbeeld een afdelingsplan.
+Voorbeelden van
+informatie in het proces
+Vergaderstukken en voorbereidende stukken van overleg onder het hoogste
+ambtelijke en bestuurlijke niveau, vergaderstukken en voorbereidende stukken van
+overleg van en met de ondernemingsraad, periodieke directie- en afdelingsplannen,
+werkafspraken.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Het voeren van werkoverleg (BSD-proces 72-190): agenda, notulen,
+vergaderstukken.
+Proces BSD: Het voeren van overleg met de OR (BSD-proces 72-167): agenda, notulen,
+vergaderstukken, correspondentie met OR.
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie: Tactisch en operationeel niveau; afdelingsplannen en vergaderstukken van de afdeling.
+AANVULLEN + programma en project!
+Proces 1.5
+(GWR 1.5)
+Het beheersen van de organisatie
+Waardering V 7 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Planning en control-cyclus, werkgroepen m.b.t. inrichten van de organisatie, het
+besturen van de organisatie onder meer door de inzet van managementinstrumenten
+en het houden van hierop gericht overleg.
+Zie proces 9.8 voor financiële stukken met betrekking tot de uitvoering.
+Voorbeelden van
+informatie in het proces
+Informatie in de planning- en controlcyclus, informatie met betrekking tot de
+concerncontrollersrol en onderzoek naar een doelmatige en doeltreffende (financiële)
+bedrijfsvoering, draaiboeken planning- en controlcyclus.
+7
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Het uitvoeren van de werkplancyclus: (BSD-proces 143-350)
+directieplannen, bedrijfsplannen, afdelingsplannen.
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie:
+Primaire (bedrijfs)functies (beleid en uitvoering)
+Procescategorie 2. Het maken, verantwoorden en uitdragen van beleid
+Proces 2.1
+(GWR 2.1 en 2.2)
+Het maken, verantwoorden, uitdragen en evalueren van beleid
+Waardering B3 voor beleid op het beleidsterrein van het ministerie
+B3 voor het beantwoorden van Kamervragen, vragen van Europese instellingen en het
+voorbereiden van een standpunt ter inbrenging in de ministerraad, onderraden of de
+Staten-Generaal
+V 20 voor intern beleid op ondersteunende functies
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting De waardering B is onder meer van toepassing op:
+• Het maken, verantwoorden, uitdragen en evalueren van beleid op (het
+uitvoeren van) primaire taken door organisatieonderdelen. Denk hierbij aan
+beleid op registraties van geneesmiddelen, beleid op
+geneesmiddelenbewaking, -tekorten en (-kwaliteits)defecten, richtlijnen
+voor medisch-ethische toetsingscommissies (METC’s);
+• Het adviseren van politieke en ambtelijke leiding en het (internationaal)
+uitdragen van beleid. Hieronder valt ook het beantwoorden van
+Kamervragen en vragen van het Europees Parlement, ook als die gaan over
+intern beleid op ondersteunende taken;
+• Het voorbereiden van een parlementaire enquête;
+• Het organiseren van (internationale) congressen, conferenties, symposia,
+burgerpanels, etc. aangaande beleid op het beleidsterrein van het ministerie.
+Voor het organiseren van congressen, conferenties, etc. die niet gaan over
+beleid op het beleidsterrein van het ministerie geldt V 20. Zie voor deelname
+aan congressen, symposia, etc. nog proces 2.4;
+• Informatie/dossiers waarvan de inhoud leidt tot
+wijzigingen/aanpassingen/vernieuwingen in/van beleid.
+Met intern beleid op de ondersteunende functies worden de PIOFACH-taken
+bedoeld (Personeel, Informatievoorziening, Organisatie, Financiën, Algemene Zaken,
+Communicatie of Huisvesting). Zie voor de uitvoering van intern beleid op de
+ondersteunende functies procescategorie 9.
+Voorbeelden van
+informatie in het proces
+Beleidsnotities en -nota’s, jaarverslagen op het gebied van beleid en op het gebied van
+uitvoering van beleid (handhaving en toezicht), monitoringsinstrumenten zoals de
+8
+VWS-monitor en jeugdmonitor, richtlijnen, doorberekening van beleidsvoornemens,
+certificeringsresultaten.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Processen BSD: Rapporteren over de belangrijkste ontwikkelingen (BSD-proces 5-12):
+rapportages.
+Opstellen van beleidsregels toezicht (BSD-proces 5-17) : richtlijnen, beleidsregels,
+circulaires, leidraden, reglementen.
+Ontwikkelen van methodieken (BSD-proces 5-18): rapporten
+Onderzoeken, evaluaties.
+Opstellen van jaarverslagen (BSD-proces 5-25)
+Beantwoorden van Kamervragen (BSD-proces 5-27): correspondentie, rapportage.
+Het ontwikkelen van beleid op het gebied van PIOFAH (BSD-proces 143-282): nota’s,
+adviezen, rapporten, regelingen, richtlijnen en andere afspraken, agenda’s, notulen
+en vergaderstukken.
+Het opstellen van formatiebeleidsplannen (BSD-proces 75-14): nota’s, notities,
+adviezen, overlegverslagen, formatiebeleidsplannen.
+Het vaststellen of wijzigen van de personeelsformatie (BSD-proces 75-26):
+formatiebesluiten, O&F rapporten, overlegverslagen, overzichtslijsten,
+inschrijvingsformulieren, plaatsingsvoorstellen, functiewaarderingen.
+Voorbereiden beleid inz personeelsontwikkeling (BSD-proces 75-152): nota’s,
+notities, adviezen, opleidingsprogramma.
+Het opstellen van een arbo-jaarplan (BSD-proces 76-24),
+Het opstellen van een arbo-jaarverslag (BSD-proces 76-26).
+Proceseigenaar
+Persoonsgegevens
+aanwezig ja/nee
+Nee
+Interpretatie:
+Proces 2.2
+(GWR 2.3)
+Het adviseren van andere overheidsorganisaties en internationale organisaties over
+het maken van beleid
+Waardering V 20 na uitbrengen advies
+B3 in het geval het advies is opgesteld door GR, RVS of NLsportraad
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Hieronder valt ook het adviseren van de eigen minister en van organisaties binnen
+VWS over het maken van beleid.
+De adviserende partij bewaart het advies en alle informatie m.b.t. de totstandkoming
+daarvan 20 jaar. De ontvangende partij bewaart het advies onder het proces waar het
+betrekking op heeft. (Dus onder proces 2.1 voor een advies over het maken van
+primair beleid, en onder processen 9.1 en 9.4 t/m 9.11 voor een advies over beleid op
+ondersteunende taken).
+9
+Voor IGJ start de bewaartermijn na afsluiting van het dossier.
+Voorbeelden van
+informatie in het proces
+Vergaderstukken van commissies, verslagen van expert- en
+stakeholderbijeenkomsten, beleidsadviezen in verschillende vormen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Overleggen met en adviseren van de minister (BSD-proces 5-13):
+agenda, notulen, overige vergaderstukken, rapportages, notities
+Proceseigenaar
+Persoonsgegevens
+aanwezig ja/nee
+Mogelijk
+Interpretatie:
+Proces 2.3
+(GWR 2.3)
+Het adviseren van andere overheidsorganisaties over het uitvoeren van beleid
+Waardering V 10 na uitbrengen advies
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Hieronder valt ook het adviseren van de eigen minister en van organisaties binnen
+VWS over het uitvoeren van beleid.
+De adviserende partij bewaart het advies en alle informatie m.b.t. de totstandkoming
+daarvan 10 jaar. De ontvangende partij bewaart het advies onder het proces waar het
+betrekking op heeft. (Dus onder proces 2.1 voor een advies over het maken van
+primair beleid, en onder processen 9.1 en 9.4 t/m 9.11 voor een advies over beleid op
+ondersteunende taken).
+Voor IGJ start de bewaartermijn na afsluiting van het dossier.
+Voor DUS-I valt onder dit proces het adviseren van andere overheidsorganisaties over
+de uitvoerbaarheid van subsidieregelingen in de vorm van deelname aan het
+Expertisecentrum Subsidies (ECS).
+Voorbeelden van
+informatie in het proces
+Vergaderstukken van commissies, verslagen van expert- en
+stakeholderbijeenkomsten, adviezen in verschillende vormen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Adviseren en inlichten van derden over de uitvoering van de wet- en
+regelgeving betreffende de gezondheidszorg en de volksgezondheid (BSD-proces 5-
+14) : correspondentie, adviezen
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie:
+Proces 2.4 Het voorbereiden van, deelnemen aan en terugkoppelen uit overlegstructuren op
+rijksbreed en interdepartementaal niveau
+Waardering V 7
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Dit proces is van toepassing wanneer het alleen deelname aan het overleg betreft en
+het secretariaat elders wordt gevoerd. Het gaat bijvoorbeeld om deelname aan het
+SG-beraad, CIO-beraad, de Interdepartementale Commissie Bedrijfsvoering
+10
+Rijksdienst (ICBR) en ambtelijke voorportalen en de Groepsondernemingsraad Rijk
+(GOR Rijk).
+Dit proces heeft ook betrekking op deelname aan (internationale) congressen,
+conferenties, symposia en dergelijke.
+Voorbeelden van
+informatie in het proces
+Vergaderstukken, voorbereidende stukken.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Deelnemen aan symposia, conferenties, workshops e.d (BSD-proces 5-30).:
+uitnodigingen, Deelnameformulieren, programma’s, publicaties
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie:
+Procescategorie 3. Het maken van wet- en regelgeving
+Interpretatie:
+Proces 3.2
+(GWR 3.2)
+Het adviseren over het maken van wet- en regelgeving aan departementen en
+internationale organisaties
+Waardering V 20 na uitbrengen van het advies
+B3 in het geval het advies is opgesteld door GR, RVS of NLsportraad
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Alle informatie m.b.t. de totstandkoming van het advies wordt door de adviserende
+partij 20 jaar bewaard, de ontvangende partij bewaart het advies. Zie proces 13.8 voor
+deelname aan internationale organisaties.
+Het proces kan van toepassing zijn bij advisering aan andere departementen (wanneer
+de minister van VWS de betreffende wet of regel niet (mede) ondertekent) maar ook
+bij advisering tussen organisatieonderdelen binnen VWS.
+Voorbeelden van
+informatie in het proces
+Adviezen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Adviseren van andere overheden bij de uitvoering van wet- en regelgeving
+op het gebied van de gezondheidszorg en de volksgezondheid (BSD-proces 5-9):
+adviezen, gespreksverslagen
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie:
+Procescategorie 4. Het (mede) opstellen van de rijksbegroting en de ramingen voor de volgende jaren
+Proces 4.1
+(GWR 4.1)
+Het (mede) opstellen van de rijksbegroting en de ramingen voor de volgende jaren
+11
+Waardering V 7 na vaststelling begroting
+Voor CBG en aCBG: V 10 voor verantwoordingsstukken die niet zijn ingediend bij het
+kerndepartement
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Organisatieonderdelen leveren informatie aan bij het kerndepartement. Het
+kerndepartement verwerkt en levert aan bij het ministerie van Financiën. Het betreft
+onder andere het voorbereiden van de begroting en het voeren van overleg over de
+(voorbereiding van de) begroting.
+Het ministerie van Financiën bewaart alle eindproducten uit de begrotingscyclus
+inclusief start-, ijk- en verantwoordingsdocumenten uit dit proces.
+Bij het CBG en het aCBG wordt de interne begroting (incl. afdelingsjaarplannen)
+gebruikt bij het maken van (meerjarige) analyses en daarbij wordt maximaal 10 jaar
+teruggekeken.
+Voorbeelden van
+informatie in het proces
+Begrotingswetsvoorstellen, correspondentie, interne begroting.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Het opstellen van de IGJ-begroting en de IGJ-jaarrekening (BSD-proces 15-
+281): begroting, jaarrekening: begroting, jaarrekening
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie:
+Procescategorie 5. Het geven van voorlichting en verstrekken van informatie aan burgers, bedrijven,
+instellingen en andere overheden
+Proces 5.1
+(GWR 5.1)
+Het verrichten van woordvoering en publieksvoorlichting
+Waardering B4 voor eindproducten
+V 5 voor overige informatie in het proces na publicatie van het eindproduct
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Zie ook proces 9.10.
+Voorbeelden van
+informatie in het proces
+Internetsites, uitingen op social media, persberichten, beantwoording persvragen,
+toespraken.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Uitvoeren van voorlichtings- en promotieactiviteiten betreffende de IGJ
+en haar werkzaamheden (BSD-proces 5-23):
+eindproducten: persberichten, publicaties, video’s en DVD’s,
+toespraken/lezingen, presentaties, Internetsite, programma’s
+onderliggend materiaal: verzendlijsten, uitnodigingen, correspondentie
+Proceseigenaar
+12
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie: van toepassing bij IGJ. Voor zaakgebonden/gerelateerde informatie wordt deze opgeslagen in
+VGR/IT in WPM/BRS. V5 aanvulling mail 3 april
+Proces 5.2
+(GWR 5.2)
+Het afhandelen van verzoeken om informatie door de Nationale Ombudsman, de
+Kinderombudsman, instellingen en door burgers
+Waardering V 5 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Onder dit proces valt het opvragen van informatie door de Nationale Ombudsman
+en Kinderombudsman en het beantwoorden van zogeheten ‘burgerbrieven’. Onder
+‘burgerbrieven’ vallen ook vragen gesteld via e-mail, sociale media, webformulieren,
+berichtendiensten, etc. Onder ‘burgers’ worden niet alleen individuele burgers
+verstaan, maar ook groepen burgers en organisaties. Ook vragen vanuit de media
+kunnen hieronder vallen maar let daarbij op het onderscheid met proces 5.1
+Voor klachten, klaag- en bezwaarschriften, zie proces 10.3.
+Voor het behandelen van Wob en Woo-verzoeken, zie proces 5.3.
+Voorbeelden van
+informatie in het proces
+Informatieverzoek, antwoord.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Beantwoorden van vragen van individuele burgers, bedrijven en
+instellingen over het toezicht op de gezondheidszorg en de volksgezondheid (BSD-
+proces 5-24): burgerbrieven, webformulieren, registratie informatieverzoeken
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie: betreft ook informatieverzoek van een burger.
+Proces 5.3 Het afhandelen van verzoeken om informatie op grond van de Wet openbaarheid
+van bestuur (Wob) en de Wet open overheid (Woo)
+Waardering V 10 na afhandeling verzoek
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Na de afhandeling wordt het besluit gepubliceerd op de website van de organisatie/
+het organisatieonderdeel. In het geval van een (gedeeltelijke) toewijzing wordt daar
+tevens de openbaar gemaakte informatie gepubliceerd.
+Voorbeelden van
+informatie in het proces
+Resultaten van zoekvragen, ongelakte en gelakte versies van informatie, zienswijzen,
+besluit.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Behandelen van verzoeken op grond van de WOB of de Wbp (BSD-proces 5-29).:
+verzoek, correspondentie
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+13
+Interpretatie:
+Proces 5.4 Het behandelen van een verzoek in het kader van de Algemene Verordening
+Gegevensbescherming (AVG)
+Waardering V 5 na afhandeling verzoek
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het betreft het behandelen en uitvoeren van een verzoek m.b.t. privacyrechten onder
+de AVG, zoals een verzoek om inzage, rectificatie en aanvulling of beperking van de
+verwerking.
+Voorbeelden van
+informatie in het proces
+Verzoek, correspondentie, besluit.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Behandelen van verzoeken op grond van de WOB of de Wbp (BSD-proces 5-29).:
+verzoek, correspondentie
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie:
+Handhaving en toezicht
+Procescategorie 6. Het uitoefenen van toezicht op overheidsorganisaties
+Procescategorie 7. Het controleren op naleving van wet- en regelgeving en handhaving ervan
+Proces 7.1 Het uitoefenen van toezicht op gezondheidszorg en jeugddomein
+Waardering V 10 na afhandeling dossier als er geen wettelijke interventie plaatsvindt
+V 15 na afhandeling dossier in het geval van een wettelijke interventie
+V 2 indien een melding niet is verwerkt of niet in behandeling is genomen
+Proces komt voor bij IGJ, JA
+Toelichting Er kan sprake zijn van incidententoezicht naar aanleiding van een melding of (al dan
+niet thematisch) risicogestuurd toezicht. IGJ voert ook verschillende vormen van data-
+analyse uit. Als de uitkomst van een analyse aanleiding vormt om toezicht uit te
+oefenen wordt de analyse in samenhang met het toezichtdossier bewaard.
+Een melding bestaat uit een gebeurtenis of signaal over mogelijke tekortkomingen in
+de zorg of (vermoedens van) continuïteitsproblemen die gemeld worden door
+burgers, (individuele) zorgaanbieders en andere (publieke) organisaties.
+Interventies vanuit IGJ lopen uiteen van advies en stimulering tot het opleggen van
+afdwingbare handhavingsmaatregelen.
+Voorbeelden van interventies van de JA zijn het uitvoeren van een financiële analyse
+van jeugdhulpaanbieders, het monitoren van de financiële situatie van een
+jeugdhulpaanbieder of het monitoren van bestuurlijke afspraken. De JA beschikt nog
+niet over een handhavingsinstrumentarium en kan nog geen afdwingbare
+maatregelen opleggen.
+14
+Voorbeelden van
+informatie in het proces
+Meldingen, toezichtdossiers, databankgegevens, vragenlijsten, bezoekverslagen,
+correspondentie.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Processen BSD: Registreren en afhandelen van meldingen (BSD-proces 5-1):
+schriftelijke meldingen (dossiers)y, digitale meldingen
+(meldingenregistratiesysteem), correspondentie, telefoonnotities, e-mailberichten.
+Toezien op de gezondheidszorg (BSD-proces 5-2): toezichtobjectdossiers:
+organisatie (statuten, overeenkomst, organisatie-schema, info bewoners/patiënten),
+beleid (beleidsplan, kwaliteitsbeleid, zorgvisie, werk-, jaar- en bedrijfsplan)
+toelatingen, vergunningen, verklaringen van geen bezwaar, reglementen,
+protocollen, procedures, richtlijnen instelling, vragenlijsten, bezoekverslagen,
+verplichte opgaven (bijv. WAZ), adviezen (bijv. t.a.v. bouw/verbouw), recall-
+correspondentie, registers beroepsbeoefenaren (bijv. apotheekhoudende artsen).
+Verzamelen en bewerken van gegevens….. (BSD-proces 5-11):
+eindproduct: rapporten
+onderliggend materiaal:, overzichten, statistieken, correspondentie,
+databaseverzamelingen (5-11)
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie: incident en risicotoezicht. Toezicht gebonden informatie wordt opgeslagen in WPM/BRS.
+Voorbeelden informatie IGJ: schriftelijke meldingen (dossiers), digitale meldingen (meldingenregistratiesysteem),
+correspondentie, telefoonnotities Topdesk/Formdesk, e-mailberichten.
+Toezichtobjectdossiers: organisatie (statuten, overeenkomst, organisatie-schema, info bewoners/patiënten), beleid (beleidsplan,
+kwaliteitsbeleid, zorgvisie, werk-, jaar- en bedrijfsplan), toelatingen, vergunningen, verklaringen van geen bezwaar, reglementen,
+protocollen, procedures, richtlijnen instelling, vragenlijsten, bezoekverslagen, verplichte opgaven (bijv. WAZ?), adviezen (bijv.
+Verschillende categorieën: -> Checken! Hoort bij…
+a uitvoeren van inspecties,
+b verzamelen van basisdocumenten per ‘toezichtsobject’,
+c systematisch toezicht: verzamelen gegevens middels vragenlijsten,
+d bijhouden registers van beroeps-beoefenaren,
+e verzamelen van verplichte opgaven en overzichten,
+f adviseren over afgifte vergunningen (bijv. farmaceutische vergunningen (importeurs-vergunningen) en t.a.v.
+bouw/verbouw), recall-correspondentie en drogisten-vergunningen) en verloven (opiumverloven),
+g overige advisering (bijv. betreffend bouw/verbouw instellingen, adviezen BOPZ-aanmerking, toekenning koninklijke
+onderscheidingen). -> hoort bij..
+Proces 7.2 Het adviseren van burgers bij klachten over de zorg en het monitoren op
+klachtafhandeling bij de zorgaanbieders
+Waardering V 5 na afhandeling dossier
+Proces komt voor bij IGJ
+Toelichting Het Landelijk Meldpunt Zorg adviseert en begeleidt burgers met klachten over de
+kwaliteit van de gezondheidszorg en het volgt de klachtafhandeling bij de
+zorgaanbieders.
+De IGJ behandelt de klachten niet zelf maar beantwoordt vragen en informeert over
+de mogelijkheden om de klacht op te lossen.
+Voorbeelden van
+informatie in het proces
+(Registratie van) vragen of klachten.
+15
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie:
+Proces 7.6
+(GWR 7.7)
+Het verrichten van opsporing
+Waardering V 5 na afhandeling dossier of nadat een onherroepelijk vonnis is gewezen
+Proces komt voor bij NVWA, IGJ
+Toelichting Het instellen en uitvoeren van een opsporingsonderzoek naar aanleiding van een
+vermoeden van een overtreding van wet- en regelgeving (bijvoorbeeld bij het zich niet
+houden aan de voorwaarden van een vergunning) of misdrijf. Afhandeling van de
+geconstateerde overtredingen wordt uitgevoerd door andere partijen zoals de Officier
+van Justitie (NVWA), voor geconstateerde misdrijven door het Openbaar Ministerie
+(IGJ).
+Bij de IGJ wordt een onderzoek ingesteld en uitgevoerd door Bureau Opsporing &
+Boetes.
+Bewaartermijnen zijn conform de Wet Politiegegevens.
+Voorbeelden van
+informatie in het proces
+Rapporten, processen-verbaal, boetes, sancties, verslagen, onderzoeksrapporten en
+aanbevelingen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Werkproces BSD: Nemen van vervolgstappen op basis van tuchtrecht, bestuursrecht
+of strafrecht (in het kader van het toezicht) (BSD-proces 5-7).: bezwaar- en
+beroepschriftendossiers, Tuchtrechtdossiers, opsporingsdossiers (verzoeken,
+informatieverstrekking, achtergrondmateriaal, overige correspondentie)
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie:
+Kennis en advies
+Procescategorie 8. Het (laten) verrichten van onderzoek en het rapporteren hierover
+Proces 8.1
+(GWR 8.1 en 8.2)
+Het uitvoeren of laten uitvoeren van (wetenschappelijk) onderzoek
+16
+Waardering B3 voor het onderzoeksvoorstel en -plan, tussenrapportages, eindrapportages en
+eindresultaten, verklaring van decharge
+V 25 voor transcripten van ruwe data
+V 10 voor de overige informatie in het proces
+V 7 na afhandeling dossier voor financiering
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het betreft hier het uitvoeren of laten uitvoeren van (wetenschappelijk) onderzoek,
+ook in het kader van programma’s en projecten en het (laten) uitvoeren van analyses
+door de adviesraden. Adviesraden voeren zelf geen onderzoek uit maar maken wel
+analyses door middel van literatuurstudie, deskresearch en interviews.
+Het onderzoeksvoorstel en/of -plan (incl. budgettering), de opdrachtbrief,
+verslaglegging m.b.t. de gekozen onderzoeksmethode, tussenrapportages, de
+eindrapportage of eindresultaten, de vaststelling daarvan en eventuele
+dechargeverklaringen zijn blijvend te bewaren.
+Het (laten) uitvoeren van routinematig onderzoek valt onder proces 8.2.
+Voorbeelden van
+informatie in het proces
+Projectplan, opdrachtbrief, tussenrapportages, ruwe onderzoeksdata, verslagen van
+besprekingen met bijvoorbeeld leescommissies of begeleidingscommissies, verslagen
+van tussenresultaten, conceptrapport, vastgesteld eindrapport of eindresultaat.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Processen BSD: Uitvoeren van thematische onderzoeken (BSD-proces 5-3):
+eindproducten: Publicatie, advies aan minister, eindrapporten, plan van
+aanpak
+onderliggend materiaal: werkplannen, vragenlijsten, bezoekverslagen
+correspondentie.
+Uitvoeren van of deelnemen in projecten, onderzoeken (BSD-proces 5-10)of
+samenwerkingsverbanden * projectplannen, voortgangsrapportages, eindrapporten,
+evaluaties, overlegverslagen
+Vaststellen van de opdracht onderzoek: (BSD-proces 5-31): opdracht,
+correspondentie, eindrapport.
+Begeleiden van intern en extern (wetenschappelijk) onderzoek (BSD-proces 5-32):
+rapportages , correspondentie.
+*Indien samenwerkingsverbanden: proces 13.8 selectielijst
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie: IGJ kan zelf onderzoek uitvoeren of als opdrachtgever optreden (laten uitvoeren)
+Ondersteunende functies (PIOFACH)
+Procescategorie 9. Het verlenen van ondersteunende diensten (PIOFACH)
+Proces 9.1 Het uitvoeren van intern beleid op het gebied van personeel
+17
+(GWR 9.1)
+Waardering V 10
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het betreft hier niet op het individuele personeelslid gerichte uitvoering, bijvoorbeeld
+informatie m.b.t. personeelsactiviteiten, opleidingsvoorzieningen en -plannen,
+medewerker-tevredenheidsonderzoeken, vlootschouw, ARBO-diensten, uitvoering
+Eigenrisicodragerschap en dergelijke.
+Voor processen die betrekking hebben op het individuele personeelslid geldt de
+selectielijst P-Direkt.
+Voorbeelden van
+informatie in het proces
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Het verlenen van studiefaciliteiten aan ambtenaren en het uitvoeren
+van (interne) cursussen (BSD-proces 75-154): cursusoverzichten, deelnamelijsten,
+cursusmateriaal, stukken organisatie cursus
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie:
+Proces 9.4
+(GWR 9.2)
+Het uitvoeren van intern beleid op het gebied van duurzame informatievoorziening
+en -huishouding
+Waardering B3 voor een aantal gespecificeerde eindproducten
+V 10 na afhandeling dossier voor de overige informatie in het proces
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Op basis van wet- en regelgeving dienen de volgende (eind)producten blijvend
+bewaard te worden: beheer(s)regeling of beheer(s)regels, selectielijst, hotspotlijst,
+verklaringen van vervreemding, overbrenging, vervanging en vernietiging, besluit
+beperking van openbaarheid en inventarissen.
+Voorbeelden van
+informatie in het proces
+Informatie met betrekking tot opstellen en vaststellen (intern) van en afstemming
+over selectielijsten hotspotlijsten, inventarissen, verklaringen van vervreemding,
+overbrenging, vervanging en vernietiging, afwegingen en besluiten beperking
+openbaarheid. Uitwerking en praktische vertaling van beheer(s)regels en
+selectielijsten, opstellen en vaststellen van archiefbewerkingsplannen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Processen BSD: Het vaststellen van een documentair structuurplan ISP (BSD-proces
+92-108): ISP.
+Het beheren van het IGJ-archief(BSD-proces 92-119): overzichten, correspondentie.
+Het opstellen van archiefwettelijke verklaringen (BSD-proces 92-126): verklaring van
+vernietiging, overdracht, overbrenging, substitutie (met bijlagen!)
+Het treffen van voorzieningen igv organisatieveranderingen (BSD-proces 92-116):
+plan van aanpak, correspondentie.
+Proceseigenaar
+18
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie:
+Proces 9.5 Het uitvoeren van intern beleid op het gebied van automatisering en ICT
+Waardering V 10 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Bij ‘afhandeling dossier’ kan bijvoorbeeld gedacht worden aan het technisch
+uitfaseren van een applicatie. Er dient wel rekening mee te worden gehouden dat als
+bijvoorbeeld een algoritme een rol speelt in de uitvoering van een proces, het
+algoritme en de documentatie over de werking ervan bij het betreffende proces
+bewaard moeten worden.
+Onder dit proces valt bijvoorbeeld het afsluiten van dienstverleningsovereenkomsten,
+licentiebeheer, (het bijhouden van) autorisatieschema’s, de inrichting van de
+technische infrastructuur, systeemdocumentatie, technisch en functioneel
+applicatiebeheer, informatiebeveiliging, gebruikersopleidingen.
+Voor het afhandelen van helpdeskmeldingen en logging zie proces 9.9.
+Voorbeelden van
+informatie in het proces
+Dienstverleningsovereenkomsten, beheerregisters, autorisatieschema’s.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Processen BSD: Het voeren van het interne systeem- en applicatiebeheer (BSD-proces
+143-357) : calls, plan van eisen, acceptatietests, correspondentie.
+Het aangaan van verplichtingen met externe partijen voor het leveren van goederen
+of diensten (BSD-proces 143-132): contracten
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee, tenzij BSD proces van toepassing (calls)
+Interpretatie:
+Proces 9.7
+(GWR 9.3)
+Het uitvoeren van intern beleid op het gebied van organisatie
+Waardering V 10 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Dit betreft onder andere het vastleggen van de procedures van de administratieve
+organisatie, juridische zaken die zijn niet opgeslagen bij het betreffende werkproces,
+(interne) regelgeving en privacy. Alsmede ook advisering m.b.t. beveiliging / veiligheid
+van personen en panden.
+N.B. het verdient de voorkeur om het advies te beheren in (relatie met) het dossier
+van het betreffende onderwerp.
+19
+Voorbeelden van
+informatie in het proces
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Werkprocessen BSD: Het coördineren en (doen) uitvoeren van het beleid
+betreffende de bescherming van persoonsgegevens(BSD-proces 106-50): plannen
+van aanpak, onderzoeksrapporten, aanbevelingen.
+Het vastleggen van de administratieve organisatie(BSD-proces 143-142): handboek
+AO, procedurebeschrijvingen,
+werkprocesbeschrijvingen.
+Het verzorgen van de beveiliging van gebouwen, terreinen, personen en
+goederen(BSD-proces 143-299): verslagen, instructies bewakingsdienst,
+database registratiegegevens, sleutelbeheersplan en toegang tot speciale ruimtes
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie:
+Proces 9.8
+(GWR 9.4)
+Het uitvoeren van intern beleid op het gebied van financiën
+Waardering V 7 na afhandeling dossier
+Voor CBG en aCBG: V 10
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het voeren van de boekhouding, verrichten en ontvangen van betalingen alsook de
+administratieve verwerking daarvan, het inkoopproces (waaronder de ‘kleine kas’ en
+aanbestedingen).
+Zie voor stukken met betrekking tot de planning- en controlcyclus het proces 1.5.
+Bij het CBG en het aCBG verschilt de exploitatie sterk van jaar op jaar. Een langere
+periode terugkijken is van belang. Uit cijfers vanuit het verleden worden trends en
+ontwikkelingen gehaald die inzicht geven voor ontwikkelingen naar de toekomst.
+Voorbeelden van
+informatie in het proces
+Begrotingsuitvoeringsplan, bestedingsplan, facturen, bankafschriften, kasstaten,
+rekeningcourantoverzichten, contracten.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Het voeren en beheren van de financiële administratie (BSD-proces 15-
+296): facturen, Bankafschriften, kasstaten, rekening-courantoverzichten,
+afrekeningen, boekhoudapplicatie met financiële gegevens.
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie:
+Proces 9.9 Het uitvoeren van intern beleid op het gebied van algemene zaken
+20
+(GWR 9.5)
+Waardering V 2
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Onder dit proces vallen bijvoorbeeld: afhandeling van helpdeskmeldingen,
+vergaderzaalreserveringen, logging, attenderingen, nieuwsoverzichten,
+reprodiensten, aanvragen cateringservice, schoonmaakdiensten, post- en
+koerierdiensten, beveiliging, chauffeursdiensten, en ter kennisname ontvangen
+stukken.
+Voorbeelden van
+informatie in het proces
+Reserverings- en afhandelingsbonnen, chauffeursstaten, meldingen, dagstaten,
+rapportages van (pand)beveiliging.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Het aangaan van verplichtingen……(BSD-proces 143-132): contracten.
+Het doen van aanbestedingen…..(BSD-proces 143-294): offertes, correspondentie
+inzake gunning, aanbestedingsovereenkomst, correspondentie.
+Het bijhouden van een contractenregister (BSD-proces 143-295): register.
+het sluiten van SLA’s: (BSD-proces 143-285): voorbereidende stukken, Service Level
+Agreements, rapportages.
+Het zorgdragen voor inkoop en beheer (BSD-proces 143-290): administratie.
+Het aanvragen van facilitaire voorzieningen (BSD-proces 143-357): aanvragen / calls,
+overzichten en rapportages, correspondentie.
+Het voorbereiden en (doen) uitvoeren van verhuizingen (BSD-proces 143-357).
+Het coördineren van de bedrijfshulpverleningsactiviteiten (BSD-proces 143-357).
+Het coördineren van en toezien op de uitvoering van uitbestede facilitaire taken
+(BSD-proces 143-303): maandoverzichten, dagrapporten, schema’s,
+beheersadministratie, werkroosters
+correspondentie
+Het verlenen van secretariële en facilitaire ondersteuning (BSD-proces 143-357)
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee, tenzij BSD proces (calls)
+Interpretatie:
+Proces 9.10
+(GWR 9.6)
+Het uitvoeren van intern beleid op het gebied van communicatie
+Waardering V 5 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+21
+Toelichting Het betreft hier uitsluitend communicatie die gericht is op de eigen interne
+organisatie. In fysieke vorm, maar ook digitaal (via intranet).
+Voorbeelden van
+informatie in het proces
+Folders, nieuwsoverzichten, nieuwsbrieven, interne aankondigingen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie: Het gaat hier om niet zaakgebonden informatie.
+Proces 9.11
+(GWR 9.7)
+Het uitvoeren van intern beleid op het gebied van huisvesting
+Waardering V 10 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Onder dit proces valt onder andere: het huisvesten van eigen organisatieonderdelen,
+beheer en onderhoud van ambtswoningen, opstellen van huur- en koopcontracten,
+verbouwingen, inrichten van de gebouwen, aanvragen gemeentelijke vergunningen.
+Voorbeelden van
+informatie in het proces
+Informatie met betrekking tot onderhoud en verbouwing, beheer.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie:
+Proces 9.12
+(GWR 9.8)
+Het opstellen, wijzigen en intrekken van interne kaders en regelgeving op het gebied
+van ondersteunende functies (PIOFACH)
+Waardering V 10 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het betreft interne regels, procedures, werkinstructies en dergelijke op het gebied van
+ondersteunende taken.
+Voorbeelden van
+informatie in het proces
+(De totstandkoming van) richtlijnen, regelingen, procedures, werkinstructies.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Proces BSD: Het bijhouden van de jaarlijkse mandateringen/volmachten en de
+comptabele instructie (BSD-proces 143-147) instructies, overzicht mandateringen en
+volmachten
+22
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie:
+Uitvoering (bedrijfsvoering overig: dienstverlening, handhaving, toezicht)
+Procescategorie 10. Het leveren van producten en diensten aan personen, bedrijven, instellingen of andere
+overheden
+Generieke producten en diensten
+Proces 10.1
+(GWR 10.1)
+Het leveren van producten en diensten
+Waardering V 10 na afhandeling dossier
+Voor IGJ: V 15 na afhandeling dossier in het geval van een wettelijke interventie
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Dit proces is van toepassing wanneer er geen specifiek proces van toepassing is voor
+het betreffende product of de dienst. Wanneer er wel een specifiek proces is
+geformuleerd geldt dat proces met de bijbehorende bewaartermijn(en).
+Onder dit proces kan bijvoorbeeld worden verstaan het beoordelen en/of verwerken
+van verzoeken tot en aanvragen voor vergunningen, subsidies, rijksbijdragen (bijv.
+garanties, leningen), ontheffingen, licenties, vrijstellingen, erkenningen en
+goedkeuringen.
+Voorbeelden van
+informatie in het proces
+Aanvragen, verzoeken, besluiten.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie:
+Proces 10.2 Het toekennen van een schadevergoeding of het verlenen van een bijdrage als
+tegemoetkoming voor schade
+Waardering V 7 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Naar aanleiding van de behandeling van een klacht, beroep en bezwaar kan een
+schadevergoeding of het verlenen van een bijdrage als tegemoetkoming voor schade
+toegekend worden.
+23
+Voorbeelden van
+informatie in het proces
+Aanvragen, toekenningen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie:
+Proces 10.3
+(GWR 10.3)
+Het behandelen van klachten, bezwaar- en beroepschriften
+Waardering V 10 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Behandeling van klachten, bezwaar en beroep.
+Wanneer een klacht, bezwaar of beroep of uitspraak daarop aanleiding geeft tot een
+beleidswijziging kan (een deel van) het dossier worden uitgezonderd van vernietiging.
+(Zie ook proces 2.1).
+Let op! Bezwaar en beroep zijn afzonderlijke processen die in relatie tot elkaar staan.
+Bezwaren ten aanzien van een METC-lid vallen onder proces 6.2.
+Bezwaren ten aanzien van de onderzoeken onder proces 10.11 vallen onder proces
+10.11.
+Voorbeelden van
+informatie in het proces
+Bezwaarschriften, verweer- en beroepschriften, beschikkingen, oplegnotities,
+hoorzittingen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Behandelen van klachten van burgers, bedrijven en instellingen tegen de behandeling
+van of bejegening door de IGJ. (BSD-proces 5-28) Klachten, onderzoeksverslag,
+correspondentie, uitspraak
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie:
+Proces 10.21 Het bijhouden van registraties ter ondersteuning van het toezicht op de
+volksgezondheid
+Waardering V 30 na beëindiging activiteit zorgaanbieder
+V 90 na geboortedatum voor individuele zorgverleners
+V 2 indien geen registratie in een register volgt
+24
+Proces komt voor bij IGJ, CIBG
+Toelichting Het verwerken van een registratie in een register of overzicht van opgaven en
+overzichten van instellingen, beroepsbeoefenaren, producenten in de
+gezondheidszorg.
+Het CIBG ontvangt en beheert meldingen van nieuwe zorgaanbieders.
+Voorbeelden van
+informatie in het proces
+Databankgegevens, (web)formulieren, lijsten, registers.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Toezien op instellingen, beroepsbeoefenaren en producenten in de gezondheidszorg
+(algemeen toezicht) (BSD-proces 5-2): toezichtobjectdossiers: organisatie (statuten,
+overeenkomst, organisatie-schema, info bewoners/patiënten), beleid (beleidsplan,
+kwaliteitsbeleid, zorgvisie, werk-, jaar- en bedrijfsplan), toelatingen, vergunningen,
+verklaringen van geen bezwaar, reglementen, protocollen, procedures, richtlijnen
+instelling, vragenlijsten, bezoekverslagen, verplichte opgaven (bijv. WAZ), adviezen
+(bijv. t.a.v. bouw/verbouw), recall-correspondentie, registers beroepsbeoefenaren
+(bijv. apotheekhoudende artsen) (5-2)
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie: o.a. Register van gevestigde apothekers,
+Proces 10.43 Het aanschrijven van organisaties en het beheren van jaarverslagen in de zorg
+Waardering V 7 na publicatie van de jaarstukken
+V 2 na aanschrijving voor de aanschrijfbrieven
+V 5 nadat een instelling niet meer meldingsplichtig is voor de adresgegevens
+Proces komt voor bij IGJ, CIBG
+Toelichting Zorginstellingen die onder de Wet marktordening gezondheidzorg vallen,
+Jeugdhulpaanbieders, Gecertificeerde instellingen en Veilig Thuis-instellingen dienen
+elk jaar maatschappelijke verantwoording af te leggen. Deze organisaties uploaden
+hun gegevens via de applicatie DigiMV. Het openbare deel van deze gegevens wordt
+gepubliceerd op internet op naam instelling en in de vorm van een verzameldataset.
+Organisaties die hun gegevens nog niet (volledig) hebben geüpload naar de website
+worden aangeschreven door handhavers/toezichthouders IGJ en NZa.
+Voorbeelden van
+informatie in het proces
+Aanschrijfbrieven, ODS-bestanden met data, jaarrekeningen,
+accountantsverklaringen en de wettelijk verplichte bijlagen Jaardocument
+Maatschappelijke Verantwoording.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie: IGJ schrijft aan; o.a. MSZ.
+25
+Proces 10.44 Het niet in behandeling nemen van aanvragen of verzoeken
+Waardering V 1 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Dit (deel)proces is van toepassing wanneer een aanvraag tot registratie, erkenning,
+vergunning aanvraag, etc. niet in behandeling wordt genomen of wordt ingetrokken.
+In relatie tot proces 10.19 (wet BIG) geldt deze termijn alleen voor nieuwe aanvragen.
+Bij het niet in behandeling nemen van een herregistratie en de verklaring van
+vakbekwaamheid gelden andere waarderingen.
+Voorbeelden van
+informatie in het proces
+Ingetrokken aanvraag, incomplete aanvraag, besluit niet in behandeling nemen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Proces 10.48 Het verlenen van onderscheidingen en ereblijken
+Waardering V 20 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het ministerie ontvangt adviserende voorstellen voor het verlenen van koninklijke
+onderscheidingen van het Kapittel voor de civiele orden, en doet bij akkoord de
+voordracht tot verlening.
+Het ministerie adviseert de Commissaris van de Koning, Gouverneur of
+Rijksvertegenwoordiger over het verlenen van het predicaat Hofleverancier.
+Voorbeelden van
+informatie in het proces
+Decoratievoorstellen, besluiten, advies aanvraag predicaat Koninklijk of
+Hofleverancier.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie: 10.50 n.v.t. IGJ
+Procescategorie 11. Het heffen en innen bij en het uitkeren aan burgers, bedrijven en instellingen, specifiek
+uitgevoerd door de Belastingdienst
+Processen uit deze categorie komen bij VWS niet voor. Het betreft specifiek processen voor de Belastingdienst.
+26
+Procescategorie 12. Het vertegenwoordigen van de minister of Staat in bestuursrechtelijke procedures voor
+(inter)nationale gerechtelijke instanties
+Proces 12.1
+(GWR 12.1)
+Het vertegenwoordigen van de minister of Staat in internationale procedures
+Waardering B2
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het betreft het vertegenwoordigen van de minister of Staat in gerechtelijke
+procedures.
+Voorbeelden van
+informatie in het proces
+Processtukken.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie: Interpretatie:
+Proces 12.3
+(GWR 12.2)
+Het vertegenwoordigen van de minister of Staat in nationale procedures
+Waardering V 20 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het betreft het vertegenwoordigen van de minister of staat in gerechtelijke
+procedures.
+Voorbeeld producten Processtukken, verzoeken om advies, adviezen landsadvocaat.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Procescategorie 13. Het onderhouden van (internationale) betrekkingen en samenwerkingsverbanden
+Proces 13.1
+(GWR 13.1)
+Het verzorgen van gastheerschap voor vertegenwoordiging van landen en
+internationale organisaties
+Waardering B2
+Proces komt voor bij Alle organisatieonderdelen
+27
+Toelichting Denk hier bijvoorbeeld aan het voorzitterschap van de Europese Unie, multilateraal
+overleg, Organisatie voor Economische Samenwerking en Ontwikkeling, Verenigde
+Naties, World Health Organization, Raad van Europa.
+Werkbezoeken van individuele personen die niet een land en of internationale
+organisatie vertegenwoordigen, vallen onder proces 13.4.
+Voorbeelden van
+informatie in het proces
+Correspondentie en memo’s.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie:
+Proces 13.2
+(GWR 13.2)
+Het inhoudelijk bijdragen aan staatsbezoeken
+Waardering B2
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het voortouw ligt bij het ministerie van Buitenlandse Zaken en de vakdepartementen
+leveren een inhoudelijke bijdrage. Wanneer het overduidelijk een staatsbezoek
+betreft, wordt dit proces toegepast.
+Voorbeelden van
+informatie in het proces
+Correspondentie, dossier voor staatsbezoeken van de Minister, de Staatssecretaris,
+etc.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie:
+Proces 13.3
+(GWR 13.3)
+Het uitvoeren van belangenbehartiging
+Waardering B2
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het verzorgen van multi- en bilaterale samenwerking, het onderhouden van relaties
+met (multilaterale) organisaties. Behartiging van Nederlandse belangen in het
+buitenland.
+Voorbeelden van
+informatie in het proces
+Correspondentie.
+28
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie:
+Proces 13.4
+(GWR 13.4)
+Het verzorgen van het gastheerschap voor individuele personen
+Waardering V 5 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het gaat hier om werkbezoeken van individuele personen die niet een land en of
+internationale organisatie vertegenwoordigen. In andere gevallen is proces 13.1 van
+toepassing.
+Voorbeelden van
+informatie in het proces
+Nota’s, adviezen protocollaire en representatieve taken.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie:
+Proces 13.5
+(GWR 13.5)
+Het verzorgen van (de logistiek van) staatsbezoeken, bezoeken van regeringsleiders,
+hoge ambtenaren, handelsmissies en uitwisselingsprogramma’s
+Waardering V 10 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het logistiek voorbereiden en verzorgen van binnenkomende en uitgaande
+staatsbezoeken, bezoeken van regeringsleiders en hoge ambtenaren. Dit proces
+betreft de facilitaire organisatie van een bezoek. De inhoudelijke bijdrage aan een
+bezoek valt onder proces 13.2.
+Voorbeelden van
+informatie in het proces
+Uitnodigingen voor reizen en of bezoeken.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie:
+29
+Proces 13.6
+(GWR 13.6)
+Het verrichten van representatieve taken en diplomatieke uitingen
+Waardering V 5 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Onder dit proces vallen bijvoorbeeld door particuliere instellingen of organisaties
+gedane uitnodigingen aan bewindslieden en (hoge) ambtenaren voor al dan niet
+meerdaagse bezoeken, al dan niet in het buitenland.
+Voorbeelden van
+informatie in het proces
+Uitnodigingen voor reizen en bezoeken.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Ja
+Interpretatie:
+Proces 13.7
+(GWR 13.7)
+Het aangaan van samenwerkingsverbanden
+Waardering B2
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het aangaan van samenwerkingsverbanden op het terrein van volksgezondheid,
+welzijn en sport.
+Voorbeelden van
+informatie in het proces
+(Correspondentie over) samenwerkafspraken, overeenkomsten.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Sluiten van convenanten met derden ….(BSD-proces 5-19): rapporten,
+Correspondentie, convenanten
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie:
+Proces 13.8
+(GWR 13.8)
+Het deelnemen aan (internationale) organisaties, commissies en
+samenwerkingsverbanden
+Waardering B2 in het geval het organisatieonderdeel het secretariaat voert of als het secretariaat
+gevoerd wordt door een organisatie die niet onder de Nederlandse Archiefwet valt.
+V 10 in het geval het secretariaat elders wordt gevoerd
+Proces komt voor bij Alle organisatieonderdelen
+30
+Toelichting Het betreft in dit proces met name de voorbereiding en verslaglegging van overleggen
+en van afspraken die binnen de organisatie, commissie of het samenwerkingsverband
+(al dan niet met ketenpartners) worden gemaakt. De bewaarplicht ligt bij de partij die
+het secretariaat voert. Het is daarom van belang dat er altijd duidelijke afspraken zijn
+over welke partij het secretariaat voert.
+Wanneer het secretariaat wordt gevoerd door een organisatie die niet onder de
+Nederlandse Archiefwet valt (zoals een commerciële partij of buitenlandse
+organisatie) of wanneer om andere redenen de bewaarplicht niet (duidelijk) is belegd
+binnen de Nederlandse overheid, dan geldt ook de B-waardering.
+Voorbeelden van
+informatie in het proces
+Correspondentie, vergaderstukken.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+BSD processen: Deelnemen aan samenwerkingsverbanden….(BSD-proces 5-16):
+agenda, notulen, vergaderstukken, rapporten, notities, correspondentie.
+Voeren van periodiek of incidenteel overleg met andere actoren …(BSD-proces 5-20):
+agenda, notulen, vergaderstukken.
+Deelnemen aan op het gebied van (het toezicht op) de gezondheidszorg….(BSD-
+proces 5-21): agenda, notulen, vergaderstukken, rapporten, correspondentie
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Mogelijk
+Interpretatie: 13.8 is van toepassing bij IGJ; bijvoorbeeld voor.. Voor bewaar/vernietigingstermijnen is het
+van belang waar het secretariaat wordt gevoerd.
+Procescategorie 14. Het leveren van overheidsdiensten bij crises en calamiteiten
+Proces 14.1
+(GWR 14.1)
+Het coördineren en het treffen van maatregelen bij een crisis of calamiteit
+Waardering B3
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Het gaat hier om het coördineren en/of treffen van maatregelen bij een grote
+(nationale of zelfs internationale) ramp of crisis die raakt aan het beleidsterrein van
+VWS zoals de Coronacrisis. Onder dit werkproces valt ook het (eventueel) instellen van
+een crisisstaf, crisisorganisatie en/of het instellen van tijdelijke crisisonderdelen
+binnen VWS.
+Het RIVM heeft binnen dit proces een specifieke taak, namelijk adviseren ten behoeve
+van besluitvorming. Bijvoorbeeld:
+• Infectieziekten: ‘signaleringsoverleg’, voorstellen van het Outbreak
+Management Team (OMT) en adviezen van het Bestuurlijk
+afstemmingsoverleg voor infectieziektebestrijding;
+• Deelname en advisering aan het Back-Office Radiologische Informatie (BORI)
+inzake ontsmetting en behandeling van blootgestelde personen in geval van
+een ongeval met radioactieve straling;
+• De ‘warme organisatie’ van het Beleidsondersteunend team milieu-
+incidenten (BOT-mi);
+• Adviezen van de Expertgroep gezondheidsonderzoek.
+31
+Voorbeelden van
+informatie in het proces
+Rampenplan, informatie betreffende (de instelling van) een crisisstaf en/of
+crisisorganisatie, vergaderstukken en voorbereidende stukken bij overleg,
+(nood)wetgeving, steunmaatregelen, rapportages, nota’s, memo’s, adviezen.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+BSD-werkproces: Toezien op ,,,afhandeling of reconstructie van rampen (BSD-proces
+5-5) : rapportages, correspondentie
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Proces 14.5 Het (operationeel) voorbereiden van een crisis of calamiteit
+Waardering V 10 na afhandeling dossier
+Proces komt voor bij Alle organisatieonderdelen
+Toelichting Dit proces betreft onder meer het opstellen, toetsen en actualiseren van
+crisisplannen, handboeken en dergelijke en het voorbereiden, houden en evalueren
+van rampenoefeningen.
+Voorbeelden van
+informatie in het proces
+Continuïteitsplannen, uitwijkplannen, handboeken, draaiboeken, protocollen en
+checklists op gebied van crisisbeheersing, rapportages, controlelijsten.
+Voorbeelden van
+informatie in het proces
+vanuit werkdoc BSD
+Nvt
+Proceseigenaar
+Persoonsgegevens
+aanwezig
+Nee
+Interpretatie:
+

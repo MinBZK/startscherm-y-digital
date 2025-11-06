@@ -1,0 +1,266 @@
+{{- if .Values.nextcloud.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "bsw.fullname" . }}-nextcloud
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+    app: nextcloud
+annotations:
+  checksum/postgresql-secret: {{- with (lookup "v1" "Secret" .Release.Namespace "postgresql-secret") -}}
+      {{ .data | toYaml | sha256sum | quote }}
+  {{- end }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextcloud
+  template:
+    metadata:
+      labels:
+        app: nextcloud
+        {{- include "bsw.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      initContainers:
+        # Wait for database to be ready
+        - name: wait-for-db
+          image: postgres:15
+          command:
+            - sh
+            - -c
+            - |
+              until pg_isready; do
+                echo "Waiting for PostgreSQL to be ready..."
+                sleep 5
+              done
+              echo "PostgreSQL is ready!"
+          env:
+            - name: PGHOST
+              value: {{ include "bsw.fullname" . }}-postgresql
+            - name: PGPORT
+              value: "5432"
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: username
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: password
+            - name: PGDATABASE
+              value: "postgres"
+        # Wait for database initialization job to complete
+        - name: wait-for-db-init
+          image: postgres:15
+          command:
+            - sh
+            - -c
+            - |
+              echo "Waiting for database initialization to complete..."
+              # First wait for PostgreSQL to be ready
+              until pg_isready; do
+                echo "PostgreSQL not ready, waiting..."
+                sleep 5
+              done
+              
+              # Then wait for NextCloud database to exist
+              echo "Waiting for NextCloud database to be created..."
+              until psql -d postgres -c "\l" | grep -q "{{ .Values.nextcloud.database.name }}"; do
+                echo "NextCloud database not found, waiting..."
+                sleep 5
+              done
+              
+              echo "NextCloud database is ready!"
+          env:
+            - name: PGHOST
+              value: {{ include "bsw.fullname" . }}-postgresql
+            - name: PGPORT
+              value: "5432"
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: username
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: password
+            - name: PGDATABASE
+              value: "postgres"
+      containers:
+        - name: nextcloud
+          image: {{ .Values.nextcloud.image.repository }}:{{ .Values.nextcloud.image.tag }}
+          imagePullPolicy: {{ .Values.nextcloud.image.pullPolicy }}
+          command: ["/bin/bash"]
+          args:
+            - -c
+            - |
+              echo "Starting NextCloud with custom entrypoint..."
+              
+              # Copy NextCloud files if they don't exist (from the original entrypoint logic)
+              if [ ! -f /var/www/html/index.php ]; then
+                echo "Copying NextCloud application files..."
+                cp -rp /usr/src/nextcloud/* /var/www/html/
+                chown -R www-data:www-data /var/www/html
+              fi
+              
+              # Set up the basic NextCloud environment
+              chown -R www-data:www-data /var/www/html
+
+              if [ -f /var/www/html/config/config.php ]; then
+                if ! PGPASSWORD="$POSTGRES_PASSWORD" psql -U "$POSTGRES_USER" -h "$POSTGRES_HOST" -d "$POSTGRES_DB" -c "SELECT 1 FROM oc_appconfig LIMIT 1;" >/dev/null 2>&1; then
+                  echo "Config present but DB schema missing. Removing stale config.php for reinstall."
+                  rm -f /var/www/html/config/config.php
+                  rm -rf "$NEXTCLOUD_DATA_DIR/$NEXTCLOUD_ADMIN_USER"
+                fi
+              fi
+              
+              # Check if NextCloud is already installed
+              if [ -f /var/www/html/config/config.php ] && php /var/www/html/occ status | grep -q "installed: true"; then
+                echo "NextCloud already installed, starting Apache..."
+              else
+                echo "Installing NextCloud..."
+                # # Start Apache in background for installation
+                # apache2-foreground &
+                # APACHE_PID=$!
+                
+                # Wait for Apache to start
+                sleep 10
+                
+                # Install NextCloud via command line
+                php /var/www/html/occ maintenance:install \
+                  --database=pgsql \
+                  --database-host="$POSTGRES_HOST" \
+                  --database-name="$POSTGRES_DB" \
+                  --database-user="$POSTGRES_USER" \
+                  --database-pass="$POSTGRES_PASSWORD" \
+                  --admin-user="$NEXTCLOUD_ADMIN_USER" \
+                  --admin-pass="$NEXTCLOUD_ADMIN_PASSWORD" \
+                  --data-dir="$NEXTCLOUD_DATA_DIR" || { echo "Install failed"; exit 1; }
+                
+                # Fix ownership of config files created by installation
+                chown -R www-data:www-data /var/www/html/config/
+                chown -R www-data:www-data /var/www/html/data/
+                
+                # Configure trusted domains from values
+                TRUSTED_DOMAINS="{{ .Values.nextcloud.trustedDomains }}"
+                IFS=',' read -ra DOMAINS <<< "$TRUSTED_DOMAINS"
+                for i in "${!DOMAINS[@]}"; do
+                  php /var/www/html/occ config:system:set trusted_domains $i --value="${DOMAINS[$i]}"
+                done
+                
+                echo "NextCloud installation completed!"
+                
+                # Run the init-users script to set up users and dossiers
+                if [ -f /docker-entrypoint-hooks.d/before-starting/init-users.sh ]; then
+                  echo "Running init-users script..."
+                  chmod +x /docker-entrypoint-hooks.d/before-starting/init-users.sh
+                  /docker-entrypoint-hooks.d/before-starting/init-users.sh
+                  echo "Init-users script completed!"
+                else
+                  echo "Warning: init-users.sh script not found"
+                fi
+                
+                # # Stop background Apache and restart properly
+                # kill $APACHE_PID
+                # wait $APACHE_PID
+              fi
+              
+              # Start Apache in foreground
+              exec apache2-foreground
+          ports:
+            - containerPort: 80
+              name: http
+          env:
+            # Database configuration
+            - name: POSTGRES_HOST
+              value: {{ include "bsw.fullname" . }}-postgresql
+            - name: POSTGRES_DB
+              value: {{ .Values.nextcloud.database.name }}
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: password
+            # NextCloud admin configuration
+            - name: NEXTCLOUD_ADMIN_USER
+              valueFrom:
+                secretKeyRef:
+                  name: nextcloud-admin-secret
+                  key: admin-user
+            - name: NEXTCLOUD_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: nextcloud-admin-secret
+                  key: admin-password
+            # NextCloud configuration
+            - name: NEXTCLOUD_TRUSTED_DOMAINS
+              value: {{ .Values.nextcloud.trustedDomains | quote }}
+            - name: NEXTCLOUD_DATA_DIR
+              value: {{ .Values.nextcloud.dataDir }}
+            - name: NEXTCLOUD_DISABLE_APPS_UPDATE_CHECK
+              value: "true"
+          volumeMounts:
+            - name: nextcloud-data
+              mountPath: {{ .Values.nextcloud.dataDir }}
+            - name: nextcloud-config
+              mountPath: /var/www/html/config
+            - name: init-users-script
+              mountPath: /docker-entrypoint-hooks.d/before-starting/init-users.sh
+              subPath: init-users.sh
+              readOnly: true
+            - name: nextcloud-config-overrides
+              mountPath: /var/www/html/config/allow-local-remote.config.php
+              subPath: allow-local-remote.config.php
+              readOnly: true
+          resources:
+            {{- toYaml .Values.nextcloud.resources | nindent 12 }}
+          readinessProbe:
+            httpGet:
+              path: /status.php
+              port: http
+              httpHeaders:
+                - name: Host
+                  value: localhost
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /status.php
+              port: http
+              httpHeaders:
+                - name: Host
+                  value: localhost
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 5
+      volumes:
+        - name: nextcloud-data
+          persistentVolumeClaim:
+            claimName: {{ include "bsw.fullname" . }}-nextcloud-data
+        - name: nextcloud-config
+          persistentVolumeClaim:
+            claimName: {{ include "bsw.fullname" . }}-nextcloud-config
+        - name: init-users-script
+          configMap:
+            name: {{ include "bsw.fullname" . }}-nextcloud-init
+            defaultMode: 0755
+        - name: nextcloud-config-overrides
+          configMap:
+            name: {{ include "bsw.fullname" . }}-nextcloud-init
+{{- end }}

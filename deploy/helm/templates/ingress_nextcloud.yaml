@@ -1,0 +1,23 @@
+{{- if and .Values.nextcloud.enabled .Values.nextcloud.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "bsw.fullname" . }}-nextcloud
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: {{ .Values.nextcloud.ingress.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "bsw.fullname" . }}-nextcloud
+                port:
+                  number: 80
+{{- end }}

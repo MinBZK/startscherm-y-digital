@@ -1,0 +1,58 @@
+[
+    {
+      "dossier_id": "dossier_001_admin",
+      "name": "Zorgen over wachttijden in GGZ",
+      "url": "/Dossiers/Zorgen_over_wachttijden_in_GGZ",
+      "file_id": "90",
+      "progress": 67,
+      "linked_zaak": "",
+      "last_modified": "2025-05-27T14:12:02Z",
+      "is_unopened": true,
+      "date_received": "2025-05-27T14:12:02Z"
+    },
+    {
+      "dossier_id": "dossier_002_admin",
+      "name": "Aanvrag om subsidie voor likale welzijnsprojecten",
+      "url": "/Dossiers/Aanvrag_om_subsidie_voor_likale_welzijnsprojecten",
+      "file_id": "91",
+      "progress": 92,
+      "linked_zaak": "",
+      "last_modified": "2025-05-27T14:09:56Z",
+      "is_unopened": true,
+      "date_received": "2025-05-27T14:09:56Z"
+    },
+    {
+      "dossier_id": "dossier_003_admin",
+      "name": "Zorg over stijgende kosten van langdurige zorg",
+      "url": "/Dossiers/Zorg_over_stijgende_kosten_van_langdurige_zorg",
+      "file_id": "92",
+      "progress": 91,
+      "linked_zaak": "",
+      "last_modified": "2025-05-27T14:08:07Z",
+      "is_unopened": false,
+      "date_received": "2025-05-27T14:08:07Z"
+    },
+    {
+      "dossier_id": "dossier_004_admin",
+      "name": "Woo-verzoek over verzoek documenten EU-inbreukzaak",
+      "url": "/Dossiers/Woo-verzoek_over_verzoek_documenten_EU-inbreukzaak",
+      "file_id": "93",
+      "progress": 49,
+      "linked_zaak": "",
+      "last_modified": "2025-05-16T12:29:10Z",
+      "is_unopened": true,
+      "date_received": "2025-05-16T12:29:10Z"
+    },
+    {
+      "dossier_id": "dossier_005_admin",
+      "name": "Test",
+      "url": "/Dossiers/Test",
+      "file_id": "94",
+      "progress": 62,
+      "linked_zaak": "",
+      "last_modified": "2025-05-08T08:23:33Z",
+      "is_unopened": true,
+      "date_received": "2025-05-08T08:23:33Z"
+    }
+  ]
+  

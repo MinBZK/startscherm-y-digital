@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: annotation-cronjob
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      podtype: cronjob
+  policyTypes:
+    - Egress
+  egress:
+    - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+    - to:
+        - podSelector:
+            matchLabels:
+              # app.kubernetes.io/name: elasticsearch
+              app.kubernetes.io/name: {{ include "bsw.name" . }}-elasticsearch
+      ports:
+        - port: 9200
+    - to:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/component: bsw-api

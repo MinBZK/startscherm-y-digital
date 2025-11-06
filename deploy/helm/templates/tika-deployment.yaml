@@ -1,0 +1,39 @@
+{{- if .Values.nextcloud_ingestor.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tika
+  labels:
+    app: tika
+{{ include "bsw.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.nextcloud_ingestor.content.replicas }}
+  selector:
+    matchLabels:
+      run: tika
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "bsw.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        run: tika
+    spec:
+      securityContext:
+        runAsUser: 10000
+        runAsGroup: 10000
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+      - name: tika
+        image: apache/tika:3.1.0.0
+        imagePullPolicy: {{ .Values.imagePullPolicy }}
+        resources:
+          {{- toYaml .Values.nextcloud_ingestor.resources | nindent 10 }}
+        securityContext:
+          readOnlyRootFilesystem: false
+          seccompProfile:
+            type: RuntimeDefault
+        ports:
+        - containerPort: 9998
+          protocol: TCP
+{{- end }}

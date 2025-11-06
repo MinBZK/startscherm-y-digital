@@ -1,0 +1,62 @@
+{{- if and .Values.nextcloud_ingestor.enabled (hasKey .Values.nextcloud_ingestor "troubleshootJob") .Values.nextcloud_ingestor.troubleshootJob.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nextcloud-ingestor-troubleshoot-{{ randAlphaNum 5 | lower }}
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+    app.kubernetes.io/component: nextcloud-ingestor-troubleshoot
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 3600 # Keep for 1 hour for debugging
+  template:
+    metadata:
+      labels:
+        {{- include "bsw.labels" . | nindent 8 }}
+        app.kubernetes.io/component: nextcloud-ingestor-troubleshoot
+    spec:
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: troubleshoot
+          image: curlimages/curl:latest
+          command:
+            - sh
+            - -c
+            - |
+              echo "=== Elasticsearch Troubleshooting ==="
+              echo "Expected service: {{ include "bsw.fullname" . }}-elasticsearch:{{ .Values.elasticsearch.service.httpPort }}"
+              echo "Expected URL: http://{{ include "bsw.fullname" . }}-elasticsearch:{{ .Values.elasticsearch.service.httpPort }}"
+              echo ""
+              
+              echo "=== DNS Resolution Test ==="
+              nslookup {{ include "bsw.fullname" . }}-elasticsearch || echo "DNS resolution failed"
+              echo ""
+              
+              echo "=== Network Connectivity Test ==="
+              nc -zv {{ include "bsw.fullname" . }}-elasticsearch {{ .Values.elasticsearch.service.httpPort }} || echo "Network connection failed"
+              echo ""
+              
+              echo "=== HTTP Connectivity Test ==="
+              curl -v --connect-timeout 10 http://{{ include "bsw.fullname" . }}-elasticsearch:{{ .Values.elasticsearch.service.httpPort }}/ || echo "HTTP connection failed"
+              echo ""
+              
+              echo "=== Elasticsearch Health Check ==="
+              curl -s http://{{ include "bsw.fullname" . }}-elasticsearch:{{ .Values.elasticsearch.service.httpPort }}/_cluster/health?pretty || echo "Health check failed"
+              echo ""
+              
+              echo "=== Kubernetes Service Info ==="
+              echo "Check these commands manually:"
+              echo "kubectl get svc {{ include "bsw.fullname" . }}-elasticsearch"
+              echo "kubectl get pods -l app=elasticsearch"
+              echo "kubectl describe svc {{ include "bsw.fullname" . }}-elasticsearch"
+              echo "kubectl logs -l app=elasticsearch"
+              
+              # Keep container running for manual debugging
+              echo ""
+              echo "=== Container will sleep for debugging - use 'kubectl exec' to investigate ==="
+              sleep 3600
+      restartPolicy: Never
+{{- end }}

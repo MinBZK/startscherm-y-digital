@@ -1,0 +1,1 @@
+pdftotext -raw -layout "shared/selectielijsten/Bijlage 7 - Doorvertaling Concernbrede selectielijst VWS voor IGJ V2.0 (1).pdf" "shared/selectielijsten/selectielijst.txt"

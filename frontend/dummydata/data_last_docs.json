@@ -1,0 +1,41 @@
+[
+  {
+    "id": "transcript-1",
+    "name": "Transcriptie hoorzitting - Piet de Vries.docx",
+    "filetype": "Word",
+    "url": "https://ydigital.sharepoint.com/sites/ProefopstelingBSW/_layouts/15/Doc.aspx?sourcedoc=%7B3DED7FC5-C1C2-48AC-A08E-4F80C917AEF3%7D&file=Transcriptie%20hoorzitting%20-%20Piet%20de%20Vries.docx&action=default&mobileredirect=true",
+    "linked_dossier": "Klacht over Piet de Vries",
+    "is_transcript": true,
+    "show_magic_wand": true
+  },
+  {
+    "name": "May27.docx",
+    "filetype": "Word",
+    "url": "https://ydigital.sharepoint.com/sites/ProefopstelingBSW/_layouts/15/Doc.aspx?sourcedoc=%7B3DED7FC5-C1C2-48AC-A08E-4F80C917AEF3%7D&file=May27.docx&action=default&mobileredirect=true",
+    "linked_dossier": ""
+  },
+  {
+    "name": "VerzoekFILEFILEFILE.docx",
+    "filetype": "Word",
+    "url": "https://ydigital.sharepoint.com/sites/ProefopstelingBSW-Woo-verzoekoververzoekdocumentenEU-inbreukzaak/_layouts/15/Doc.aspx?sourcedoc=%7B309D44D8-05DC-48F0-9A2E-CDD829ECD4EB%7D&file=VerzoekFILEFILEFILE.docx&action=default&mobileredirect=true",
+    "linked_dossier": "Woo-verzoek over verzoek documenten EU-inbreukzaak"
+  },
+  {
+    "name": "wherewillitgo.docx",
+    "filetype": "Word",
+    "url": "https://ydigital.sharepoint.com/sites/ProefopstelingBSW/_layouts/15/Doc.aspx?sourcedoc=%7B7D0DE93D-99D1-456A-A1A6-CDA739733948%7D&file=wherewillitgo.docx&action=default&mobileredirect=true",
+    "linked_dossier": ""
+  },
+  {
+    "name": "manymanymanyletters.docx",
+    "filetype": "Word",
+    "url": "https://ydigital.sharepoint.com/sites/ProefopstelingBSW-Test/_layouts/15/Doc.aspx?sourcedoc=%7B00372A20-DC3C-4CEB-968D-CB9DA2E02930%7D&file=manymanymanyletters.docx&action=default&mobileredirect=true",
+    "linked_dossier": "Test"
+  },
+  {
+    "name": "Test_permissions.docx",
+    "filetype": "Word",
+    "url": "https://ydigital.sharepoint.com/sites/ProefopstelingBSW-Test/_layouts/15/Doc.aspx?sourcedoc=%7B689B6C80-82AD-4B08-B412-92063FEF2AEA%7D&file=Test_permissions.docx&action=default&mobileredirect=true",
+    "linked_dossier": "Test"
+  }
+]

@@ -1,0 +1,46 @@
+{{- if and .Values.nextcloud_ingestor.enabled .Values.nextcloud_ingestor.runAsDeployment }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextcloud-ingestor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextcloud-ingestor
+  template:
+    metadata:
+      labels:
+        app: nextcloud-ingestor
+    spec:
+      containers:
+        - name: ingestor-api
+          image: "{{ .Values.nextcloud_ingestor.image.repository }}:{{ .Values.nextcloud_ingestor.image.tag }}"
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          args:
+            - "python3"
+            - "main.py"
+            - "api"
+          ports:
+            - containerPort: 8080
+          env:
+            - name: LOG_LEVEL
+              value: {{ .Values.nextcloud_ingestor.loglevel | quote }}
+            - name: NC_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: nextcloud-admin-secret
+                  key: admin-password
+            - name: NC_USER
+              valueFrom:
+                secretKeyRef:
+                  name: nextcloud-admin-secret
+                  key: admin-user
+          envFrom:
+            - configMapRef:
+                name: nextcloud-ingestor-config
+            - configMapRef:
+                name: elasticsearch-config
+          resources:
+            {{- toYaml .Values.nextcloud_ingestor.resources | nindent 12 }}
+{{- end }}

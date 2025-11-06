@@ -1,0 +1,12 @@
+python-dotenv
+webdavclient3
+elasticsearch>=8.12,<9
+PyMuPDF
+tika
+python-magic
+psycopg2-binary
+httpx
+sqlalchemy>=2.0.0
+alembic
+fastapi
+uvicorn

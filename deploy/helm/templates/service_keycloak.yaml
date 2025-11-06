@@ -1,0 +1,19 @@
+{{- if .Values.auth.keycloak.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "bsw.fullname" . }}-keycloak
+  labels:
+    app.kubernetes.io/component: keycloak
+    {{- include "bsw.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/component: keycloak
+    app.kubernetes.io/name: {{ include "bsw.name" . }}
+  ports:
+    - name: http
+      port: 8081
+      targetPort: 8081
+      protocol: TCP
+{{- end }}

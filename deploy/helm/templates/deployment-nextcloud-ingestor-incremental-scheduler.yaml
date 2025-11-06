@@ -1,0 +1,89 @@
+{{- if and .Values.nextcloud_ingestor.enabled (hasKey .Values.nextcloud_ingestor "incrementalScheduler") .Values.nextcloud_ingestor.incrementalScheduler.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextcloud-ingestor-incremental-scheduler
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+    app.kubernetes.io/component: nextcloud-ingestor-incremental-scheduler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextcloud-ingestor-incremental-scheduler
+  template:
+    metadata:
+      labels:
+        {{- include "bsw.labels" . | nindent 8 }}
+        app: nextcloud-ingestor-incremental-scheduler
+    spec:
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: scheduler
+          image: "{{ .Values.nextcloud_ingestor.image.repository }}:{{ .Values.nextcloud_ingestor.image.tag }}"
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          command:
+            - /bin/bash
+            - -c
+            - |
+              echo "Starting incremental ingestion scheduler..."
+              while true; do
+                echo "$(date): Running incremental ingestion..."
+                python3 main.py incremental
+                exit_code=$?
+                if [ $exit_code -ne 0 ]; then
+                  echo "$(date): Incremental ingestion failed with exit code $exit_code"
+                else
+                  echo "$(date): Incremental ingestion completed successfully"
+                fi
+                echo "$(date): Sleeping for {{ .Values.nextcloud_ingestor.incrementalScheduler.intervalSeconds }} seconds..."
+                sleep {{ .Values.nextcloud_ingestor.incrementalScheduler.intervalSeconds }}
+              done
+          env:
+            - name: LOG_LEVEL
+              value: {{ .Values.nextcloud_ingestor.loglevel | default "INFO" | quote }}
+            - name: DRY_RUN
+              value: {{ .Values.nextcloud_ingestor.incrementalScheduler.dryRun | default "false" | quote }}
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: oc-user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: oc-password
+          envFrom:
+            - configMapRef:
+                name: nextcloud-ingestor-config
+            - configMapRef:
+                name: elasticsearch-config
+          resources:
+            {{- toYaml .Values.nextcloud_ingestor.incrementalScheduler.resources | nindent 12 }}
+          # Add health checks
+          livenessProbe:
+            exec:
+              command:
+                - pgrep
+                - -f
+                - "python3 main.py incremental|sleep"
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            exec:
+              command:
+                - pgrep
+                - -f
+                - "python3|sleep"
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+      restartPolicy: Always
+{{- end }}

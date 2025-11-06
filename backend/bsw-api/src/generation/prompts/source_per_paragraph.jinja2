@@ -1,0 +1,18 @@
+Je bent een juridisch expert. Je taak is om elke paragraaf te analyseren en te bepalen welke van de beschikbare bronnen expliciet of impliciet worden vermeld.
+
+**PARAGRAPHS: **
+{% for text in paragraphs %}
+**paragraph_index: {{ loop.index0 }}**:
+**paragraph tekst: ** {{ text }}
+
+{% endfor %}
+
+**Beschikbare bronnen: **
+{{ sources | join(", ") }}
+
+**Instructies:**
+Doe het volgende voor elke alinea:
+- Geef een lijst met alle bron-ID's die van toepassing zijn en kies alleen uit de lijst met beschikbare bronnen.
+- Als u een bron vindt waarnaar wordt verwezen maar die niet in de lijst met beschikbare bronnen staat, vermeld deze dan apart onder 'unlisted_sources' voor die alinea.
+- Als er geen relevante bron van toepassing is op een alinea, geef dan een lege lijst op voor 'relevant_sources'.
+- Gebruik 'unlisted_sources' alleen als u zeker weet dat er een andere, niet-vermelde bron wordt gebruikt. Als er helemaal geen bronnen zijn, laat beide lijsten leeg.

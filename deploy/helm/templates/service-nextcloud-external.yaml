@@ -1,0 +1,33 @@
+{{- if and .Values.nextcloud_ingestor.enabled .Values.nextcloud_ingestor.nextcloud.external.enabled }}
+# Service to connect to external NextCloud instance
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "bsw.fullname" . }}-nextcloud-external
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+    app.kubernetes.io/component: nextcloud-external
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.nextcloud_ingestor.nextcloud.external.port }}
+      targetPort: {{ .Values.nextcloud_ingestor.nextcloud.external.port }}
+      protocol: TCP
+      name: http
+---
+# Endpoints to point to the external NextCloud
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: {{ include "bsw.fullname" . }}-nextcloud-external
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+    app.kubernetes.io/component: nextcloud-external
+subsets:
+  - addresses:
+      - ip: {{ .Values.nextcloud_ingestor.nextcloud.external.ip }}
+    ports:
+      - port: {{ .Values.nextcloud_ingestor.nextcloud.external.port }}
+        protocol: TCP
+        name: http
+{{- end }}

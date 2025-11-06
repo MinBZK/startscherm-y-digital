@@ -1,0 +1,498 @@
+{
+	"results": 2,
+	"hits": [
+		{
+			"_index": "bsw-index",
+			"_id": "8ee0f9ae5538cecd342f60c0537f988a77d1e101b172232d54b54211a2328ba6",
+			"_score": 1.4314833,
+			"_ignored": [
+				"full_text.keyword",
+				"paragraphs.text.keyword"
+			],
+			"_source": {
+				"title": "Testdocument1",
+				"raw_title": "Testdocument1.docx",
+				"url": "https://ydigital.sharepoint.com/sites/ProefopstelingBSW/_layouts/15/Doc.aspx?sourcedoc=%7B2F795FDA-FB3F-4690-B6CB-58C0F3108DDF%7D&file=Testdocument1.docx&action=default&mobileredirect=true",
+				"datetime_published": "2025-06-03T13:38:49.070040",
+				"created_date": "2025-05-08T13:21:19Z",
+				"lastmodifiedtime": "2025-05-13T10:03:58Z",
+				"sharepoint_id": "01HUKLPX62L54S6P73SBDLNS2YYDZRBDO7",
+				"drive_id": "b!ocT3bGO4SUCQA4OstGbBOXThL1VZ93RHobckKy6khGplE8YdKJSeQpjRR7SrAMWb",
+				"author": "Anna Dollbo",
+				"author_id": "c5c70443-e0b5-4123-8c79-121a92a9e75f",
+				"lastmodified_user_id": "c5c70443-e0b5-4123-8c79-121a92a9e75f",
+				"size": "26.0 kB",
+				"author_modified": "Anna Dollbo",
+				"filepath": "Documents/General",
+				"filetype": "Word",
+				"needs_download": "not",
+				"needs_annotation": "annotated",
+				"last_annotated": "2025-05-13T10:03:58Z",
+				"full_text": "\n\nGet Drive\n\n· Article\n· 01/27/2024\n\n·\n\nIn this article\nJgrfnxklgernk gklremkgnrejnjgernkjre\n\n1. Permissions\n\n2. HTTP request\n\n3. Optional query parameters\n\n4. Request headers\n\nNamespace: microsoft.graph\nRetrieve the properties and relationships of a Drive resource.\nA Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.\nThis API is available in the following national cloud deployments.\n\tGlobal service\n\tUS Government L4\n\tUS Government L5 (DOD)\n\tChina operated by 21Vianet\n\n✅\n\t✅\n\t✅\n\t✅\n\nPermissions\nChoose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions only if your app requires it. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.\n\tPermission type\n\tLeast privileged permissions\n\tHigher privileged permissions\n\nDelegated (work or school account)\n\tFiles.Read\n\tFiles.Read.All, Files.ReadWrite, Files.ReadWrite.All, Sites.Read.All, Sites.ReadWrite.All, User.Read\n\nDelegated (personal Microsoft account)\n\tFiles.Read\n\tFiles.Read.All, Files.ReadWrite, Files.ReadWrite.All\n\nApplication\n\tNot supported.\n\tNot supported.\n\nHTTP request\nGet current user's OneDrive\nThe signed in user's drive (when using delegated authentication) can be accessed from the me singleton.\nIf a user's OneDrive isn't provisioned but the user has a license to use OneDrive, this request will automatically provision the user's drive, when using delegated authentication.\nHTTP \t\t\nGET /me/drive\n\nGet a user's OneDrive\nTo access a user's OneDrive or OneDrive for Business, your app must request the drive relationship on the User resource.\nIf a user's OneDrive isn't provisioned but the user has a license to use OneDrive, this request will automatically provision the user's drive, when using delegated authentication.\nHTTP \t\t\nGET https://graph.microsoft.com/v1.0/users/{idOrUserPrincipalName}/drive\n\nPath parameters\n\tParameter name\n\tValue\n\tDescription\n\nidOrUserPrincipalName\n\tstring\n\tRequired. The identifier for the user object who owns the OneDrive.\n\nGet the document library associated with a group\nTo access a Group's default document library, your app requests the drive relationship on the Group.\nHTTP \t\t\nGET /groups/{groupId}/drive\n\nPath parameters\n\tParameter name\n\tValue\n\tDescription\n\ngroupId\n\tstring\n\tRequired. The identifier for the group that owns the document library.\n\nGet the document library for a site\nTo access a Site's default document library, your app requests the drive relationship on the Site.\nHTTP \t\t\nGET /sites/{siteId}/drive\n\nPath parameters\n\tParameter name\n\tValue\n\tDescription\n\nsiteId\n\tstring\n\tRequired. The identifier for the site that contains the document library.\n\nGet a drive by ID\nIf you have the unique identifier for a drive, you can access it directly from the top-level drives collection.\n\nGET /drives/{driveId}\n\nI MADE ACHANGE TO THIS DOCUMENT\n\nPath parameters\n\n",
+				"paragraphs": [
+					{
+						"id": 0,
+						"text": "Get Drive"
+					},
+					{
+						"id": 1,
+						"text": "· Article · 01/27/2024"
+					},
+					{
+						"id": 2,
+						"text": "·"
+					},
+					{
+						"id": 3,
+						"text": "In this article Jgrfnxklgernk gklremkgnrejnjgernkjre"
+					},
+					{
+						"id": 4,
+						"text": "1. Permissions"
+					},
+					{
+						"id": 5,
+						"text": "2. HTTP request"
+					},
+					{
+						"id": 6,
+						"text": "3. Optional query parameters"
+					},
+					{
+						"id": 7,
+						"text": "4. Request headers"
+					},
+					{
+						"id": 8,
+						"text": "Namespace: microsoft.graph Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries. This API is available in the following national cloud deployments. Global service US Government L4 US Government L5 (DOD) China operated by 21Vianet"
+					},
+					{
+						"id": 9,
+						"text": "✅ ✅ ✅ ✅"
+					},
+					{
+						"id": 10,
+						"text": "Permissions Choose the permission or permissions marked as least privileged for this API. Use a higher privileged permission or permissions only if your app requires it. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference. Permission type Least privileged permissions Higher privileged permissions"
+					},
+					{
+						"id": 11,
+						"text": "Delegated (work or school account) Files.Read Files.Read.All, Files.ReadWrite, Files.ReadWrite.All, Sites.Read.All, Sites.ReadWrite.All, User.Read"
+					},
+					{
+						"id": 12,
+						"text": "Delegated (personal Microsoft account) Files.Read Files.Read.All, Files.ReadWrite, Files.ReadWrite.All"
+					},
+					{
+						"id": 13,
+						"text": "Application Not supported. Not supported."
+					},
+					{
+						"id": 14,
+						"text": "HTTP request Get current user's OneDrive The signed in user's drive (when using delegated authentication) can be accessed from the me singleton. If a user's OneDrive isn't provisioned but the user has a license to use OneDrive, this request will automatically provision the user's drive, when using delegated authentication. HTTP GET /me/drive"
+					},
+					{
+						"id": 15,
+						"text": "Get a user's OneDrive To access a user's OneDrive or OneDrive for Business, your app must request the drive relationship on the User resource. If a user's OneDrive isn't provisioned but the user has a license to use OneDrive, this request will automatically provision the user's drive, when using delegated authentication. HTTP GET https://graph.microsoft.com/v1.0/users/{idOrUserPrincipalName}/drive"
+					},
+					{
+						"id": 16,
+						"text": "Path parameters Parameter name Value Description"
+					},
+					{
+						"id": 17,
+						"text": "idOrUserPrincipalName string Required. The identifier for the user object who owns the OneDrive."
+					},
+					{
+						"id": 18,
+						"text": "Get the document library associated with a group To access a Group's default document library, your app requests the drive relationship on the Group. HTTP GET /groups/{groupId}/drive"
+					},
+					{
+						"id": 19,
+						"text": "Path parameters Parameter name Value Description"
+					},
+					{
+						"id": 20,
+						"text": "groupId string Required. The identifier for the group that owns the document library."
+					},
+					{
+						"id": 21,
+						"text": "Get the document library for a site To access a Site's default document library, your app requests the drive relationship on the Site. HTTP GET /sites/{siteId}/drive"
+					},
+					{
+						"id": 22,
+						"text": "Path parameters Parameter name Value Description"
+					},
+					{
+						"id": 23,
+						"text": "siteId string Required. The identifier for the site that contains the document library."
+					},
+					{
+						"id": 24,
+						"text": "Get a drive by ID If you have the unique identifier for a drive, you can access it directly from the top-level drives collection."
+					},
+					{
+						"id": 25,
+						"text": "GET /drives/{driveId}"
+					},
+					{
+						"id": 26,
+						"text": "I MADE ACHANGE TO THIS DOCUMENT"
+					},
+					{
+						"id": 27,
+						"text": "Path parameters"
+					}
+				],
+				"accessible_to_users": [
+					"47b1d9b9-dfc8-4fb0-8d77-b762cbde22a9",
+					"5d006320-e471-4013-b34b-312026fb5e9e",
+					"28235788-ad54-4633-a62c-2fbe00c3e707",
+					"4b79227a-dd32-48ca-a7a2-94dea10fab5b",
+					"c5c70443-e0b5-4123-8c79-121a92a9e75f"
+				],
+				"topics": []
+			}
+		},
+		{
+			"_index": "bsw-index",
+			"_id": "aacb267cf43d009c211d40681d01f3acf43c78233c3b0dc2928251420dc780aa",
+			"_score": 0.7548609,
+			"_ignored": [
+				"full_text.keyword",
+				"paragraphs.text.keyword"
+			],
+			"_source": {
+				"title": "Architectuur Proefopstelling Werkomgeving",
+				"raw_title": "Architectuur Proefopstelling Werkomgeving.docx",
+				"url": "https://ydigital.sharepoint.com/sites/ProefopstelingBSW-Test/_layouts/15/Doc.aspx?sourcedoc=%7BA647C29E-63DF-4997-83C7-5EAA5865F6A3%7D&file=Architectuur%20Proefopstelling%20Werkomgeving.docx&action=default&mobileredirect=true",
+				"datetime_published": "2025-06-03T13:38:48.189866",
+				"created_date": "2024-12-04T08:31:00Z",
+				"lastmodifiedtime": "2024-12-04T15:17:00Z",
+				"sharepoint_id": "01A2DUO7U6YJD2NX3DS5EYHR26VJMGL5VD",
+				"drive_id": "b!ShOLWciZM0u6vO64TF6eoSd1gOd6-3dGlJMbpupEAK7nevXT7enhSIqzXx2f2RGM",
+				"author": "Stefan Wachmann",
+				"author_id": "4b79227a-dd32-48ca-a7a2-94dea10fab5b",
+				"lastmodified_user_id": "4b79227a-dd32-48ca-a7a2-94dea10fab5b",
+				"size": "217.1 kB",
+				"author_modified": "Stefan Wachmann",
+				"filepath": "Test/Test",
+				"filetype": "Word",
+				"needs_download": "not",
+				"needs_annotation": "needed",
+				"last_annotated": "",
+				"full_text": "\n\nArchitectuur\n\nProefopstelling Werkomgeving van de Toekomst\n\n<< visualisatie >>\n\nVersie: 4 december 2024\n\nDocumenthistorie\n\nDatum:\n4-12-2024\n\nAuteurs: \nArt Ligthart\n\nWijzigingen: \n-\n\nPublieke samenvatting\n\n……\n\nInhoud\nDocumenthistorie\t2\nPublieke samenvatting\t2\n1\tInleiding\t4\n1.1\tAanleiding\t4\n1.2\tDoelstelling\t4\n1.3\tBeoogd effect\t4\n1.4\tOpdrachtgever en -nemer\t4\n1.5\tTotstandkoming\t4\n2\tUitgangspunten\t4\n2.1\tArchitectuurprincipes\t4\n2.2\tEisen en maatregelen\t4\n2.2.1\tFunctionele eisen en maatregelen\t4\n2.3\tTechnische eisen en maatregelen\t6\n3\tGewenste situatie\t7\n3.1\tContext\t7\n3.2\tBusiness-architectuur\t7\n3.3\tInformatie-architectuur\t7\n3.4\tApplicatie-architectuur\t7\n3.5\tInfrastructuur-architectuur\t9\n\nInleiding\nIn dit document wordt de architectuur beschreven die past bij het project Proefopstelling Werkomgeving van de Toekomst.\n\nAanleiding\n\nDoelstelling\n\nBeoogd effect\n\nOpdrachtgever en -nemer\n\nTotstandkoming\n·  betrokkenen\n· relaties met andere projecten\n·\n\nUitgangspunten\n\nArchitectuurprincipes\n\nBSW architectuur\nDe architectuur moet een detaillering en concretisering zijn van de BSW Architectuur.\n\nOns voorstel is om de architectuur samen met de BSW architecten te verdiepen\n\nEisen en maatregelen\n\nHieronder worden de belangrijkste eisen beschreven die aan de proefopstelling worden gesteld, alsmede de maatregelen die in de architectuur genomen worden om hier invulling aan te geven.\n\nFunctionele eisen en maatregelen\n\nFE1. Gebruikersbeleving creëren\n· apart startscherm realiseren, conform de mockups;\n· werkende AI-functies realiseren, die zichtbaar zijn voor gebruikers;\n· een werkende digitale assistent toevoegen: deze wordt in project Wegwijs in Regels gerealiseerd;\n· opleveren als werkende proefopstelling, in een Experience Lab te testen door gebruikers.\n\nFE2. Conform aan NL/EU wet- en regelgeving\n· architectuur uitwerken tot op solution architectuur niveau (technische componenten);\n· hiermee samen met juridische experts beschrijven hoe conformiteit aan de wet- en regelgeving gerealiseerd kan worden (AVG, AI Act, AIIA, richtlijnen voor GenAI en Algoritmeregister); \n· speciale aandacht voor herleidbaarheid en uitlegbaarheid van het toepassen van de informatiewetten AVG, Woo en Archiefwet bij het metadateren van informatieobjecten.\n\nFE3. Metadateren van informatieobjecten t.b.v. afhandelen van Woo-verzoeken. \n· AI-functies realiseren die informatieobjecten op verschillende manieren metadateren t.b.v. de Woo, zowel bij het ontstaan als bij reeds bestaande informatieobjecten;\n· inzichtelijk maken aan gebruikers dat de AI-functies metadata toevoegen waarmee Woo-verzoeken sneller kunnen worden afgehandeld, zoals dossiernummer, onderwerpen, wettelijk domein, maatschappelijk thema, betrokken organisatie.\n\nFE4. Metadateren van informatieobjecten conform een selectielijst t.b.v. automatisch archiveren \n· AI-functies realiseren die informatieobjecten op verschillende manieren metadateren t.b.v. archiveren, waarbij als input gebruik wordt gemaakt van de Archiefwet, archiefbeleid, werkinstructies of procedures en uiteraard de selectielijst; \n· inzichtelijk maken aan gebruikers dat de AI-functies metadata toevoegen zoals bewaartermijn, vernietigingstermijn, overdrachtsmoment, type document, documentcode e.a.;\n· een geautomatiseerd archiveringsproces realiseren of mocken waarin metadata van informatieobjecten in MS Teams worden gebruikt om automatisch te archiveren in het DMS.\n\nFE5. Aanleggen van een virtueel dossier over dossiers heen \n· inzet van de open source zoekmachine Elastic Search waarin alle informatieobjecten full-text worden geïndexeerd en vervolgens met de AI-functies gemetadateerd;\n· gebruikers kunnen zelf ook aanvullende metadata toevoegen, bijv. de identificatie van het Woo-dossier waar ze aan werken; via die metadata kan afgeleid worden dat de informatieobjecten deel uitmaken van het onderhanden virtuele Woo-dossier. De informatieobjecten worden niet verplaatst of gekopieerd, maar alleen aanvullend gemetadateerd.\n\nFE6. Een digitale assistent die zaakgerelateerde vragen over Archiefwet en Woo kan beantwoorden\n· Integreren van de digitale assistent die in het project Wegwijs in Regels wordt gerealiseerd; deze is gebaseerd op de onderstaande uitgangspunten;\n· knowledge graphs, waarin de informatiewetten Woo, Archiefwet en AVG zijn gemodelleerd;\n· combineren van die knowledge graphs met verschillende soorten AI (GraphRAG);\n\nFE7. Indexeren van bestaande documenten en metadata toevoegen \n· inzet van de open source zoekmachine Elastic Search; deze laadt (‘ingest’) informatieobjecten uit allerlei bronnen en doet full-text indexering;\n· AI-functies realiseren die de inhoud van deze indexen gebruikt om metadata toe te voegen aan de informatieobjecten, en op te slaan in Elastic Search.\n\nFE8. Bestaande documenten ontdubbelen. \n· AI-functies realiseren die documenten kunnen analyseren op metadata en inhoud, ongeacht documentformaat, en bepalen of een document vaker dan 1 keer voorkomt en zo ontdubbelen;\n· optioneel een AI-functie realiseren die verschillende versies van één document (bijv. 0.1, 0.2, 0.9, 1.0) kan vinden en op een tijdslijn kan plaatsen.\n\nTechnische eisen en maatregelen\n\nTE1. Open source technologie \n· open source technologie voor Startscherm: Java React\n· open source technologie voor de AI-functies: \n· Large Language Models: voldoen door hun inherente opzet niet aan de open source criteria. Radboud Universiteit heeft recent een wetenschappelijk paper gepubliceerd (“Rethinking open source generative AI: open-washing and the EU AI Act”, Liesenfeld, A., & Dingemanse, M. - 2024) met 14 criteria om toch het open-sourcegehalte van LLMs te kunnen vaststellen. Daarin wordt aangetoond dat er nog geen LLMs zijn die aan alle criteria voldoen; 2 onbekende LLMs scoren relatief goed; de bekende Amerikaanse LLMs scoren erg slecht. De keuze voor een LLM kunnen we daarom tijdens het project samen maken, waarbij een criterium zou kunnen zijn om een LLM te kiezen die relatief open is.  \n· technologie voor integratie met de commerciële applicaties in de werkomgeving (o.a. MS Teams, Office apps, DMS): kiezen i.s.m. applicatiebeheerders van de Werkomgeving (SSC-ICT).\n\nTE2. Open standaarden\n· verplichte open standaarden voor de publieke sector van Forum Standaardisatie, onder meer de standaarden BWB, ECLI en SKOS;\n· de standaarden van NORA Online m.b.t. Project Start Architectuur en op onderdelen verdiept worden tot het niveau van een Solution Architectuur\n\nTE3. Onafhankelijk afwegingen maken van mogelijke oplossingen en scenario’s \n· een component-gebaseerde architectuur, waarin keuzes zijn te maken, zowel voor functionaliteit als voor de technische componenten;\n· ook m.b.t. inzet van AI, zoals indexering, databases, LLM, machine learning technieken, inzet van knowledge graphs, algoritmes, de exacte instelling en configuratie, het gebruik van data, e.a.;  \n· keuzes onderbouwen met voor- en nadelen.\n\nTE4. Aantonen maakbaarheid en haalbaarheid\n· de architectuur gaat uit van een oplossing die in principe ook in productie kan worden genomen, dus conform alle vigerende eisen;\n· in de testfase wordt de technische maakbaarheid aangetoond; tijdens het project zal afgestemd worden aan welke eisen minder aandacht zal worden gegeven (omdat algemeen bekend is hoe deze kunnen worden vormgegeven en geïmplementeerd) en welke eisen juist méér aandacht moeten krijgen en om een bewuste vormgeving vragen (bijv. omdat deze specifiek gelden voor de inzet van AI). \n· De haalbaarheid wordt door verschillende factoren beïnvloed, zoals beschikbaarheid van de benodigde kennis (wet- en regelgeving, omzetten naar een architectuur, aantonen conformiteit, voldoen aan eisen als herleidbaarheid, uitlegbaarheid), organisatorische consequenties (nieuwe rollen, kennis en kunde) de complexiteit van de oplossing (modellering, AI-functionaliteit, beheerbaarheid) en ook kosten (is er een business case, kosten vs. baten). De haalbaarheid zullen we expliciet meenemen in het project en aan het einde evalueren.\n\nTE5. Aantonen opschaalbaarheid \n· Inzet van een Docker containerplatform met deployment op Azure (o.a. door de benodigde integratie met MS Teams en andere Office apps);\n· Dit cloud-gebaseerd containerplatform is inherent voorbereid op opschaalbaarheid. In de testfase kan de opschaalbaarheid worden aangetoond.\n\nGewenste situatie\n\nContext\n\nBusiness-architectuur\nProcessen, gebruikers en use cases\n\nInformatie-architectuur\n\nApplicatie-architectuur\n\nApplicaties in de proefopstelling \nIn de komende releases van de Werkomgeving van de Toekomst zijn momenteel de volgende applicaties voorzien: \n· Microsoft365 (Teams wordt nu uitgerold, de andere Office apps waren al beschikbaar, oa Outlook, Word, PowerPoint, Excel en SharePoint);\n· DocGen (wordt momenteel herbouwd als plug-in binnen M365); \n· DigiDoc (op FileNet gebaseerd archiefsysteem)\n· Advanced Search (OpenText Idol).\n\nIn de proefopstelling installeren we niet al deze applicaties, om verschillende redenen: de technische complexiteit, de doorlooptijd, lopende ontwikkelingen (zo is AS nog in ontwikkeling, en hetzelfde geldt ook voor de koppeling tussen M365 en FileNet via de integratielaag). We kiezen daarom bewust een minimale variant, die voldoende is om de projectdoelstellingen te halen:\n· Startscherm (te realiseren);\n· M365\n· AI-platform, incl de open source zoekmachine Elastic Search (te realiseren). \n· DocGen (FileNet): niet installeren, de koppeling tussen M365 en DocGen is nog in ontwikkeling bij SSC-ICT; we kunnen DocGen simuleren, door niet de documenten zelf te verwerken maar de inhoud van de documenten te gebruiken, en die is opgenomen in de zoekindexen van de zoekmachine.\n· Advanced Search (Open Text Ido): niet installeren, de ontwikkeling van AS loopt nog. We zetten ES in om AS te simuleren. In ES kunnen we indexen aanleggen van documenten die normaal in een DMS zoals FileNet staan.\n\nStartscherm \nHet Startscherm is een dunne laag bovenop andere applicaties en wordt door BSW gezien als een doorontwikkeling van Rijksportaal richting een veel meer persoonlijk ‘Werkportaal’. Door RvIHH zijn hier al mockups van gemaakt. Een gebruiker logt in (inlogscherm) en komt op een overzichtsscherm waarin nieuwsberichten op maat staan (nieuws uit Rijksportaal), de belangrijkste dossiers waar hij/haar aan werkt (uit Teams), de taken/activiteiten voor die dag (uit Teams en Outlook), een zoekfunctie (voor dit project wordt dat onze eigen oplossing, dus niet Open Text Idol), nieuwe ontwikkelingen in dossiers waaraan gewerkt wordt (signaleringen uit Teams). Op het scherm ziet de gebruiker ook icons van de belangrijkste applicaties, de Rijksadresgids, en kan ook doorklikken naar een gebruikersprofiel.\n\nWelke functionaliteit het Startscherm gaat bevatten wordt nader afgestemd met BSW en de Gebruikersgroep. Samen met BSW en de Gebruikersgroep zal ook worden bepaald op welke manier de werking van de AI-functies inzichtelijk gemaakt kan worden aan de gebruikers in of via het Startscherm.\n\nTechnisch wordt het Startscherm gerealiseerd met open source technologie, ons voorstel is Remix (een open source full stack web framework) en React (een open source JavaScript library). Er zijn ook andere opties, dit kunnen we nader invullen in afstemming met BSW. Er wordt ook nader afgestemd welke integraties technisch gerealiseerd worden, en welke gemockt (in die gevallen dat technische integratie complex en duur zijn en deze niet per se bijdragen aan het doel van het project).\n\nAI-platform\nEr worden AI-functies gerealiseerd die de informatieobjecten (documenten, chats, emails, ..) voorzien van metadata, voor verschillende doeleinden: automatisch archiveren, doorzoekbaar maken in het kader van de Woo, e.a.\n\nDe ingelezen informatieobjecten worden ingelezen en full-text geindexeerd door Elastic Search. Vervolgens worden er AI-technieken toegepast op de inhoud van deze indexen die de metadata genereren. Deze metadata wordt vervolgens apart opgeslagen.\n\nVoor de digitale assistent geldt een andere architectuur; de chat-interface zal gebaseerd worden op knowledge graphs waarin de taxonomieën, structuur, samenhang en meta-informatie van de informatiewetten wordt gemodelleerd. De digitale assistent wordt in het project Wegwijs in Regels gerealiseerd.\n\nVoor de AI-functies wordt een open source platform ingericht. Hieronder staat een gedetailleerde architectuurvisualisatie van een mogelijke invulling, gebaseerd op ons eigen AI-platform Ally. Hieruit zullen we een selectie maken van componenten die nodig zijn t.b.v. de AI-functies in dit project:\n\nBeoogde koppelingen \nDe volgende koppelingen worden gerealiseerd:\n· Startscherm <> Microsoft Graph API van M365: o.a. om de dossiers van de ingelogde gebruiker op te halen, de afspraken voor die dag, etc\n· Startscherm <> API van het AI-platform: o.a. om te zoeken via Elastic Search, of om metadata op te halen.\n· AI-platform <> Microsoft Graph API van M365: o.a. om nieuwe en gewijzigde informatieobjecten in M365 over te nemen en daarna te metadateren;\n· AI-platform <> fileshare of DMS: om documenten te kunnen laden (‘ingest’) en full-text te indexeren in Elastic Search.\n\nInfrastructuur-architectuur\n\nOmgeving: \n· cloud-based containerplatform op Azure;\n· Startscherm;\n· M365\n· AI-platform\n· Elastic Search. \n· DMS: niet installeren, de inhoud van het DMS (de documenten) staat in de zoekindexen van ES\n· Zoek & Vind/ Advanced Search: niet installeren; ES inzetten om deze te simuleren.\n\nHosting:\n· Azure\n· tijdelijke licenties (voor een maximum aantal gebruikers, we gaan uit van 10);\n· kosten voor CPU’s, geheugen en eventuele kosten van een commercieel LLM: stelpost van 15.000 euro excl. btw voor op. \n· in overleg gaan met BSW en SSC-ICT of het toch mogelijk is om aan te sluiten bij één van de testomgevingen van BSW, of om (een deel van de proefopstelling) tijdens de ontwikkelfase bij Y.digital te hosten maar na afloop of op enig moment over te zetten naar een testomgeving bij SSC-ICT.\n\n2\n\nimage1.png\n\n",
+				"paragraphs": [
+					{
+						"id": 0,
+						"text": "Architectuur"
+					},
+					{
+						"id": 1,
+						"text": "Proefopstelling Werkomgeving van de Toekomst"
+					},
+					{
+						"id": 2,
+						"text": "<< visualisatie >>"
+					},
+					{
+						"id": 3,
+						"text": "Versie: 4 december 2024"
+					},
+					{
+						"id": 4,
+						"text": "Documenthistorie"
+					},
+					{
+						"id": 5,
+						"text": "Datum: 4-12-2024"
+					},
+					{
+						"id": 6,
+						"text": "Auteurs: Art Ligthart"
+					},
+					{
+						"id": 7,
+						"text": "Wijzigingen: -"
+					},
+					{
+						"id": 8,
+						"text": "Publieke samenvatting"
+					},
+					{
+						"id": 9,
+						"text": "……"
+					},
+					{
+						"id": 10,
+						"text": "Inhoud Documenthistorie 2 Publieke samenvatting 2 1 Inleiding 4 1.1 Aanleiding 4 1.2 Doelstelling 4 1.3 Beoogd effect 4 1.4 Opdrachtgever en -nemer 4 1.5 Totstandkoming 4 2 Uitgangspunten 4 2.1 Architectuurprincipes 4 2.2 Eisen en maatregelen 4 2.2.1 Functionele eisen en maatregelen 4 2.3 Technische eisen en maatregelen 6 3 Gewenste situatie 7 3.1 Context 7 3.2 Business-architectuur 7 3.3 Informatie-architectuur 7 3.4 Applicatie-architectuur 7 3.5 Infrastructuur-architectuur 9"
+					},
+					{
+						"id": 11,
+						"text": "Inleiding In dit document wordt de architectuur beschreven die past bij het project Proefopstelling Werkomgeving van de Toekomst."
+					},
+					{
+						"id": 12,
+						"text": "Aanleiding"
+					},
+					{
+						"id": 13,
+						"text": "Doelstelling"
+					},
+					{
+						"id": 14,
+						"text": "Beoogd effect"
+					},
+					{
+						"id": 15,
+						"text": "Opdrachtgever en -nemer"
+					},
+					{
+						"id": 16,
+						"text": "Totstandkoming · betrokkenen · relaties met andere projecten ·"
+					},
+					{
+						"id": 17,
+						"text": "Uitgangspunten"
+					},
+					{
+						"id": 18,
+						"text": "Architectuurprincipes"
+					},
+					{
+						"id": 19,
+						"text": "BSW architectuur De architectuur moet een detaillering en concretisering zijn van de BSW Architectuur."
+					},
+					{
+						"id": 20,
+						"text": "Ons voorstel is om de architectuur samen met de BSW architecten te verdiepen"
+					},
+					{
+						"id": 21,
+						"text": "Eisen en maatregelen"
+					},
+					{
+						"id": 22,
+						"text": "Hieronder worden de belangrijkste eisen beschreven die aan de proefopstelling worden gesteld, alsmede de maatregelen die in de architectuur genomen worden om hier invulling aan te geven."
+					},
+					{
+						"id": 23,
+						"text": "Functionele eisen en maatregelen"
+					},
+					{
+						"id": 24,
+						"text": "FE1. Gebruikersbeleving creëren · apart startscherm realiseren, conform de mockups; · werkende AI-functies realiseren, die zichtbaar zijn voor gebruikers; · een werkende digitale assistent toevoegen: deze wordt in project Wegwijs in Regels gerealiseerd; · opleveren als werkende proefopstelling, in een Experience Lab te testen door gebruikers."
+					},
+					{
+						"id": 25,
+						"text": "FE2. Conform aan NL/EU wet- en regelgeving · architectuur uitwerken tot op solution architectuur niveau (technische componenten); · hiermee samen met juridische experts beschrijven hoe conformiteit aan de wet- en regelgeving gerealiseerd kan worden (AVG, AI Act, AIIA, richtlijnen voor GenAI en Algoritmeregister); · speciale aandacht voor herleidbaarheid en uitlegbaarheid van het toepassen van de informatiewetten AVG, Woo en Archiefwet bij het metadateren van informatieobjecten."
+					},
+					{
+						"id": 26,
+						"text": "FE3. Metadateren van informatieobjecten t.b.v. afhandelen van Woo-verzoeken. · AI-functies realiseren die informatieobjecten op verschillende manieren metadateren t.b.v. de Woo, zowel bij het ontstaan als bij reeds bestaande informatieobjecten; · inzichtelijk maken aan gebruikers dat de AI-functies metadata toevoegen waarmee Woo-verzoeken sneller kunnen worden afgehandeld, zoals dossiernummer, onderwerpen, wettelijk domein, maatschappelijk thema, betrokken organisatie."
+					},
+					{
+						"id": 27,
+						"text": "FE4. Metadateren van informatieobjecten conform een selectielijst t.b.v. automatisch archiveren · AI-functies realiseren die informatieobjecten op verschillende manieren metadateren t.b.v. archiveren, waarbij als input gebruik wordt gemaakt van de Archiefwet, archiefbeleid, werkinstructies of procedures en uiteraard de selectielijst; · inzichtelijk maken aan gebruikers dat de AI-functies metadata toevoegen zoals bewaartermijn, vernietigingstermijn, overdrachtsmoment, type document, documentcode e.a.; · een geautomatiseerd archiveringsproces realiseren of mocken waarin metadata van informatieobjecten in MS Teams worden gebruikt om automatisch te archiveren in het DMS."
+					},
+					{
+						"id": 28,
+						"text": "FE5. Aanleggen van een virtueel dossier over dossiers heen · inzet van de open source zoekmachine Elastic Search waarin alle informatieobjecten full-text worden geïndexeerd en vervolgens met de AI-functies gemetadateerd; · gebruikers kunnen zelf ook aanvullende metadata toevoegen, bijv. de identificatie van het Woo-dossier waar ze aan werken; via die metadata kan afgeleid worden dat de informatieobjecten deel uitmaken van het onderhanden virtuele Woo-dossier. De informatieobjecten worden niet verplaatst of gekopieerd, maar alleen aanvullend gemetadateerd."
+					},
+					{
+						"id": 29,
+						"text": "FE6. Een digitale assistent die zaakgerelateerde vragen over Archiefwet en Woo kan beantwoorden · Integreren van de digitale assistent die in het project Wegwijs in Regels wordt gerealiseerd; deze is gebaseerd op de onderstaande uitgangspunten; · knowledge graphs, waarin de informatiewetten Woo, Archiefwet en AVG zijn gemodelleerd; · combineren van die knowledge graphs met verschillende soorten AI (GraphRAG);"
+					},
+					{
+						"id": 30,
+						"text": "FE7. Indexeren van bestaande documenten en metadata toevoegen · inzet van de open source zoekmachine Elastic Search; deze laadt (‘ingest’) informatieobjecten uit allerlei bronnen en doet full-text indexering; · AI-functies realiseren die de inhoud van deze indexen gebruikt om metadata toe te voegen aan de informatieobjecten, en op te slaan in Elastic Search."
+					},
+					{
+						"id": 31,
+						"text": "FE8. Bestaande documenten ontdubbelen. · AI-functies realiseren die documenten kunnen analyseren op metadata en inhoud, ongeacht documentformaat, en bepalen of een document vaker dan 1 keer voorkomt en zo ontdubbelen; · optioneel een AI-functie realiseren die verschillende versies van één document (bijv. 0.1, 0.2, 0.9, 1.0) kan vinden en op een tijdslijn kan plaatsen."
+					},
+					{
+						"id": 32,
+						"text": "Technische eisen en maatregelen"
+					},
+					{
+						"id": 33,
+						"text": "TE1. Open source technologie · open source technologie voor Startscherm: Java React · open source technologie voor de AI-functies: · Large Language Models: voldoen door hun inherente opzet niet aan de open source criteria. Radboud Universiteit heeft recent een wetenschappelijk paper gepubliceerd (“Rethinking open source generative AI: open-washing and the EU AI Act”, Liesenfeld, A., & Dingemanse, M. - 2024) met 14 criteria om toch het open-sourcegehalte van LLMs te kunnen vaststellen. Daarin wordt aangetoond dat er nog geen LLMs zijn die aan alle criteria voldoen; 2 onbekende LLMs scoren relatief goed; de bekende Amerikaanse LLMs scoren erg slecht. De keuze voor een LLM kunnen we daarom tijdens het project samen maken, waarbij een criterium zou kunnen zijn om een LLM te kiezen die relatief open is. · technologie voor integratie met de commerciële applicaties in de werkomgeving (o.a. MS Teams, Office apps, DMS): kiezen i.s.m. applicatiebeheerders van de Werkomgeving (SSC-ICT)."
+					},
+					{
+						"id": 34,
+						"text": "TE2. Open standaarden · verplichte open standaarden voor de publieke sector van Forum Standaardisatie, onder meer de standaarden BWB, ECLI en SKOS; · de standaarden van NORA Online m.b.t. Project Start Architectuur en op onderdelen verdiept worden tot het niveau van een Solution Architectuur"
+					},
+					{
+						"id": 35,
+						"text": "TE3. Onafhankelijk afwegingen maken van mogelijke oplossingen en scenario’s · een component-gebaseerde architectuur, waarin keuzes zijn te maken, zowel voor functionaliteit als voor de technische componenten; · ook m.b.t. inzet van AI, zoals indexering, databases, LLM, machine learning technieken, inzet van knowledge graphs, algoritmes, de exacte instelling en configuratie, het gebruik van data, e.a.; · keuzes onderbouwen met voor- en nadelen."
+					},
+					{
+						"id": 36,
+						"text": "TE4. Aantonen maakbaarheid en haalbaarheid · de architectuur gaat uit van een oplossing die in principe ook in productie kan worden genomen, dus conform alle vigerende eisen; · in de testfase wordt de technische maakbaarheid aangetoond; tijdens het project zal afgestemd worden aan welke eisen minder aandacht zal worden gegeven (omdat algemeen bekend is hoe deze kunnen worden vormgegeven en geïmplementeerd) en welke eisen juist méér aandacht moeten krijgen en om een bewuste vormgeving vragen (bijv. omdat deze specifiek gelden voor de inzet van AI). · De haalbaarheid wordt door verschillende factoren beïnvloed, zoals beschikbaarheid van de benodigde kennis (wet- en regelgeving, omzetten naar een architectuur, aantonen conformiteit, voldoen aan eisen als herleidbaarheid, uitlegbaarheid), organisatorische consequenties (nieuwe rollen, kennis en kunde) de complexiteit van de oplossing (modellering, AI-functionaliteit, beheerbaarheid) en ook kosten (is er een business case, kosten vs. baten). De haalbaarheid zullen we expliciet meenemen in het project en aan het einde evalueren."
+					},
+					{
+						"id": 37,
+						"text": "TE5. Aantonen opschaalbaarheid · Inzet van een Docker containerplatform met deployment op Azure (o.a. door de benodigde integratie met MS Teams en andere Office apps); · Dit cloud-gebaseerd containerplatform is inherent voorbereid op opschaalbaarheid. In de testfase kan de opschaalbaarheid worden aangetoond."
+					},
+					{
+						"id": 38,
+						"text": "Gewenste situatie"
+					},
+					{
+						"id": 39,
+						"text": "Context"
+					},
+					{
+						"id": 40,
+						"text": "Business-architectuur Processen, gebruikers en use cases"
+					},
+					{
+						"id": 41,
+						"text": "Informatie-architectuur"
+					},
+					{
+						"id": 42,
+						"text": "Applicatie-architectuur"
+					},
+					{
+						"id": 43,
+						"text": "Applicaties in de proefopstelling In de komende releases van de Werkomgeving van de Toekomst zijn momenteel de volgende applicaties voorzien: · Microsoft365 (Teams wordt nu uitgerold, de andere Office apps waren al beschikbaar, oa Outlook, Word, PowerPoint, Excel en SharePoint); · DocGen (wordt momenteel herbouwd als plug-in binnen M365); · DigiDoc (op FileNet gebaseerd archiefsysteem) · Advanced Search (OpenText Idol)."
+					},
+					{
+						"id": 44,
+						"text": "In de proefopstelling installeren we niet al deze applicaties, om verschillende redenen: de technische complexiteit, de doorlooptijd, lopende ontwikkelingen (zo is AS nog in ontwikkeling, en hetzelfde geldt ook voor de koppeling tussen M365 en FileNet via de integratielaag). We kiezen daarom bewust een minimale variant, die voldoende is om de projectdoelstellingen te halen: · Startscherm (te realiseren); · M365 · AI-platform, incl de open source zoekmachine Elastic Search (te realiseren). · DocGen (FileNet): niet installeren, de koppeling tussen M365 en DocGen is nog in ontwikkeling bij SSC-ICT; we kunnen DocGen simuleren, door niet de documenten zelf te verwerken maar de inhoud van de documenten te gebruiken, en die is opgenomen in de zoekindexen van de zoekmachine. · Advanced Search (Open Text Ido): niet installeren, de ontwikkeling van AS loopt nog. We zetten ES in om AS te simuleren. In ES kunnen we indexen aanleggen van documenten die normaal in een DMS zoals FileNet staan."
+					},
+					{
+						"id": 45,
+						"text": "Startscherm Het Startscherm is een dunne laag bovenop andere applicaties en wordt door BSW gezien als een doorontwikkeling van Rijksportaal richting een veel meer persoonlijk ‘Werkportaal’. Door RvIHH zijn hier al mockups van gemaakt. Een gebruiker logt in (inlogscherm) en komt op een overzichtsscherm waarin nieuwsberichten op maat staan (nieuws uit Rijksportaal), de belangrijkste dossiers waar hij/haar aan werkt (uit Teams), de taken/activiteiten voor die dag (uit Teams en Outlook), een zoekfunctie (voor dit project wordt dat onze eigen oplossing, dus niet Open Text Idol), nieuwe ontwikkelingen in dossiers waaraan gewerkt wordt (signaleringen uit Teams). Op het scherm ziet de gebruiker ook icons van de belangrijkste applicaties, de Rijksadresgids, en kan ook doorklikken naar een gebruikersprofiel."
+					},
+					{
+						"id": 46,
+						"text": "Welke functionaliteit het Startscherm gaat bevatten wordt nader afgestemd met BSW en de Gebruikersgroep. Samen met BSW en de Gebruikersgroep zal ook worden bepaald op welke manier de werking van de AI-functies inzichtelijk gemaakt kan worden aan de gebruikers in of via het Startscherm."
+					},
+					{
+						"id": 47,
+						"text": "Technisch wordt het Startscherm gerealiseerd met open source technologie, ons voorstel is Remix (een open source full stack web framework) en React (een open source JavaScript library). Er zijn ook andere opties, dit kunnen we nader invullen in afstemming met BSW. Er wordt ook nader afgestemd welke integraties technisch gerealiseerd worden, en welke gemockt (in die gevallen dat technische integratie complex en duur zijn en deze niet per se bijdragen aan het doel van het project)."
+					},
+					{
+						"id": 48,
+						"text": "AI-platform Er worden AI-functies gerealiseerd die de informatieobjecten (documenten, chats, emails, ..) voorzien van metadata, voor verschillende doeleinden: automatisch archiveren, doorzoekbaar maken in het kader van de Woo, e.a."
+					},
+					{
+						"id": 49,
+						"text": "De ingelezen informatieobjecten worden ingelezen en full-text geindexeerd door Elastic Search. Vervolgens worden er AI-technieken toegepast op de inhoud van deze indexen die de metadata genereren. Deze metadata wordt vervolgens apart opgeslagen."
+					},
+					{
+						"id": 50,
+						"text": "Voor de digitale assistent geldt een andere architectuur; de chat-interface zal gebaseerd worden op knowledge graphs waarin de taxonomieën, structuur, samenhang en meta-informatie van de informatiewetten wordt gemodelleerd. De digitale assistent wordt in het project Wegwijs in Regels gerealiseerd."
+					},
+					{
+						"id": 51,
+						"text": "Voor de AI-functies wordt een open source platform ingericht. Hieronder staat een gedetailleerde architectuurvisualisatie van een mogelijke invulling, gebaseerd op ons eigen AI-platform Ally. Hieruit zullen we een selectie maken van componenten die nodig zijn t.b.v. de AI-functies in dit project:"
+					},
+					{
+						"id": 52,
+						"text": "Beoogde koppelingen De volgende koppelingen worden gerealiseerd: · Startscherm <> Microsoft Graph API van M365: o.a. om de dossiers van de ingelogde gebruiker op te halen, de afspraken voor die dag, etc · Startscherm <> API van het AI-platform: o.a. om te zoeken via Elastic Search, of om metadata op te halen. · AI-platform <> Microsoft Graph API van M365: o.a. om nieuwe en gewijzigde informatieobjecten in M365 over te nemen en daarna te metadateren; · AI-platform <> fileshare of DMS: om documenten te kunnen laden (‘ingest’) en full-text te indexeren in Elastic Search."
+					},
+					{
+						"id": 53,
+						"text": "Infrastructuur-architectuur"
+					},
+					{
+						"id": 54,
+						"text": "Omgeving: · cloud-based containerplatform op Azure; · Startscherm; · M365 · AI-platform · Elastic Search. · DMS: niet installeren, de inhoud van het DMS (de documenten) staat in de zoekindexen van ES · Zoek & Vind/ Advanced Search: niet installeren; ES inzetten om deze te simuleren."
+					},
+					{
+						"id": 55,
+						"text": "Hosting: · Azure · tijdelijke licenties (voor een maximum aantal gebruikers, we gaan uit van 10); · kosten voor CPU’s, geheugen en eventuele kosten van een commercieel LLM: stelpost van 15.000 euro excl. btw voor op. · in overleg gaan met BSW en SSC-ICT of het toch mogelijk is om aan te sluiten bij één van de testomgevingen van BSW, of om (een deel van de proefopstelling) tijdens de ontwikkelfase bij Y.digital te hosten maar na afloop of op enig moment over te zetten naar een testomgeving bij SSC-ICT."
+					},
+					{
+						"id": 56,
+						"text": "2"
+					},
+					{
+						"id": 57,
+						"text": "image1.png"
+					}
+				],
+				"accessible_to_users": [
+					"c5c70443-e0b5-4123-8c79-121a92a9e75f",
+					"4b79227a-dd32-48ca-a7a2-94dea10fab5b",
+					"47b1d9b9-dfc8-4fb0-8d77-b762cbde22a9"
+				],
+				"dossier_id": "b!ShOLWciZM0u6vO64TF6eoSd1gOd6-3dGlJMbpupEAK7nevXT7enhSIqzXx2f2RGM",
+				"dossier_name": "Test",
+				"topics": [],
+				"number_pages": "10"
+			}
+		}
+	],
+	"aggregations": {
+		"agg-author": {
+			"doc_count_error_upper_bound": 0,
+			"sum_other_doc_count": 0,
+			"buckets": [
+				{
+					"key": "Anna Dollbo",
+					"doc_count": 1
+				},
+				{
+					"key": "Stefan Wachmann",
+					"doc_count": 1
+				}
+			]
+		},
+		"agg-datetime_published": {
+			"doc_count_error_upper_bound": 0,
+			"sum_other_doc_count": 0,
+			"buckets": [
+				{
+					"key": 1748957928189,
+					"key_as_string": "2025-06-03T13:38:48.189Z",
+					"doc_count": 1
+				},
+				{
+					"key": 1748957929070,
+					"key_as_string": "2025-06-03T13:38:49.070Z",
+					"doc_count": 1
+				}
+			]
+		},
+		"agg-filetype": {
+			"doc_count_error_upper_bound": 0,
+			"sum_other_doc_count": 0,
+			"buckets": [
+				{
+					"key": "Word",
+					"doc_count": 2
+				}
+			]
+		},
+		"agg-created_date": {
+			"doc_count_error_upper_bound": 0,
+			"sum_other_doc_count": 0,
+			"buckets": [
+				{
+					"key": 1733301060000,
+					"key_as_string": "2024-12-04T08:31:00.000Z",
+					"doc_count": 1
+				},
+				{
+					"key": 1746710479000,
+					"key_as_string": "2025-05-08T13:21:19.000Z",
+					"doc_count": 1
+				}
+			]
+		},
+		"agg-dossier_name": {
+			"doc_count_error_upper_bound": 0,
+			"sum_other_doc_count": 0,
+			"buckets": [
+				{
+					"key": "Test",
+					"doc_count": 1
+				}
+			]
+		}
+	}
+}

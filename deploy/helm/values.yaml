@@ -1,0 +1,431 @@
+# Default values for bsw.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Determines if the cluster is run on a local machine, or on a cloud provider.
+skaffold: false
+
+imageTag: &tag 0.1.0
+
+# Image pull secrets for private registries and Docker Hub rate limiting
+imagePullSecrets:
+  # Uncomment and configure as needed:
+  - name: dockerhub-secret        # For Docker Hub authentication (use setup-dockerhub-auth.sh)
+  - name: ydigitalregistry        # For your private registry
+  # Add more secrets as needed
+
+imagePullPolicy: IfNotPresent
+
+storageClass: "standard"
+
+networkPolicies:
+  enabled: false
+
+auth:
+  keycloak:
+    enabled: true
+    publicUrl: https://keycloak.localhost:8443
+    internalUrl: http://bsw-keycloak:8081
+    realm: bsw-realm
+    clientId: bsw-client
+    ingress:
+      enabled: true
+      host: keycloak.localhost
+      tls:
+        enabled: true
+        secretName: bsw-tls-secret
+
+frontend:
+  image:
+    tag: *tag
+    repository: ydigital.azurecr.io/frontend
+    pullPolicy: IfNotPresent # default PullPolicy
+  enabled: true
+  # External URL configuration for browser access
+  nextcloud:
+    externalUrl: "http://nextcloud.localhost:8080" # overwritten if nextcloud.enabled is true
+  resources:
+    requests:
+      memory: "1Gi"
+      cpu: "500m"
+    limits:
+      memory: "2Gi"
+      cpu: "1000m"
+  ingress:
+    enabled: true
+    host: frontend.localhost
+    tls:
+      enabled: true
+      secretName: bsw-tls-secret
+
+
+api:
+  loglevel: DEBUG
+  image:
+    tag: *tag
+    repository: ydigital.azurecr.io/api
+    pullPolicy: IfNotPresent # default PullPolicy
+  storage:
+    storageAccountConnectionString: ""
+  huggingface:
+    token: ""
+  llm:
+    default_llm: vlam # mistral # gpt
+    gpt:
+      deploymentName: gpt-4o-mini
+      apiVersion: 2024-08-01-preview
+      endpoint: https://ally-gpt.openai.azure.com/
+      embeddings:
+        modelName: text-embedding-3-large
+        apiVersion: "2024-09-01-preview"
+        endpoint: https://ally-gpt4.openai.azure.com
+    mistral:
+      deploymentName: mistral-medium-latest
+    vlam:
+      modelName: "ubiops-deployment/bzk-bsw-chat//chat-model"
+      VLAM_BASE_URL: "https://api.demo.vlam.ai/v2.1/projects/poc/openai-compatible/v1"
+      # temperature: 0.7 # TODO: add to values, deployment, and code if needed
+      # max_tokens: 2000 # TODO: add to values, deployment, and code if needed
+      # stream_usage: true # TODO: add to values, deployment, and code if needed
+
+  env:
+    - name: GRAPHDB_URL
+      value: "http://fuseki-service:3030"
+
+nextcloud_ingestor:
+  loglevel: DEBUG
+  enabled: true
+  runAsDeployment: true # Set to false for CronJob
+  image:
+    tag: *tag
+    repository: ydigital.azurecr.io/nextcloud_ingestor
+    pullPolicy: IfNotPresent
+  content:
+    replicas: 2
+  resources:
+    requests:
+      ephemeral-storage: 1Gi
+    limits:
+      ephemeral-storage: 2Gi
+  nextcloud:
+    enabled: true
+    nextcloud_url: http://nextcloud.localhost:8080  # Will be overridden if nextcloud.enabled is true
+    nextcloud_dossier_parent_path: Dossiers
+    # External NextCloud configuration (for development with docker-compose)
+    external:
+      enabled: false  # Set to true to connect to external NextCloud (docker-compose)
+      ip: "192.168.1.100"  # Replace with actual host IP where NextCloud is running
+      port: 8080
+      # When enabled, the nextcloud_url will be automatically set to use the service
+  
+  # Database configuration for ingestor state management
+  database:
+    name: nextcloud_ingestor
+  
+  # Initial full ingestion job that runs at installation/upgrade
+  initJob:
+    enabled: true
+    dryRun: false
+    waitForNextcloud: false # Will be automatically set to true if nextcloud.enabled is true
+    useHook: false # Set to true to run as Helm hook, false to run as regular job
+    hookFailurePolicy: "ignore" # Options: ignore, fail (only used if useHook is true)
+    hookDeletePolicy: "before-hook-creation" # Don't auto-delete on success for debugging
+    backoffLimit: 1 # Reduced from 3 - if it fails once, don't retry
+    ttlSecondsAfterFinished: 600 # 10 minutes
+    activeDeadlineSeconds: 7200 # 2 hours timeout for the entire job (increased for slow ES startup)
+    restartPolicy: OnFailure
+    resources:
+      requests:
+        memory: "512Mi"
+        cpu: "250m"
+        ephemeral-storage: 1Gi
+      limits:
+        memory: "2Gi"
+        cpu: "1000m"
+        ephemeral-storage: 2Gi
+  cronjobs:
+    full:
+      enabled: true # Enable full ingestion cronjob
+      # Run weekly for full reindexing
+      schedule: "0 2 * * 0" # Every Sunday at 2 AM
+      suspend: false
+      dryRun: false
+      backoffLimit: 1
+      ttlSecondsAfterFinished: 300 # 5 minutes
+      successfulJobsHistoryLimit: 3
+      failedJobsHistoryLimit: 1
+      restartPolicy: OnFailure
+      resources:
+        requests:
+          memory: "512Mi"
+          cpu: "250m"
+          ephemeral-storage: 1Gi
+        limits:
+          memory: "2Gi"
+          cpu: "1000m"
+          ephemeral-storage: 2Gi
+    incremental:
+      enabled: true # Enable incremental ingestion cronjob
+      # Run every minute (closest to 30 seconds with standard cron)
+      schedule: "* * * * *" # Every minute
+      suspend: false
+      dryRun: false
+      backoffLimit: 0 # Don't retry on failure for frequent jobs
+      ttlSecondsAfterFinished: 60 # 1 minute - clean up quickly for frequent jobs
+      successfulJobsHistoryLimit: 3
+      failedJobsHistoryLimit: 1
+      restartPolicy: OnFailure
+      resources:
+        requests:
+          memory: "256Mi"
+          cpu: "100m"
+          ephemeral-storage: 512Mi
+        limits:
+          memory: "1Gi"
+          cpu: "500m"
+          ephemeral-storage: 1Gi
+  # Alternative to CronJob for more precise timing (every 30 seconds)
+  incrementalScheduler:
+    enabled: false
+    intervalSeconds: 30 # Run every 30 seconds
+    dryRun: false
+    resources:
+      requests:
+        memory: "256Mi"
+        cpu: "100m"
+        ephemeral-storage: 512Mi
+      limits:
+        memory: "1Gi"
+        cpu: "500m"
+        ephemeral-storage: 1Gi
+  # Troubleshooting job for debugging connectivity issues
+  troubleshootJob:
+    enabled: false # Set to true to create a troubleshooting job
+
+
+# sharepoint_ingestor:
+#   enabled: true
+#   runAsDeployment: true # Set to false for CronJob
+#   reindex: false
+#   loglevel: DEBUG
+#   image:
+#     tag: *tag
+#     repository: ydigital.azurecr.io/sharepoint_ingestor
+#     pullPolicy: IfNotPresent
+#   includeDrives: '["https://ydigital.sharepoint.com/sites/ProefopstelingBSW/Shared%20Documents"]'
+#   excludeDrives: "[]"
+#   topics:
+#     enabled: "false"
+#   knn:
+#     enabled: "false"
+#   content:
+#     replicas: 2
+#   resources:
+#     requests:
+#       ephemeral-storage: 1Gi
+#     limits:
+#       ephemeral-storage: 2Gi
+#   ingested_users: '["YOUR_NAME_HERE"]'
+#   includeMailfolders: '["Inbox", "Sent Items"]'
+#   calendar:
+#     enabled: true
+#     calendar_fetch_range: "week" # one of: week, month, 3_months, 6_months
+#   teams:
+#     enabled: true
+#     teams_ids: '["1f881ede-5a01-4c2d-8f5a-def8d0813971"]'
+#     include_private_channels: true
+#     create_dossier_index: true
+#     ingest_site_files: true
+#     ingest_channel_messages: true
+
+fuseki:
+  adminPassword: admin123
+  image:
+    repository: stain/jena-fuseki
+    tag: 5.1.0
+    pullPolicy: IfNotPresent
+
+postgresql:
+  enabled: true
+  image:
+    repository: postgres
+    tag: "15"
+    pullPolicy: IfNotPresent
+  
+  # Authentication configuration
+  auth:
+    database: postgres
+  
+  # Persistence configuration
+  persistence:
+    size: 8Gi
+  
+  # Resource configuration
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "100m"
+    limits:
+      memory: "1Gi"
+      cpu: "500m"
+
+nextcloud:
+  enabled: true
+  image:
+    repository: nextcloud
+    tag: "latest"
+    pullPolicy: IfNotPresent
+  
+  database:
+    name: nextcloud
+  
+  dataDir: /var/www/html/data
+  trustedDomains: "localhost,127.0.0.1,bsw-nextcloud,172.18.0.2:8080,localhost:8080,nextcloud.localhost"
+  
+  # service:
+  #   type: ClusterIP
+  #   port: 80
+  service:
+    type: ClusterIP
+    port: 80
+
+  ingress:
+    enabled: true
+    host: nextcloud.localhost
+
+  persistence:
+    data:
+      size: 8Gi
+    config:
+      size: 1Gi
+  
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "100m"
+    limits:
+      memory: "1Gi"
+      cpu: "500m"
+
+
+elasticsearch:
+  enabled: true
+  # serviceName: elasticsearch
+
+  image:
+    repository: docker.elastic.co/elasticsearch/elasticsearch
+    tag: "8.19.0"
+    pullPolicy: Always
+
+  service:
+    type: ClusterIP
+    httpPort: 9200
+    transportPort: 9300
+
+  main_index:
+    name: bsw-index
+  dossier_index:
+    name: dossier-index
+
+  resources:
+    requests:
+      cpu: "10m"
+      memory: "256"
+    limits:
+      memory: "4Gi"
+      # cpu: "2000m"
+
+  # resources:
+  #   limits:
+  #     memory: "4Gi"
+  #     cpu: "2000m"
+  #   requests:
+  #     memory: "2Gi"
+  #     cpu: "1000m"
+
+  storage:
+    size: 128Gi
+    accessMode: ReadWriteOnce
+
+  env:
+    discoveryType: single-node
+    securityEnabled: "false"
+    javaOpts: "-Xms1g -Xmx1g"
+    clusterName: search-cluster-acc
+    nodeName: search-node-acc
+
+  probes:
+    readiness:
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 3
+      successThreshold: 1
+    liveness:
+      initialDelaySeconds: 60
+      periodSeconds: 30
+      timeoutSeconds: 10
+      failureThreshold: 5
+    startup:
+      initialDelaySeconds: 20
+      periodSeconds: 15
+      timeoutSeconds: 5
+      failureThreshold: 40
+
+  ingest:
+    enabled: false
+    replicaCount: 0
+
+  data:
+    autoscaling:
+      enabled: false
+    replicaCount: 0
+
+  coordinating:
+    autoscaling:
+      enabled: false
+    replicaCount: 0
+
+
+# elasticsearch:
+#   enabled: true
+#   master:
+#     masterOnly: false # <-- required otherwise indexes never get green
+#     autoscaling:
+#       enabled: false
+#     replicaCount: 1
+#     heapSize: 1024m
+#     resources:
+#       requests:
+#         cpu: "10m"
+#         memory: "256"
+#       limits:
+#         memory: "4Gi"
+#   main_index:
+#     name: bsw-index
+#   ingest:
+#     enabled: false
+#     replicaCount: 0
+#   data:
+#     autoscaling:
+#       enabled: false
+#     replicaCount: 0
+#   coordinating:
+#     autoscaling:
+#       enabled: false
+#     replicaCount: 0
+
+ingestion_fails_pv:
+  enabled: false
+
+annotation:
+  cronjob:
+    enabled: true
+    schedule: "*/5 * * * *" # every 5 minutes
+    args:
+      - python
+      - jobs/annotation_job.py
+    image:
+      tag: *tag
+      repository: annotation
+      pullPolicy: IfNotPresent # default PullPolicy

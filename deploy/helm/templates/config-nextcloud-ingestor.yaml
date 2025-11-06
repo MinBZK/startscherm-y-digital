@@ -1,0 +1,20 @@
+{{- if .Values.nextcloud_ingestor.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nextcloud-ingestor-config
+data:
+  {{- if .Values.nextcloud.enabled }}
+  NC_URL: "http://{{ include "bsw.fullname" . }}-nextcloud:{{ .Values.nextcloud.service.port }}"
+  {{- else if .Values.nextcloud_ingestor.nextcloud.external.enabled }}
+  NC_URL: "http://{{ include "bsw.fullname" . }}-nextcloud-external:{{ .Values.nextcloud_ingestor.nextcloud.external.port }}"
+  {{- else }}
+  NC_URL: {{ .Values.nextcloud_ingestor.nextcloud.nextcloud_url | quote }}
+  {{- end }}
+  NC_DOSSIER_PARENT_PATH: {{ .Values.nextcloud_ingestor.nextcloud.nextcloud_dossier_parent_path | quote }}
+  
+  # Database configuration for the ingestor's own state management
+  POSTGRES_HOST: {{ include "bsw.fullname" . }}-postgresql
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: {{ .Values.nextcloud_ingestor.database.name | default "nextcloud_ingestor" | quote }}
+{{- end }}

@@ -1,0 +1,204 @@
+{
+  "week_16": [
+    {
+      "id": "592859",
+      "date": "2025-05-12",
+      "dayOfWeek": "Monday",
+      "events": [
+        {
+          "title": "Daily Standup",
+          "start": {
+            "dateTime": "2025-05-12T09:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-12T09:30:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Alice Johnson",
+          "meetingLocation": "Teams Meeting",
+          "relatedToDossier": "Woo-verzoek over beleid en uitvoering",
+          "link": "https://teams.microsoft.com/l/meetup-join/..."
+        },
+        {
+          "title": "1:1 with Manager",
+          "start": {
+            "dateTime": "2025-05-12T10:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-12T10:30:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Anna Dollbo",
+          "meetingLocation": "In-person",
+          "relatedToDossier": null,
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "75802745430",
+      "date": "2025-05-13",
+      "dayOfWeek": "Tuesday",
+      "events": [
+        {
+          "title": "Daily Standup",
+          "start": {
+            "dateTime": "2025-05-13T09:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-13T09:30:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Alice Johnson",
+          "meetingLocation": "Teams Meeting",
+          "relatedToDossier": null,
+          "link": "https://teams.microsoft.com/l/meetup-join/..."
+        },
+        {
+          "title": "Project Sync",
+          "start": {
+            "dateTime": "2025-05-13T14:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-13T15:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Sven de Boer",
+          "meetingLocation": "Teams Meeting",
+          "relatedToDossier": "Bezwaar op besluit Woo-verzoek",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "7904729",
+      "date": "2025-05-14",
+      "dayOfWeek": "Wednesday",
+      "events": [
+        {
+          "title": "Daily Standup",
+          "start": {
+            "dateTime": "2025-05-14T09:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-14T09:30:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Alice Johnson",
+          "meetingLocation": "Teams Meeting",
+          "relatedToDossier": "Woo-verzoek over verzoek documenten EU-inbreukzaak",
+          "link": "https://teams.microsoft.com/l/meetup-join/..."
+        },
+        {
+          "title": "1:1 with Manager",
+          "start": {
+            "dateTime": "2025-05-14T10:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-14T10:30:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Anna Dollbo",
+          "meetingLocation": "In-person",
+          "relatedToDossier": null,
+          "link": null
+        },
+        {
+          "title": "Wekelijkse Teamvergadering",
+          "start": {
+            "dateTime": "2025-05-14T11:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-14T12:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Your Manager",
+          "meetingLocation": "Z.K10.KA.318A Zuid, Turfmarkt Den Haag",
+          "relatedToDossier": null,
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "5724905743",
+      "date": "2025-05-15",
+      "dayOfWeek": "Thursday",
+      "events": [
+        {
+          "title": "Daily Standup",
+          "start": {
+            "dateTime": "2025-05-15T09:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-15T09:30:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Alice Johnson",
+          "meetingLocation": "Teams Meeting",
+          "relatedToDossier": null,
+          "link": "https://teams.microsoft.com/l/meetup-join/..."
+        },
+        {
+          "title": "Overdrachtsmoment",
+          "start": {
+            "dateTime": "2025-05-15T15:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-15T15:45:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Niels van Dijk",
+          "meetingLocation": "Online",
+          "relatedToDossier": "Woo-verzoek over voldoende toegang MKB",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "5724905749",
+      "date": "2025-05-16",
+      "dayOfWeek": "Friday",
+      "events": [
+        {
+          "title": "Daily Standup",
+          "start": {
+            "dateTime": "2025-05-16T09:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-16T09:30:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Alice Johnson",
+          "meetingLocation": "Teams Meeting",
+          "relatedToDossier": null,
+          "link": "https://teams.microsoft.com/l/meetup-join/..."
+        },
+        {
+          "title": "Retrospective",
+          "start": {
+            "dateTime": "2025-05-16T15:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "end": {
+            "dateTime": "2025-05-16T16:00:00",
+            "timeZone": "Europe/Amsterdam"
+          },
+          "organizer": "Team Lead",
+          "meetingLocation": "Teams",
+          "relatedToDossier": null,
+          "link": null
+        }
+      ]
+    }
+  ]
+}

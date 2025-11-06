@@ -1,0 +1,194 @@
+{{- if and .Values.nextcloud_ingestor.enabled (hasKey .Values.nextcloud_ingestor "initJob") .Values.nextcloud_ingestor.initJob.enabled .Values.elasticsearch.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nextcloud-ingestor-init
+  labels:
+    {{- include "bsw.labels" . | nindent 4 }}
+    app.kubernetes.io/component: nextcloud-ingestor-init
+  annotations:
+    {{- if .Values.nextcloud_ingestor.initJob.useHook }}
+    # This job should run after elasticsearch and nextcloud are ready
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "10"
+    "helm.sh/hook-delete-policy": {{ .Values.nextcloud_ingestor.initJob.hookDeletePolicy | default "before-hook-creation,hook-succeeded" }}
+    {{- if .Values.nextcloud_ingestor.initJob.hookFailurePolicy }}
+    "helm.sh/hook-failure-policy": {{ .Values.nextcloud_ingestor.initJob.hookFailurePolicy }}
+    {{- end }}
+    {{- end }}
+spec:
+  backoffLimit: {{ .Values.nextcloud_ingestor.initJob.backoffLimit | default 1 }}
+  ttlSecondsAfterFinished: {{ .Values.nextcloud_ingestor.initJob.ttlSecondsAfterFinished | default 600 }}
+  {{- if .Values.nextcloud_ingestor.initJob.activeDeadlineSeconds }}
+  activeDeadlineSeconds: {{ .Values.nextcloud_ingestor.initJob.activeDeadlineSeconds }}
+  {{- end }}
+  template:
+    metadata:
+      labels:
+        {{- include "bsw.labels" . | nindent 8 }}
+        app.kubernetes.io/component: nextcloud-ingestor-init
+    spec:
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      initContainers:
+        # Wait for elasticsearch to be ready
+        - name: wait-for-elasticsearch
+          image: curlimages/curl:latest
+          command:
+            - sh
+            - -c
+            - |
+              echo "Waiting for Elasticsearch at {{ include "bsw.fullname" . }}-elasticsearch:{{ .Values.elasticsearch.service.httpPort }}"
+              echo "This may take several minutes while Elasticsearch starts up..."
+              
+              attempt=0
+              max_attempts=180  # 30 minutes (180 * 10 seconds)
+              
+              while [ $attempt -lt $max_attempts ]; do
+                echo "Attempt $((attempt + 1))/$max_attempts: Checking Elasticsearch..."
+                
+                # First check if the service is reachable
+                if curl -s --connect-timeout 5 http://{{ include "bsw.fullname" . }}-elasticsearch:{{ .Values.elasticsearch.service.httpPort }}/ > /dev/null 2>&1; then
+                  echo "Elasticsearch service is reachable, checking health..."
+                  
+                  # Check cluster health
+                  if curl -s -f http://{{ include "bsw.fullname" . }}-elasticsearch:{{ .Values.elasticsearch.service.httpPort }}/_cluster/health?wait_for_status=yellow&timeout=30s; then
+                    echo "Elasticsearch is ready and healthy!"
+                    exit 0
+                  else
+                    echo "Elasticsearch is reachable but not healthy yet..."
+                  fi
+                else
+                  echo "Elasticsearch service not reachable yet..."
+                fi
+                
+                attempt=$((attempt + 1))
+                echo "Waiting 10 seconds before next attempt..."
+                sleep 10
+              done
+              
+              echo "ERROR: Elasticsearch failed to become ready after $max_attempts attempts (30 minutes)"
+              echo "This might indicate:"
+              echo "1. Elasticsearch pod is not starting"
+              echo "2. Resource constraints"
+              echo "3. Configuration issues"
+              echo "Please check: kubectl get pods -l app=elasticsearch"
+              echo "And logs: kubectl logs -l app=elasticsearch"
+              exit 1
+        # Wait for nextcloud to be ready (if it's deployed in the same cluster)
+        {{- if or .Values.nextcloud_ingestor.initJob.waitForNextcloud .Values.nextcloud.enabled }}
+        - name: wait-for-nextcloud
+          image: curlimages/curl:latest
+          command:
+            - sh
+            - -c
+            - |
+              {{- if .Values.nextcloud.enabled }}
+              NC_URL="http://{{ include "bsw.fullname" . }}-nextcloud:{{ .Values.nextcloud.service.port }}"
+              {{- else if .Values.nextcloud_ingestor.nextcloud.external.enabled }}
+              NC_URL="http://{{ include "bsw.fullname" . }}-nextcloud-external:{{ .Values.nextcloud_ingestor.nextcloud.external.port }}"
+              {{- else }}
+              NC_URL="{{ .Values.nextcloud_ingestor.nextcloud.nextcloud_url }}"
+              {{- end }}
+              echo "Waiting for Nextcloud at $NC_URL"
+              attempt=0
+              max_attempts=60  # 10 minutes (NextCloud can take time to initialize)
+              while [ $attempt -lt $max_attempts ]; do
+                if curl -f "$NC_URL/status.php"; then
+                  echo "Nextcloud is ready!"
+                  exit 0
+                fi
+                attempt=$((attempt + 1))
+                echo "Attempt $attempt/$max_attempts: Nextcloud not ready, waiting 10 seconds..."
+                sleep 10
+              done
+              echo "Nextcloud failed to become ready after $max_attempts attempts"
+              exit 1
+        {{- end }}
+      containers:
+        - name: nextcloud-ingestor-init
+          image: "{{ .Values.nextcloud_ingestor.image.repository }}:{{ .Values.nextcloud_ingestor.image.tag }}"
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          command:
+            - /bin/bash
+            - -c
+            - |
+              echo "=== NextCloud Ingestor Init Job ==="
+              echo "Starting full ingestion process..."
+              echo ""
+              echo "=== Environment Check ==="
+              echo "ES_URL: $ES_URL"
+              echo "ES_INDEX_DOCUMENTS: $ES_INDEX_DOCUMENTS"
+              echo "ES_INDEX_DOSSIERS: $ES_INDEX_DOSSIERS"
+              echo "DRY_RUN: $DRY_RUN"
+              echo "LOG_LEVEL: $LOG_LEVEL"
+              echo ""
+              
+              echo "=== Final Elasticsearch Connectivity Check ==="
+              if curl -s --connect-timeout 10 "$ES_URL/_cluster/health" > /dev/null; then
+                echo "✓ Elasticsearch is accessible"
+                curl -s "$ES_URL/_cluster/health?pretty"
+              else
+                echo "✗ ERROR: Cannot connect to Elasticsearch at $ES_URL"
+                echo "This should not happen as init containers passed..."
+                exit 1
+              fi
+              echo ""
+              
+              echo "=== Starting Full Ingestion ==="
+              start_time=$(date +%s)
+              
+              # Run the ingestion with proper error handling
+              if timeout 7200 python3 main.py full; then
+                end_time=$(date +%s)
+                duration=$((end_time - start_time))
+                echo ""
+                echo "=== SUCCESS ==="
+                echo "✓ Full ingestion completed successfully in ${duration} seconds"
+                exit 0
+              else
+                exit_code=$?
+                end_time=$(date +%s)
+                duration=$((end_time - start_time))
+                echo ""
+                echo "=== FAILURE ==="
+                echo "✗ Full ingestion failed after ${duration} seconds with exit code $exit_code"
+                echo "Check logs above for details"
+                exit $exit_code
+              fi
+          env:
+            - name: LOG_LEVEL
+              value: {{ .Values.nextcloud_ingestor.loglevel | default "INFO" | quote }}
+            - name: DRY_RUN
+              value: {{ .Values.nextcloud_ingestor.initJob.dryRun | default "false" | quote }}
+            - name: NC_USER
+              valueFrom:
+                secretKeyRef:
+                  name: nextcloud-admin-secret
+                  key: admin-user
+            - name: NC_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: nextcloud-admin-secret
+                  key: admin-password
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: password
+          envFrom:
+            - configMapRef:
+                name: nextcloud-ingestor-config
+            - configMapRef:
+                name: elasticsearch-config
+          resources:
+            {{- toYaml .Values.nextcloud_ingestor.initJob.resources | nindent 12 }}
+      restartPolicy: {{ .Values.nextcloud_ingestor.initJob.restartPolicy | default "OnFailure" }}
+{{- end }}
