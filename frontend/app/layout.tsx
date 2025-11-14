@@ -11,8 +11,8 @@ const rijksOverheidFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Wegwijs in Regels",
-  description: "Wegwijs in Regels",
+  title: "Wet Open Overheid",
+  description: "Wet Open Overheid",
 };
 
 export default function RootLayout({
@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${rijksOverheidFont.variable}`} lang="en">
-      <body className={`antialiased`}>
+    <html className={`${rijksOverheidFont.variable}`} lang="nl">
+      <body className="antialiased">
         <Providers>
           {children}
           <Toaster />

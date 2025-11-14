@@ -1,22 +1,23 @@
 "use client";
-import { Grid, Bell, User, ChevronDown } from "lucide-react";
+
+import { Grid, Bell, User, ChevronDown, Wrench, RotateCcw } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { SidebarIcon } from "./icon-text";
-import { Wrench, RotateCcw } from "lucide-react";
-
-import { useState, useEffect } from "react";
-import ProfileSidebar from "./profile-sidebar-content";
 import documentsData from "@/dummydata/data_last_docs.json";
-import { useNotificationsStore } from "@/store/notification-store";
 import { DocumentItem } from "@/lib/types";
+import { useNotificationsStore } from "@/store/notification-store";
+import { SidebarIcon } from "./icon-text";
+import ProfileSidebar from "./profile-sidebar-content";
 
 export function Header() {
+  const pathname = usePathname();
   const [profileOpen, setProfileOpen] = useState(false);
   const { latestDoc, hasNew, markAsRead, setLatestDoc } =
     useNotificationsStore();
@@ -26,17 +27,17 @@ export function Header() {
   }, [setLatestDoc]);
 
   return (
-    <header className="bg-white border-b border-gray-200 py-2 px-4">
+    <header className="bg-white border-b border-gray-200 py-2 px-4 flex-none">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <div className="flex items-center py-3">
             <h1 className="!text-black text-3xl font-bold">
-              Goedemorgen <span className="text-hemelblauw">Marieke</span>
+              {getGreeting()}, <span className="text-hemelblauw">Marieke</span>
             </h1>
           </div>
         </div>
         <div className="flex items-center space-x-4">
-          <Button
+          {/* <Button
             variant="ghost"
             size="sm"
             className="text-[#027BC7] flex items-center"
@@ -57,36 +58,38 @@ export function Header() {
               <path d="m15 5 4 4" />
             </svg>
             <span className="ml-1">Bewerk indeling</span>
-          </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                className="rounded-md px-4 py-4 text-[#027BC7] flex items-center gap-2 border-[#027BC7] border"
-              >
-                <Grid className="h-5 w-5 text-[#027BC7]" />
-                WOO overzicht
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-64">
-              <DropdownMenuItem className="bg-[#F2F7FA] text-black font-semibold cursor-default">
-                Woo overzicht
-              </DropdownMenuItem>
-              <DropdownMenuItem>Samenwerkingsruimte</DropdownMenuItem>
-              <DropdownMenuItem>
-                <SidebarIcon bgColor="bg-gray-100 rounded-lg w-6 h-6 mr-2">
-                  <Wrench className="h-4 w-4 text-[#027BC7]" />
-                </SidebarIcon>
-                Indelingen verkennen
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <SidebarIcon bgColor="bg-gray-100 rounded-lg w-6 h-6 mr-2">
-                  <RotateCcw className="h-4 w-4 text-[#027BC7]" />
-                </SidebarIcon>
-                Terug naar standaard
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          </Button> */}
+          {pathname === "/" && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="rounded-md px-4 py-4 text-[#027BC7] flex items-center gap-2 border-[#027BC7] border"
+                >
+                  <Grid className="h-5 w-5 text-[#027BC7]" />
+                  Overzicht bewerken
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-64">
+                <DropdownMenuItem className="bg-[#F2F7FA] text-black font-semibold cursor-default">
+                  Overzicht
+                </DropdownMenuItem>
+                <DropdownMenuItem>Samenwerkingsruimte</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <SidebarIcon bgColor="bg-gray-100 rounded-lg w-6 h-6 mr-2">
+                    <Wrench className="h-4 w-4 text-[#027BC7]" />
+                  </SidebarIcon>
+                  Indelingen verkennen
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <SidebarIcon bgColor="bg-gray-100 rounded-lg w-6 h-6 mr-2">
+                    <RotateCcw className="h-4 w-4 text-[#027BC7]" />
+                  </SidebarIcon>
+                  Terug naar standaard
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
           <DropdownMenu onOpenChange={(open) => open && markAsRead()}>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="relative">
@@ -99,7 +102,7 @@ export function Header() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-72">
-              {latestDoc && (
+              {/* {latestDoc && (
                 <DropdownMenuItem asChild>
                   <a
                     href={latestDoc.url}
@@ -121,7 +124,10 @@ export function Header() {
                     )}
                   </a>
                 </DropdownMenuItem>
-              )}
+              )} */}
+              <p className="italic text-sm text-gray-600 p-2">
+                Geen meldingen.
+              </p>
             </DropdownMenuContent>
           </DropdownMenu>
           <DropdownMenu>
@@ -152,4 +158,17 @@ export function Header() {
       <ProfileSidebar open={profileOpen} onOpenChange={setProfileOpen} />
     </header>
   );
+}
+
+function getGreeting() {
+  const now = new Date();
+  const hour = now.getHours();
+
+  if (hour < 12) {
+    return "Goedemorgen";
+  } else if (hour < 18) {
+    return "Goedemiddag";
+  } else {
+    return "Goedenavond";
+  }
 }

@@ -22,6 +22,9 @@ export const API_ENDPOINTS = {
   tasks: {
     getTasks: "/api/tasks/get_tasks",
   },
+  llm: {
+    query: "/chat-llm",
+  },
 } as const;
 
 export type ApiEndpoint = typeof API_ENDPOINTS;

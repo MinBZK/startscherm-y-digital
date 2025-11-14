@@ -140,15 +140,13 @@ export type TFilter = SourceType | "answer" | "all";
 
 // Agenda/Calendar types
 export interface AgendaEvent {
+  id: number | string;
   title: string;
-  start: {
-    dateTime: string;
-    timeZone: string;
-  };
-  end: {
-    dateTime: string;
-    timeZone: string;
-  };
+  date: string;
+  dayOfWeek: string;
+  start: string;
+  end: string;
+  timeZone: string;
   organizer: string;
   meetingLocation: string;
   relatedToDossier: string | null;
@@ -156,15 +154,11 @@ export interface AgendaEvent {
 }
 
 export interface AgendaDay {
-  id: string;
   date: string; // YYYY-MM-DD
-  dayOfWeek: string;
   events: AgendaEvent[];
 }
 
-export interface AgendaWeek {
-  [weekKey: string]: AgendaDay[];
-}
+export type AgendaWeek = Record<string, AgendaDay>;
 
 export interface RelatedTo {
   type: string;

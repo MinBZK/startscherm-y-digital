@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import {
   Home,
   Folder,
@@ -14,6 +15,7 @@ import {
   Mail,
   Bot,
 } from "lucide-react";
+import { useState } from "react";
 import { SidebarItem } from "@/app/sidebar-item";
 import {
   Dialog,
@@ -22,13 +24,13 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { SearchDialogContent } from "@/app/dashboard/components/search-dialog-content";
-import { AssistentDialogContent } from "@/app/dashboard/components/assistent-dialog-content";
+// import { AssistentDialogContent } from "@/app/dashboard/components/assistent-dialog-content";
 import { DossierItem } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
 import { useSidebarStore } from "@/store/sidebar-store";
 
 export function Sidebar({ dossiers }: { dossiers: DossierItem[] }) {
+  const pathname = usePathname();
   const [hasSearched, setHasSearched] = useState(false);
   const {
     clearLegalData,
@@ -86,7 +88,7 @@ export function Sidebar({ dossiers }: { dossiers: DossierItem[] }) {
           <DialogContent
             id="search-dialog-content"
             className={cn(
-              "p-0 w-[90vw] bg-gray-50 max-w-none",
+              "p-0 w-[90vw] bg-gray-50 max-w-none focus:outline-none",
               !hasSearched ? "h-[60vh]" : "h-[90vh]"
             )}
           >
@@ -117,30 +119,30 @@ export function Sidebar({ dossiers }: { dossiers: DossierItem[] }) {
         <ul className="space-y-1">
           <li>
             <SidebarItem
-              icon={<Home className="h-5 w-5 text-lintblauw" />}
+              icon={<Home className="size-5 text-lintblauw" />}
               text="Mijn dag"
-              bgColor="bg-[#F2F7FA]"
               textColor="text-black"
-              active
+              active={pathname === "/"}
+              href="/"
             />
           </li>
           <li>
             <SidebarItem
-              icon={<Folder className="h-5 w-5 text-gray-700" />}
+              icon={<Folder className="size-5 text-gray-700" />}
               text="Dossiers"
               textColor="text-gray-700"
             />
           </li>
           <li>
             <SidebarItem
-              icon={<CheckSquare className="h-5 w-5 text-gray-700" />}
+              icon={<CheckSquare className="size-5 text-gray-700" />}
               text="Taken"
               textColor="text-gray-700"
             />
           </li>
           <li>
             <SidebarItem
-              icon={<Calendar className="h-5 w-5 text-gray-700" />}
+              icon={<Calendar className="size-5 text-gray-700" />}
               text="Agenda"
               textColor="text-gray-700"
             />
@@ -151,28 +153,28 @@ export function Sidebar({ dossiers }: { dossiers: DossierItem[] }) {
           <ul className="space-y-1">
             <li>
               <SidebarItem
-                icon={<Book className="h-5 w-5 text-lintblauw" />}
+                icon={<Book className="size-5 text-lintblauw" />}
                 text="Rijksadresgids"
                 textColor="text-lintblauw"
               />
             </li>
             <li>
               <SidebarItem
-                icon={<Book className="h-5 w-5 text-lintblauw" />}
+                icon={<Book className="size-5 text-lintblauw" />}
                 text="Kenniscentrum"
                 textColor="text-lintblauw"
               />
             </li>
             <li>
               <SidebarItem
-                icon={<Users className="h-5 w-5 text-lintblauw" />}
+                icon={<Users className="size-5 text-lintblauw" />}
                 text="Organisaties"
                 textColor="text-lintblauw"
               />
             </li>
             <li>
               <SidebarItem
-                icon={<Monitor className="h-5 w-5 text-lintblauw" />}
+                icon={<Monitor className="size-5 text-lintblauw" />}
                 text="Selfserviceportal SSC-ICT"
                 textColor="text-lintblauw"
               />
@@ -190,7 +192,7 @@ export function Sidebar({ dossiers }: { dossiers: DossierItem[] }) {
             </span>
           </div>
           <ul className="">
-            <li>
+            {/* <li>
               <SidebarItem
                 icon={
                   <svg
@@ -209,28 +211,53 @@ export function Sidebar({ dossiers }: { dossiers: DossierItem[] }) {
                 text="Microsoft Teams"
                 iconBg="bg-gray-100 rounded-lg w-9 h-9"
               />
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Dialog onOpenChange={(open) => handleNewChat(open)}>
                 <DialogTrigger asChild>
                   <button className="flex items-center px-2 py-2 text-sm rounded-md transition-colors text-gray-700 font-normal hover:bg-gray-100 w-full text-left">
                     <span className="mr-3 flex items-center justify-center bg-gray-100 rounded-lg w-9 h-9">
-                      <Bot className="h-5 w-5 text-gray-700" />
+                      <Bot className="size-5 text-gray-700" />
                     </span>
-                    <span>Digitale assistent</span>
+                    <span>Juridische assistent</span>
                   </button>
                 </DialogTrigger>
                 <DialogContent className="p-0 w-[90vw] h-[90vh] bg-gray-50 max-w-none">
                   <DialogTitle className="sr-only">
-                    Digitale assistent
+                    Juridische assistent
                   </DialogTitle>
                   <AssistentDialogContent />
                 </DialogContent>
               </Dialog>
+            </li> */}
+            <li>
+              <SidebarItem
+                icon={
+                  <Bot
+                    className={`size-5 ${
+                      pathname === "/digitale-assistent"
+                        ? "text-lintblauw"
+                        : "text-gray-700"
+                    }`}
+                  />
+                }
+                text="Digitale assistent"
+                iconBg="bg-gray-100 rounded-lg w-9 h-9"
+                href="/digitale-assistent"
+                active={pathname === "/digitale-assistent"}
+                bgColor={
+                  pathname === "/digitale-assistent" ? "bg-[#F2F7FA]" : ""
+                }
+                textColor={
+                  pathname === "/digitale-assistent"
+                    ? "text-black"
+                    : "text-gray-700"
+                }
+              />
             </li>
             <li>
               <SidebarItem
-                icon={<Search className="h-5 w-5 text-gray-700" />}
+                icon={<Search className="size-5 text-gray-700" />}
                 text="Zoek en vind"
                 iconBg="bg-gray-100 rounded-lg w-9 h-9"
               />
@@ -257,14 +284,14 @@ export function Sidebar({ dossiers }: { dossiers: DossierItem[] }) {
             </li>
             <li>
               <SidebarItem
-                icon={<MessageSquare className="h-5 w-5 text-gray-700" />}
+                icon={<MessageSquare className="size-5 text-gray-700" />}
                 text="Chat"
                 iconBg="bg-gray-100 rounded-lg w-9 h-9"
               />
             </li>
             <li>
               <SidebarItem
-                icon={<Mail className="h-5 w-5 text-gray-700" />}
+                icon={<Mail className="size-5 text-gray-700" />}
                 text="Mail"
                 iconBg="bg-gray-100 rounded-lg w-9 h-9"
               />

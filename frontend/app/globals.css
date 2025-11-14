@@ -4,6 +4,7 @@
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant aria-current-date (&[aria-current="date"]);
 
 @theme {
   --color-background: hsl(var(--background));

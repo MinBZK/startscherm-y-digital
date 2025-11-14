@@ -26,14 +26,13 @@ export function DossierLink({ dossier }: Props) {
   };
 
   // Transform the webURL to proper Nextcloud format
-  const nextcloudUrl = transformToNextcloudUrl(
-    dossier.url,
-    dossier.file_id,
-  );
+  const nextcloudUrl = transformToNextcloudUrl(dossier.url, dossier.file_id);
 
   // Debug logging for development
-  if (process.env.NODE_ENV === 'development') {
-    console.log(`Dossier ${dossier.name}: file_id=${dossier.file_id}, url=${dossier.url}, nextcloudUrl=${nextcloudUrl}`);
+  if (process.env.NODE_ENV === "development") {
+    console.log(
+      `Dossier ${dossier.name}: file_id=${dossier.file_id}, url=${dossier.url}, nextcloudUrl=${nextcloudUrl}`
+    );
   }
 
   // Toon magic wand button alleen voor nieuwe dossiers (is_unopened = true)
@@ -74,14 +73,14 @@ export function DossierLink({ dossier }: Props) {
         />
       </Link>
 
-      {shouldShowMagicWand && (
+      {/* {shouldShowMagicWand && (
         <div className="absolute -top-2 -right-2 z-10">
           <DossierSummaryPopover
             dossier={dossier}
             onClose={() => setShowMagicWand(false)}
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 }
