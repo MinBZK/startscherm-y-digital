@@ -49,6 +49,8 @@ spec:
               value: "true"
             - name: KC_HOSTNAME_STRICT
               value: "false"
+            - name: ADMIN_USER_PASSWORD
+              value: {{ .Values.auth.userPassword | quote }}
           ports:
             - containerPort: 8081
               name: http
@@ -137,7 +139,7 @@ data:
                 "credentials": [
                     {
                         "type": "password",
-                        "value": "password",
+                        "value": {{ .Values.auth.userPassword | quote }},
                         "temporary": false
                     }
                 ],

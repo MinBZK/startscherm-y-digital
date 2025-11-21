@@ -233,19 +233,19 @@ spec:
               port: http
               httpHeaders:
                 - name: Host
-                  value: localhost
-            initialDelaySeconds: 30
+                  value: nextcloud.localhost
+            initialDelaySeconds: 120
             periodSeconds: 10
             timeoutSeconds: 5
-            failureThreshold: 3
+            failureThreshold: 6
           livenessProbe:
             httpGet:
               path: /status.php
               port: http
               httpHeaders:
                 - name: Host
-                  value: localhost
-            initialDelaySeconds: 60
+                  value: nextcloud.localhost
+            initialDelaySeconds: 180
             periodSeconds: 30
             timeoutSeconds: 10
             failureThreshold: 5

@@ -26,6 +26,18 @@ This repository hosts the ingestion & knowledge layer for the Beter Samenwerken 
 
 ---
 
+## Local setup using kind
+
+* Generate TLS certificate and key files for HTTPS access. You could do so using `mkcert frontend.localhost`, or use *openssl*.
+* Copy the .env.example file to deploy/skaffold/.env and update the required values. Minimal requirements are `GPT_EMBEDDINGS_KEY` and `VLAM_API_KEY`. Add paths to the certificate and key files generated in the previous step under `FRONTEND_TLS_CERT` and `FRONTEND_TLS_KEY`.
+* Run `make develop` from the main directory.
+* Run `make install-nginx` to install an ingress controller for http / https access.
+* As soon as everything has loaded, Startscherm can be accessed via `https://frontend.localhost:8443`. 
+* Log in with keycloak. For local development, a default admin user is created using username *admin* and password corresponding to the value of *auth.userPassword* in deploy/helm/values.yaml.
+
+
+---
+
 ## License
 
 See `LICENSE`.

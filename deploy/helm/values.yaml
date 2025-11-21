@@ -22,6 +22,7 @@ networkPolicies:
   enabled: false
 
 auth:
+  userPassword: "bswadmin"
   keycloak:
     enabled: true
     publicUrl: https://keycloak.localhost:8443
@@ -82,7 +83,7 @@ api:
     mistral:
       deploymentName: mistral-medium-latest
     vlam:
-      modelName: "ubiops-deployment/bzk-bsw-chat//chat-model"
+      modelName: "ubiops-deployment/bzk-bsw-mistralmedium-flexibel//chat-model"
       VLAM_BASE_URL: "https://api.demo.vlam.ai/v2.1/projects/poc/openai-compatible/v1"
       # temperature: 0.7 # TODO: add to values, deployment, and code if needed
       # max_tokens: 2000 # TODO: add to values, deployment, and code if needed

@@ -41,11 +41,6 @@ spec:
                 secretKeyRef:
                   name: postgresql-secret
                   key: password
-            - name: POSTGRES_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgresql-secret
-                  key: root-password
             - name: PGDATA
               value: /var/lib/postgresql/data/pgdata
           volumeMounts:
