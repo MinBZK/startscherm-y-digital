@@ -20,7 +20,7 @@ export function ButtonClient({
   return (
     <Button
       className={`${base} ${className} ${kleur ? kleur : ""}`.trim()}
-      onClick={() => alert(action)}
+      // onClick={() => alert(action)}
       type="button"
     >
       {children}

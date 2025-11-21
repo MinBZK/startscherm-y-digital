@@ -32,7 +32,7 @@ export function DocumentItemComponent({
 
   const nextcloudUrl = transformToNextcloudUrl(
     document.url,
-    document.nextcloud_id,
+    document.nextcloud_id
   );
 
   // Toon magic wand button alleen voor transcript documenten
@@ -66,7 +66,7 @@ export function DocumentItemComponent({
         </div>
       </div>
 
-      {shouldShowMagicWand && (
+      {/* {shouldShowMagicWand && (
         <div className="absolute top-1/2 -translate-y-1/2 right-2 z-10">
           <DocumentProcessingPopover
             document={document}
@@ -76,7 +76,7 @@ export function DocumentItemComponent({
             }}
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 }

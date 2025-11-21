@@ -1,40 +1,46 @@
+# BSW Frontend
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Local development
 
-Install pnpm using `curl -fsSL https://get.pnpm.io/install.sh | sh -`
+For local development, it is best to run the application using `npm run dev`. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Then run `pnpm install` to install the packages, resulting in a `node_modules/` directory.
+In order to make this work, you need the following setup:
 
-Then, run the development server:
+- Run the API (`make develop` in the root of the BSW project);
+- Port forward both the `bsw-api` and `bsw-keycloak` services (`make k9s` > `[shift] + F` on the service > `ok`);
+- Run `npm install` / `pnpm install` in the frontend root;
+- Set the following environment variables in the frontend root:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  ```bash
+  #.env
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  # Development Environment
+  # Set to "development" to use mock data instead of API calls
+  NEXT_PUBLIC_ENV=development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  # API Configuration
+  # Base URL for the backend API
+  NEXT_PUBLIC_API_BASE_URL=http://localhost:5000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  # Keycloak Authentication
+  # Keycloak server URL (accessible from browser)
+  NEXT_PUBLIC_KEYCLOAK_URL=http://localhost:8082
 
-## Learn More
+  # Keycloak realm name
+  NEXT_PUBLIC_KEYCLOAK_REALM=bsw-realm
 
-To learn more about Next.js, take a look at the following resources:
+  # Keycloak client ID for the frontend application
+  NEXT_PUBLIC_KEYCLOAK_CLIENT_ID=bsw-client
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  # Keycloak internal URL (for server-side requests)
+  KEYCLOAK_INTERNAL_URL=http://localhost:8082
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  # Keycloak container name (for Docker networking)
+  KEYCLOAK_CONTAINER_NAME=keycloak
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  # Nextcloud Integration
+  # Nextcloud base URL for file sharing and browser links
+  NEXT_PUBLIC_NEXTCLOUD_BASE_URL=http://localhost:8080
+  ```

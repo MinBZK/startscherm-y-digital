@@ -151,19 +151,19 @@ export default function ProfileSidebar({
           <TabsList className="w-full flex gap-2 bg-transparent border-b border-gray-200 mb-8 px-6 pt-6">
             <TabsTrigger
               value="contact"
-              className="flex-1 text-lg font-bold data-[state=active]:text-[#027BC7] data-[state=active]:border-b-2 data-[state=active]:border-[#027BC7] data-[state=inactive]:text-gray-400 rounded-none"
+              className="flex-1 text-lg font-bold data-[state=active]:text-[#027BC7] border-b-2 border-transparent data-[state=active]:border-[#027BC7] data-[state=inactive]:text-gray-400 rounded-none"
             >
               Contact
             </TabsTrigger>
             <TabsTrigger
               value="about"
-              className="flex-1 text-lg font-bold data-[state=active]:text-[#027BC7] data-[state=active]:border-b-2 data-[state=active]:border-[#027BC7] data-[state=inactive]:text-gray-400 rounded-none"
+              className="flex-1 text-lg font-bold data-[state=active]:text-[#027BC7] border-b-2 border-transparent data-[state=active]:border-[#027BC7] data-[state=inactive]:text-gray-400 rounded-none"
             >
               Over mij
             </TabsTrigger>
             <TabsTrigger
               value="org"
-              className="flex-1 text-lg font-bold data-[state=active]:text-[#027BC7] data-[state=active]:border-b-2 data-[state=active]:border-[#027BC7] data-[state=inactive]:text-gray-400 rounded-none"
+              className="flex-1 text-lg font-bold data-[state=active]:text-[#027BC7] border-b-2 border-transparent data-[state=active]:border-[#027BC7] data-[state=inactive]:text-gray-400 rounded-none"
             >
               Organisatie
             </TabsTrigger>
@@ -223,14 +223,17 @@ export default function ProfileSidebar({
           {/* Over mij Tab */}
           <TabsContent value="about" className="flex flex-col flex-1 px-6">
             <div className="text-gray-700 text-base mt-4">
-              Hier komt de persoonlijke informatie van de gebruiker. (Hardcoded
-              demo)
+              <span className="italic">
+                Hier komt de persoonlijke informatie van de gebruiker.
+              </span>
             </div>
           </TabsContent>
           {/* Organisatie Tab */}
           <TabsContent value="org" className="flex flex-col flex-1 px-6">
             <div className="text-gray-700 text-base mt-4">
-              Hier komt de organisatie-informatie. (Hardcoded demo)
+              <span className="italic">
+                Hier komt de organisatie-informatie van de gebruiker.
+              </span>
             </div>
           </TabsContent>
         </Tabs>

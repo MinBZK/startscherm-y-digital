@@ -12,23 +12,23 @@ import {
   Flag,
   Loader2,
 } from "lucide-react";
+import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Switch } from "@/components/ui/switch";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
+import { Switch } from "@/components/ui/switch";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SearchResultHit, DossierItem } from "@/lib/types";
+import { cn, formatBucketValue } from "@/lib/utils";
 import { useDashboardSearch } from "@/modules/dashboard/hooks/use-dashboard-search";
 import { useSearchStore } from "@/store/search-store";
-import { SearchResultHit, DossierItem } from "@/lib/types";
-import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
-import { Badge } from "@/components/ui/badge";
-import { toast } from "sonner";
-import { formatBucketValue } from "@/lib/utils";
 
 // const SOURCE_TABS = [
 //   "Alles",
@@ -76,7 +76,7 @@ export function SearchDialogContent({
     null
   );
 
-  const { filters, setFilter } = useSearchStore();
+  const { filters, setFilter, clearFilters } = useSearchStore();
 
   const { data, isPending } = useDashboardSearch(
     searchQuery,
@@ -124,7 +124,8 @@ export function SearchDialogContent({
             onValueChange={setActiveTabView}
             className="w-full"
           >
-            <TabsList className="grid w-full grid-cols-2 bg-white">
+            {/* Saved searches is not supported yet. */}
+            {/* <TabsList className="grid w-full grid-cols-2 bg-white">
               <TabsTrigger
                 value="new-search"
                 className="data-[state=active]:bg-gray-50 rounded-t-lg"
@@ -137,7 +138,7 @@ export function SearchDialogContent({
               >
                 Opgeslagen zoekopdrachten
               </TabsTrigger>
-            </TabsList>
+            </TabsList> */}
             <TabsContent value="new-search" className="space-y-6 ">
               {/* Search Input + Bewaar */}
               <div className="mb-8 bg-gray-50 p-4 flex items-center gap-4">
@@ -195,7 +196,8 @@ export function SearchDialogContent({
       {/* Titel Zoekresultaten + Geavanceerd zoeken switch rechts */}
       <div className="px-10 pt-6 pb-2 flex items-center justify-between">
         <h2 className="text-xl font-semibold">Zoekresultaten</h2>
-        <div className="flex items-center gap-2">
+        {/* Advanced search not supported yet. */}
+        {/* <div className="flex items-center gap-2">
           <Switch
             id="advanced-search-modal"
             checked={advanced}
@@ -208,7 +210,7 @@ export function SearchDialogContent({
           >
             Geavanceerd zoeken
           </label>
-        </div>
+        </div> */}
       </div>
       {/* Sticky header: zoekbalk, tabs, filters */}
       <div className="sticky top-0 z-20 bg-gray-50 border-b">
@@ -231,13 +233,13 @@ export function SearchDialogContent({
               </span>
             </div>
             {/* Lintblauw 'Bewaar zoekopdracht' button */}
-            <Button
+            {/* <Button
               variant="default"
               size="sm"
               className="ml-4 whitespace-nowrap flex-shrink-0 bg-lintblauw text-white hover:bg-lintblauw/90"
             >
               Bewaar zoekopdracht
-            </Button>
+            </Button> */}
           </div>
         </div>
         {/* Bron-tabs */}
@@ -264,7 +266,7 @@ export function SearchDialogContent({
         */}
         {/* Filters */}
         <div
-          className="flex gap-3 py-3 border-b border-gray-200 bg-gray-50"
+          className="flex flex-wrap gap-3 py-3 border-b border-gray-200 bg-gray-50"
           style={{
             marginLeft: 0,
             marginRight: 0,
@@ -277,9 +279,20 @@ export function SearchDialogContent({
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className={`flex items-center gap-2 text-lintblauw px-4 py-2 rounded shadow-none hover:bg-lintblauw/5 focus:bg-lintblauw/10 focus:text-lintblauw active:bg-lintblauw/10 active:text-lintblauw `}
+                  className="flex items-center gap-1 text-lintblauw px-3 py-2 rounded shadow-none hover:bg-lintblauw/5 focus:bg-lintblauw/10 focus:text-lintblauw active:bg-lintblauw/10 active:text-lintblauw"
                 >
                   {filter.label}
+
+                  {/* put active filter value here if any */}
+                  {filters[filter.key] && (
+                    <Badge variant="outline">
+                      {formatBucketValue(
+                        aggregations[filter.key]?.buckets?.find(
+                          (b) => b.key === filters[filter.key]
+                        )
+                      )}
+                    </Badge>
+                  )}
                   <ChevronDown className="w-4 h-4 ml-1" />
                 </Button>
               </DropdownMenuTrigger>
@@ -287,9 +300,9 @@ export function SearchDialogContent({
                 {aggregations[filter.key]?.buckets?.map((b: any) => (
                   <DropdownMenuItem
                     key={b.key}
-                    className={
-                      filters[filter.key] === b.key ? "bg-gray-100" : ""
-                    }
+                    className={cn({
+                      "bg-gray-100": filters[filter.key] === b.key,
+                    })}
                     onSelect={() => {
                       setFilter(filter.key, b.key);
                       setCurrentPage(1);
