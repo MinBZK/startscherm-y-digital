@@ -11,7 +11,7 @@ nextcloud_password = subprocess.run(['pass', 'show', 'y/bsw-passwords/nextcloud/
 
 DOSSIERS_PATH = Path(__file__).parent / "dossiers"
 OPTIONS = {
-    "webdav_hostname": "http://172.18.0.2:30080/remote.php/dav/files/admin/",
+    "webdav_hostname": "http://nextcloud.localhost:8080/remote.php/dav/files/admin/",
     "webdav_login": nextcloud_user,
     "webdav_password": nextcloud_password
 }
