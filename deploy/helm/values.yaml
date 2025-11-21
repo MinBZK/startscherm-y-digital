@@ -22,6 +22,7 @@ networkPolicies:
   enabled: false
 
 auth:
+  userPassword: "bswadmin"
   keycloak:
     enabled: true
     publicUrl: https://keycloak.localhost:8443
