@@ -55,7 +55,7 @@ class LLMClient:
         elif self.default_llm == "vlam":
             vlam_model_name = os.getenv(
                 "VLAM_MODEL_NAME",
-                "ubiops-deployment/bzk-bsw-chat//chat-model"
+                "ubiops-deployment/bzk-bsw-mistralmedium-flexibel//chat-model"
             )
             vlam_api_key = os.getenv("VLAM_API_KEY")
             vlam_base_url = os.getenv(

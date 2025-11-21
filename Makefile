@@ -86,13 +86,13 @@ SHELL=/bin/bash
 install-nginx:
 	kubectl apply -f https://kind.sigs.k8s.io/examples/ingress/deploy-ingress-nginx.yaml --kubeconfig=deploy/skaffold/.kind-kubeconfig
 
-restart-cluster: stop-cluster setup-cluster dockerhub-auth develop
+restart-cluster: stop-cluster setup-cluster install-nginx dockerhub-auth develop
 
 setup-cluster:
 	@[[ -n "$(shell kind get clusters | grep bsw)" ]] || kind create cluster --name bsw --kubeconfig deploy/skaffold/.kind-kubeconfig --config=deploy/skaffold/kind-config.yaml
 
 stop-cluster:
-	kind delete cluster --name bsw --kubeconfig ../skaffold/.kind-kubeconfig
+	kind delete cluster --name bsw --kubeconfig deploy/skaffold/.kind-kubeconfig
 
 k9s:
 	k9s --kubeconfig deploy/skaffold/.kind-kubeconfig
