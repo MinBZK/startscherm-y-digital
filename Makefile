@@ -92,7 +92,7 @@ setup-cluster:
 	@[[ -n "$(shell kind get clusters | grep bsw)" ]] || kind create cluster --name bsw --kubeconfig deploy/skaffold/.kind-kubeconfig --config=deploy/skaffold/kind-config.yaml
 
 stop-cluster:
-	kind delete cluster --name bsw --kubeconfig ../skaffold/.kind-kubeconfig
+	kind delete cluster --name bsw --kubeconfig deploy/skaffold/.kind-kubeconfig
 
 k9s:
 	k9s --kubeconfig deploy/skaffold/.kind-kubeconfig

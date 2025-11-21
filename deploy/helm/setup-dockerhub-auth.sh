@@ -14,7 +14,7 @@ if ! command -v kubectl >/dev/null 2>&1; then
 fi
 
 # Check if we can connect to cluster
-if ! kubectl cluster-info >/dev/null 2>&1; then
+if ! kubectl cluster-info --kubeconfig ../skaffold/.kind-kubeconfig >/dev/null 2>&1; then
     echo "❌ Cannot connect to Kubernetes cluster"
     echo "Make sure your kubectl context is set correctly"
     exit 1
