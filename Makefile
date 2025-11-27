@@ -84,9 +84,9 @@ dockerhub-auth:
 SHELL=/bin/bash
 
 install-nginx:
-	kubectl apply -f https://kind.sigs.k8s.io/examples/ingress/deploy-ingress-nginx.yaml --kubeconfig=deploy/skaffold/.kind-kubeconfig
+	kubectl get ns ingress-nginx --context=kind-bsw --kubeconfig=deploy/skaffold/.kind-kubeconfig || kubectl apply -f https://kind.sigs.k8s.io/examples/ingress/deploy-ingress-nginx.yaml --kubeconfig=deploy/skaffold/.kind-kubeconfig
 
-restart-cluster: stop-cluster setup-cluster install-nginx dockerhub-auth develop
+restart-cluster: stop-cluster setup-cluster install-nginx develop
 
 setup-cluster:
 	@[[ -n "$(shell kind get clusters | grep bsw)" ]] || kind create cluster --name bsw --kubeconfig deploy/skaffold/.kind-kubeconfig --config=deploy/skaffold/kind-config.yaml
@@ -100,7 +100,7 @@ k9s:
 update-kubeconfig:
 	kind get kubeconfig --name bsw > deploy/skaffold/.kind-kubeconfig
 
-develop: login-acr setup-cluster set-secret-values
+develop: setup-cluster set-secret-values install-nginx
 	skaffold dev --profile dev --filename deploy/skaffold/skaffold.yaml --trigger=manual --status-check=false --kubeconfig=deploy/skaffold/.kind-kubeconfig
 
 set-secret-values:
